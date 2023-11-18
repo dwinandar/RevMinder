@@ -1,11 +1,11 @@
-import logoFnd from "../assets/LogoFND_Footer.svg";
-import chatBubble from "../assets/chat-bubble-footer.svg";
-import PhoneIcon from "../assets/phone-footer.svg";
+// import logoFnd from "../assets/LogoFND_Footer.svg";
+// import chatBubble from "../assets/chat-bubble-footer.svg";
+// import PhoneIcon from "../assets/phone-footer.svg";
 
 const Footer = () => {
   return (
     <>
-      <footer className='footer p-10 pt-16 bg-[#F9FAFC] flex flex-col items-center gap-20'>
+      {/* <footer className='footer p-10 pt-16 bg-[#F9FAFC] flex flex-col items-center gap-20'>
         <h1 className='text-[1.75rem] font-bold text-center leading-relaxed'>
           Servis kendaraan mudah bersama FixNDrive
         </h1>
@@ -43,7 +43,7 @@ const Footer = () => {
             </nav>
           </div>
         </div>
-      </footer>
+      </footer> */}
       <footer className='p-4 footer footer-center bg-base-300 text-base-content'>
         <aside>
           <p>Copyright © 2023 FixNDrive. Dibuat dengan ❤️ by Striver </p>

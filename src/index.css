@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,5 +12,6 @@
   .bg-wave {
     background-image: url("../src/assets/wave-linear-gradient.svg");
     background-size: cover;
+    background-position: 25% 75%;
   }
 }

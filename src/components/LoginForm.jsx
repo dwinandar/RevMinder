@@ -1,7 +1,7 @@
 const LoginForm = () => {
   return (
     <form
-      className='max-w-sm px-4 mx-auto space-y-4 text-black md:space-y-6'
+      className='max-w-sm px-6 mx-auto space-y-4 text-black md:space-y-6'
       action='#'
     >
       <div>

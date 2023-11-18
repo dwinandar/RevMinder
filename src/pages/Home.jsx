@@ -1,16 +1,16 @@
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Tips from "../components/Tips";
-import WhyUs from "../components/WhyUs";
+// import Tips from "../components/Tips";
+import WhatWeOffer from "../components/WhatWeOffer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <WhyUs />
-      <Tips />
+      <WhatWeOffer />
+      {/* Layanan rekomendasi sparepart */}
       <Footer />
     </>
   );

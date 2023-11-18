@@ -2,6 +2,7 @@ import iconDocument from "../assets/icons8_document.svg";
 import iconBell from "../assets/icons8_alarm.svg";
 import iconDraft from "../assets/icons8_details.svg";
 import iconForum from "../assets/icons8_talk_male.svg";
+import iconThumb from "../assets/icons8_thumbsup.svg";
 
 import {
   MotorTips1,
@@ -18,7 +19,7 @@ import {
   MobilTips6,
 } from "../assets/tips";
 
-export const whyUsContent = [
+export const whatWeOfferContent = [
   {
     id: 1,
     title: "Pencatatan Service",
@@ -33,12 +34,18 @@ export const whyUsContent = [
   },
   {
     id: 3,
+    title: "Rekomendasi Sparepart",
+    desc: "Fitur ini berguna untuk merekomendasikan sparepart yang cocok digunakan untuk kendaraan yang digunakan",
+    icon: iconThumb,
+  },
+  {
+    id: 4,
     title: "Artikel & Video",
     desc: "Fitur ini berguna untuk memberikan edukasi kepada pengguna tentang cara merawat kendaraan.",
     icon: iconDraft,
   },
   {
-    id: 4,
+    id: 5,
     title: "Forum",
     desc: "Fitur ini berguna untuk saling sharing pengalaman antar pengguna terkait otomotif",
     icon: iconForum,
