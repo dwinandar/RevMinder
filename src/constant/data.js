@@ -19,6 +19,20 @@ import {
   MobilTips6,
 } from "../assets/tips";
 
+import {
+  oliRecom,
+  accuRecom,
+  airFilterRecom,
+  brakeCanvassRecom,
+  lightRecom,
+  oilFilterRecom,
+  radiatorWaterRecom,
+  sparkPlugRecom,
+  tireRecom,
+  brakeCanvassRecom2,
+  glassFilmRecom,
+} from "../assets/recom";
+
 export const whatWeOfferContent = [
   {
     id: 1,
@@ -116,5 +130,101 @@ export const TipsMobil = [
     id: 6,
     title: "Keliling kota dengan Brio RS 2018 (5 tahun kemudian)",
     imgsrc: MobilTips6,
+  },
+];
+
+export const motorRecom = [
+  {
+    id: 1,
+    name: "Oli Mesin",
+    icon: oliRecom,
+  },
+  {
+    id: 2,
+    name: "Filter Udara",
+    icon: airFilterRecom,
+  },
+  {
+    id: 3,
+    name: "Kampas Rem",
+    icon: brakeCanvassRecom,
+  },
+  {
+    id: 4,
+    name: "Filter Oli",
+    icon: oilFilterRecom,
+  },
+  {
+    id: 5,
+    name: "Air Radiator",
+    icon: radiatorWaterRecom,
+  },
+  {
+    id: 6,
+    name: "Aki",
+    icon: accuRecom,
+  },
+  {
+    id: 7,
+    name: "Busi",
+    icon: sparkPlugRecom,
+  },
+  {
+    id: 8,
+    name: "Ban",
+    icon: tireRecom,
+  },
+  {
+    id: 9,
+    name: "Lampu",
+    icon: lightRecom,
+  },
+];
+
+export const mobilRecom = [
+  {
+    id: 1,
+    name: "Oli Mesin",
+    icon: oliRecom,
+  },
+  {
+    id: 2,
+    name: "Busi",
+    icon: sparkPlugRecom,
+  },
+  {
+    id: 3,
+    name: "Kampas Rem",
+    icon: brakeCanvassRecom2,
+  },
+  {
+    id: 4,
+    name: "Filter Oli",
+    icon: oilFilterRecom,
+  },
+  {
+    id: 5,
+    name: "Filter Udara",
+    icon: airFilterRecom,
+  },
+  {
+    id: 6,
+    name: "Aki",
+    icon: accuRecom,
+  },
+  {
+    id: 7,
+    name: "Air Radiator",
+    icon: radiatorWaterRecom,
+  },
+  {
+    id: 8,
+    name: "Ban",
+    icon: tireRecom,
+  },
+  {
+    id: 9,
+    name: "Kaca Film",
+    icon: glassFilmRecom,
   },
 ];
