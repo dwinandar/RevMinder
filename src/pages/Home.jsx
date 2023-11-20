@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Recommendation from "../components/Recommendation";
-// import Tips from "../components/Tips";
+import WhatTheySay from "../components/WhatTheySay";
 import WhatWeOffer from "../components/WhatWeOffer";
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
       <Hero />
       <WhatWeOffer />
       <Recommendation />
+      <WhatTheySay />
       <Footer />
     </>
   );

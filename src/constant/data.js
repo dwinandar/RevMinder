@@ -5,6 +5,16 @@ import iconForum from "../assets/icons8_talk_male.svg";
 import iconThumb from "../assets/icons8_thumbsup.svg";
 
 import {
+  avatarAde,
+  avatarAndy,
+  avatarBentang,
+  avatarNafid,
+  avatarNaza,
+  avatarRizky,
+  avatarTania,
+} from "../assets/avatar";
+
+import {
   MotorTips1,
   MotorTips2,
   MotorTips3,
@@ -226,5 +236,77 @@ export const mobilRecom = [
     id: 9,
     name: "Kaca Film",
     icon: glassFilmRecom,
+  },
+];
+
+export const whatTheySayContent = [
+  {
+    id: 1,
+    avatar: avatarBentang,
+    name: "Bentang Nala",
+    rating: 5,
+    comment:
+      "“Sangat membantu saya dalam hal pencatatan service, karena saya sering lupa kapan terakhir kali service.”",
+  },
+  {
+    id: 2,
+    avatar: avatarNafid,
+    name: "Nafid Zanis",
+    rating: 5,
+    comment:
+      "“Website ini sangat recomended, karena dapet mengingatkan kita untuk service rutin.”",
+  },
+  {
+    id: 3,
+    avatar: avatarTania,
+    name: "Tania Frentinur",
+    rating: 5,
+    comment:
+      "“Wajib coba website ini untuk orang yang ingin dingatkan service rutin.”",
+  },
+  {
+    id: 4,
+    avatar: avatarRizky,
+    name: "Rizky Budiansyah",
+    rating: 5,
+    comment:
+      "“Mantab websitenya, bisa menambahkan banyak kendaraan juga untuk pencatatan service.”",
+  },
+  {
+    id: 5,
+    avatar: avatarNaza,
+    name: "Naza Amarianda",
+    rating: 5,
+    comment: "“Website ini sangat recomended, sangat berguna untuk saya.”",
+  },
+  {
+    id: 6,
+    avatar: avatarAde,
+    name: "Ade Dwinandar",
+    rating: 5,
+    comment:
+      "“Siap mantap, websitenya keren. Sangat mempermudah untuk perawatan kendaraan.”",
+  },
+  {
+    id: 7,
+    avatar: avatarAndy,
+    name: "Ahmad Affandy",
+    rating: 5,
+    comment: "“Sip, semoga kedepannya fiturnya lebih banyak lagi..”",
+  },
+  {
+    id: 8,
+    avatar: avatarNaza,
+    name: "Naza Amarianda",
+    rating: 5,
+    comment: "“Website ini sangat recomended, sangat berguna untuk saya.”",
+  },
+  {
+    id: 9,
+    avatar: avatarTania,
+    name: "Tania Frentinur",
+    rating: 5,
+    comment:
+      "“Wajib coba website ini untuk orang yang ingin dingatkan service rutin.”",
   },
 ];

@@ -44,8 +44,8 @@ const Footer = () => {
           </div>
         </div>
       </footer> */}
-      <footer className='p-4 footer footer-center bg-base-300 text-base-content'>
-        <aside>
+      <footer className='py-7 footer footer-center bg-base-300 text-base-content shadow-lg absolute transform rotate-180'>
+        <aside className='absolute transform rotate-180 '>
           <p>Copyright © 2023 FixNDrive. Dibuat dengan ❤️ by Striver </p>
         </aside>
       </footer>
