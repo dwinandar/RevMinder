@@ -25,7 +25,7 @@ const Navbar = () => {
       className={`flex md:justify-between justify-center items-center md:px-20 px-7 w-full gap-2 shadow transition-all text-white sticky top-0 z-30 ${bgNav} py-4 duration-200`}
     >
       <div className='flex items-center justify-between w-full shrink-0 lg:w-auto'>
-        <img src={logoRM} alt='logo-fnd' className='w-52' />
+        <img src={logoRM} alt='logo-fnd' className='w-52 h-[2.7rem]' />
         <label className='btn btn-circle swap swap-rotate lg:hidden'>
           <input type='checkbox' />
           <Menu className='border-none fill-current swap-off ring-0' />

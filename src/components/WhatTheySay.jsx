@@ -29,10 +29,10 @@ const WhatTheySay = () => {
             ))}
           </div>
           <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 lg:left-14 lg:right-14 top-1/2'>
-            <a href='#slide3' className=''>
+            <a href='#slide3' className='' aria-label='to-slide-3'>
               {""}
             </a>
-            <a href='#slide2' className='text-6xl'>
+            <a href='#slide2' className='text-6xl' aria-label='to-slide-2'>
               ❯
             </a>
           </div>
@@ -59,10 +59,10 @@ const WhatTheySay = () => {
             ))}
           </div>
           <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 lg:left-14 lg:right-14 top-1/2'>
-            <a href='#slide1' className='text-6xl'>
+            <a href='#slide1' className='text-6xl' aria-label='to-slide-1'>
               ❮
             </a>
-            <a href='#slide3' className='text-6xl'>
+            <a href='#slide3' className='text-6xl' aria-label='to-slide-1'>
               ❯
             </a>
           </div>
@@ -89,10 +89,10 @@ const WhatTheySay = () => {
             ))}
           </div>
           <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 lg:left-14 lg:right-14 top-1/2'>
-            <a href='#slide2' className='text-6xl'>
+            <a href='#slide2' className='text-6xl' aria-label='to-slide-2'>
               ❮
             </a>
-            <a href='#slide4' className=''>
+            <a href='#slide4' className='' aria-label='to-slide-4'>
               {""}
             </a>
           </div>
