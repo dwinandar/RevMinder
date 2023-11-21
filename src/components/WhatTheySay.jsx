@@ -11,7 +11,7 @@ const WhatTheySay = () => {
           id='slide1'
           className='relative flex flex-wrap justify-center w-full h-full py-20 carousel-item'
         >
-          <div className='flex items-center justify-center flex-wrap gap-14 px-14'>
+          <div className='flex flex-wrap items-center justify-center gap-14 px-14'>
             {whatTheySayContent.slice(0, 3).map((content) => (
               <div
                 className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
@@ -20,10 +20,11 @@ const WhatTheySay = () => {
                 <img
                   src={content.avatar}
                   className='rounded-full h-[120px] w-[120px] object-contain'
+                  alt='avatar'
                 />
                 <h3 className='font-semibold'>{content.name}</h3>
                 <h3>⭐⭐⭐⭐⭐</h3>
-                <p className='text-center font-semibold'>{content.comment}</p>
+                <p className='font-semibold text-center'>{content.comment}</p>
               </div>
             ))}
           </div>
@@ -40,7 +41,7 @@ const WhatTheySay = () => {
           id='slide2'
           className='relative flex flex-wrap justify-center w-full h-full py-20 carousel-item'
         >
-          <div className='flex items-center justify-center h-full flex-wrap gap-14 px-14'>
+          <div className='flex flex-wrap items-center justify-center h-full gap-14 px-14'>
             {whatTheySayContent.slice(3, 6).map((content) => (
               <div
                 className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
@@ -49,10 +50,11 @@ const WhatTheySay = () => {
                 <img
                   src={content.avatar}
                   className='rounded-full h-[120px] w-[120px] object-contain'
+                  alt='avatar'
                 />
                 <h3 className='font-semibold'>{content.name}</h3>
                 <h3>⭐⭐⭐⭐⭐</h3>
-                <p className='text-center font-semibold'>{content.comment}</p>
+                <p className='font-semibold text-center'>{content.comment}</p>
               </div>
             ))}
           </div>
@@ -69,7 +71,7 @@ const WhatTheySay = () => {
           id='slide3'
           className='relative flex flex-wrap justify-center w-full h-full py-20 carousel-item'
         >
-          <div className='flex items-center justify-center h-full flex-wrap gap-14 px-14'>
+          <div className='flex flex-wrap items-center justify-center h-full gap-14 px-14'>
             {whatTheySayContent.slice(6, 9).map((content) => (
               <div
                 className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
@@ -78,10 +80,11 @@ const WhatTheySay = () => {
                 <img
                   src={content.avatar}
                   className='rounded-full h-[120px] w-[120px] object-contain'
+                  alt='avatar'
                 />
                 <h3 className='font-semibold'>{content.name}</h3>
                 <h3>⭐⭐⭐⭐⭐</h3>
-                <p className='text-center font-semibold'>{content.comment}</p>
+                <p className='font-semibold text-center'>{content.comment}</p>
               </div>
             ))}
           </div>
