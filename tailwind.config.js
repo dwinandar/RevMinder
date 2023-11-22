@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
+    extend : {
+
+    },
+    colors : {
+      primary1 : '#4C4DDC',
+      primary2 : '#DFE0F3',
+      primary3 : '#3334CC',
+    }
+
   },
   container: {
     center: true,
@@ -14,11 +22,9 @@ export default {
       md: "50px"
     }
   },
-  colors : {
-    "black" : '#1E1E1E',
-    "white" : '#FFFFFF'
-  },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"), require('flowbite/plugin')],
+  
   daisyui: {
     themes: ["light"]
   }

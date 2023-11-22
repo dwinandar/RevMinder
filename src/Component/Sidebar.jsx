@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { RiMenu3Fill } from "react-icons/ri";
+import { RiMenu3Fill, RiCustomerServiceFill } from "react-icons/ri";
 import { FaQuestionCircle } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { HiChatBubbleLeftRight } from "react-icons/hi2";
 import { RiArticleFill } from "react-icons/ri";
-import { MdWebAsset } from "react-icons/md";
-import { RiCustomerServiceFill } from "react-icons/ri";
+import { MdWebAsset, MdDashboard } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
-import { MdDashboard } from "react-icons/md";
 
 const Dashboardview = () => {
   return (
@@ -32,45 +30,45 @@ const Dashboardview = () => {
         <div className="menu w-64 p-6 gap-3 flex justify-start">
           <p className="text-lg font-bold justify-start">Dashboard</p>
           <li>
-            <Link to='/Dashboard' className="active:bg-warning font-semibold hover:bg-warning ">
+            <Link to='/Dashboard' className="active:bg-warning font-semibold hover:bg-primary2 ">
               <MdDashboard />
               Dashboard
             </Link>
           </li>
           <p className="text-lg font-bold justify-start">Menu Utama</p>
           <li>
-            <a className="font-semibold hover:bg-warning">
+            <a className="font-semibold hover:bg-primary2">
               <RiCustomerServiceFill />
               Layanan
             </a>
           </li>
           <li>
-            <Link to='/Aset' className="font-semibold hover:bg-warning">
+            <Link to='/Aset' className="font-semibold hover:bg-primary2">
               <MdWebAsset />
               Aset
             </Link>
           </li>
           <li>
-            <a className="font-semibold hover:bg-warning">
+            <a className="font-semibold hover:bg-primary2">
               <RiArticleFill />
               Artikel & Video
             </a>
           </li>
           <li>
-            <a className="font-semibold hover:bg-warning">
+            <a className="font-semibold hover:bg-primary2">
               <HiChatBubbleLeftRight />
               Forum
             </a>
           </li>
           <li>
-            <a className="font-semibold hover:bg-warning">
+            <a className="font-semibold hover:bg-primary2">
               <IoSettingsSharp />
               Pengaturan
             </a>
           </li>
           <p className="text-lg font-bold justify-start">Informasi</p>
           <li>
-            <a className="font-semibold hover:bg-warning">
+            <a className="font-semibold hover:bg-primary2">
               <FaQuestionCircle />
               Informasi
             </a>
