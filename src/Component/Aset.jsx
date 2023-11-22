@@ -17,16 +17,17 @@ const Aset = () => {
           <div className="m-7">
             <p className="text-3xl font-bold">Informasi Aset</p>
             <div className="flex mt-11 gap-5 ">
-              <button className="shadow-2xl font-bold hover:border-b-2 hover:border-blue-800 px-11 py-3 rounded-xl">
+              <button className="shadow-2xl font-bold hover:border-b-2 hover:border-blue-800 btn-wide rounded-xl">
                 <FaMotorcycle className="w-10" />
                 Motor
               </button>
-              <button className="shadow-xl font-bold hover:border-b-2 hover:border-blue-800 px-11 py-3 rounded-xl">
-                <FaCar className="w-10" />
+              <button className="shadow-xl font-bold hover:border-b-2 hover:border-blue-800 btn-wide rounded-xl">
+                <FaCar className="flex w-10 justify-center" />
                 Mobil
               </button>
             </div>
           </div>
+          
 
           <div className="border border-gray-200 m-5 shadow-xl rounded-xl place-content-center bg-primary2">
             <div className="flex justify-center">
@@ -51,12 +52,12 @@ const Aset = () => {
                     </h3>
                     <div className="flex m-11 gap-11 justify-center">
                       <a>
-                        <Link to="/tambahaset">
                           <FaMotorcycle />
-                        </Link>
                       </a>
-                      <a className="link">
-                        <FaCar />
+                      <a>
+                        <Link to="/tambahaset">
+                          <FaCar />
+                        </Link>
                       </a>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import NavDashboard from "./NavDashboard";
+import Sidebar from './Sidebar';
+import NavDashboard from './NavDashboard';
 import { FaMotorcycle } from "react-icons/fa6";
 import { FaCalendarAlt, FaCar } from "react-icons/fa";
 import DateRangePicker from 'flowbite-datepicker/DateRangePicker';
@@ -8,7 +8,7 @@ import { Fa1, Fa2, Fa3 } from "react-icons/fa6";
 
 const Dashboard = () => {
   
-  var showdate = new Date(Date.UTC(2023, 10, 21, 3, 0, 0));
+  var showdate = new Date();
   var options = {
     weekday: 'long',
     year: 'numeric',
@@ -63,18 +63,18 @@ const Dashboard = () => {
                   datepicker-autohide
                   type="text"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder={dt}
+                  placeholder={dt} 
                 ></input>
               </div>
             </div>
             {/* End Datepicker */}
 
-            <div className="flex py-11 gap-11 justify-center self-center">
-              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800">
-                <FaMotorcycle className="w-10 shadow-xl" />
+            <div className="flex flex-row py-11 gap-11 justify-center self-center">
+              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800 flex">
+                <FaMotorcycle className="w-10 shadow-xl flex" />
                 Motor
               </button>
-              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800 text-primary2">
+              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800  flex">
                 <FaCar className="w-10" />
                 Mobil
               </button>
