@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <main className='w-full mx-auto max-w-[1707px]'>
+    <main className='w-full mx-auto'>
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

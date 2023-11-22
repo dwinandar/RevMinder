@@ -6,7 +6,7 @@ const WhatTheySay = () => {
       <h1 className='text-center text-[32px] font-semibold py-24'>
         Apa Kata Mereka ?
       </h1>
-      <div className='w-full bg-[#FFDED4] h-fit carousel flex items-center rounded-xl mb-24'>
+      <div className='w-full bg-[#DFE0F3] h-fit carousel flex items-center rounded-xl mb-24'>
         <div
           id='slide1'
           className='relative flex flex-wrap justify-center w-full h-full py-20 carousel-item'
@@ -14,7 +14,7 @@ const WhatTheySay = () => {
           <div className='flex flex-wrap items-center justify-center gap-14 px-14'>
             {whatTheySayContent.slice(0, 3).map((content) => (
               <div
-                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
+                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px] shadow-md'
                 key={content.id}
               >
                 <img
@@ -32,7 +32,11 @@ const WhatTheySay = () => {
             <a href='#slide3' className='' aria-label='to-slide-3'>
               {""}
             </a>
-            <a href='#slide2' className='text-6xl' aria-label='to-slide-2'>
+            <a
+              href='#slide2'
+              className='text-6xl hidden md:block'
+              aria-label='to-slide-2'
+            >
               ❯
             </a>
           </div>
@@ -44,7 +48,7 @@ const WhatTheySay = () => {
           <div className='flex flex-wrap items-center justify-center h-full gap-14 px-14'>
             {whatTheySayContent.slice(3, 6).map((content) => (
               <div
-                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
+                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px] shadow-md'
                 key={content.id}
               >
                 <img
@@ -74,7 +78,7 @@ const WhatTheySay = () => {
           <div className='flex flex-wrap items-center justify-center h-full gap-14 px-14'>
             {whatTheySayContent.slice(6, 9).map((content) => (
               <div
-                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px]'
+                className='flex flex-col justify-center items-center gap-3 max-w-sm px-5 bg-white rounded-xl w-[287px] h-[381px] shadow-md'
                 key={content.id}
               >
                 <img

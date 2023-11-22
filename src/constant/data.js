@@ -42,8 +42,17 @@ import {
   brakeCanvassRecom2,
   glassFilmRecom,
 } from "../assets/recom";
+import {
+  ppAde,
+  ppAndy,
+  ppBentang,
+  ppNafid,
+  ppNaza,
+  ppRizky,
+  ppTania,
+} from "../assets/photo-profile";
 
-export const whatWeOfferContent = [
+export const RevMinderFeature = [
   {
     id: 1,
     title: "Pencatatan Service",
@@ -308,5 +317,50 @@ export const whatTheySayContent = [
     rating: 5,
     comment:
       "“Wajib coba website ini untuk orang yang ingin dingatkan service rutin.”",
+  },
+];
+
+export const developers = [
+  {
+    id: 1,
+    photo: ppBentang,
+    name: "Bentang Nala Narendrayanto",
+    role: "Project Manager",
+  },
+  {
+    id: 2,
+    photo: ppRizky,
+    name: "Rizky Budiansyah",
+    role: "UI UX Designer",
+  },
+  {
+    id: 3,
+    photo: ppTania,
+    name: "Tania Frentinur",
+    role: "UI UX Designer",
+  },
+  {
+    id: 4,
+    photo: ppNaza,
+    name: "Naza Amarianda",
+    role: "UI UX Designer",
+  },
+  {
+    id: 5,
+    photo: ppNafid,
+    name: "M. Nafid Zanis",
+    role: "Coder",
+  },
+  {
+    id: 6,
+    photo: ppAde,
+    name: "Ade Dwinandar Ritonga",
+    role: "Coder",
+  },
+  {
+    id: 6,
+    photo: ppAndy,
+    name: "Ahmad Afandy Latodjo",
+    role: "Coder",
   },
 ];
