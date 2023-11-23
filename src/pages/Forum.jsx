@@ -99,7 +99,7 @@ const Forum = () => {
                       <span className="label-text">Post</span>
                     </label>
                     <textarea className="textarea textarea-bordered h-32 focus:outline-none resize-none" placeholder="Apa yang sedang kamu pikirkan?" ref={postRef}></textarea>
-                    <button className="submit btn btn-accent my-5" onClick={() => { }} >Submit</button>
+                    <button className="submit btn-[#F2994A] hover:bg-[#F2994A] my-5" onClick={() => { }} >Submit</button>
                   </form>
                 </div>
               </dialog>
@@ -143,7 +143,7 @@ const Forum = () => {
                                 </span>
                               </p>
                               <div className="flex justify-end w-full">
-                                <button className="btn text-base px-[1.5rem] md:px-[3rem]">Balas</button>
+                                <button className="btn bg-[#F2994A] hover:bg-[#F2994A] text-white px-[1.5rem] md:px-[3rem]">Balas</button>
                               </div>
                             </div>
                           </div>

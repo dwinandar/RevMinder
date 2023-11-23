@@ -3,7 +3,7 @@
     {
       "id": 1,
       "user": "Tikanctzens",
-      "avatar": "/user1.png",
+      "avatar": "../../public/user1.png",
       "topic": "Motor",
       "comment": "Guys mau nanya dong, mending ganti oli apa beli seblack ya?",
       "createdAt": "15 Menit yang lalu",
@@ -163,7 +163,7 @@
     },
     {
       "user": "Pheonix",
-      "avatar": "/user2.png",
+      "avatar": "../../public/user2.png",
       "comment": "Kenapa motor saya knalpotnya mengeluarkan asap putih? apakah ada oli yang bocor atau gimana?",
       "topic": "Motor",
       "created": "1 Jam yang lalu",
@@ -219,7 +219,7 @@
     },
     {
       "user": "Owouwu24",
-      "avatar": "/user3.png",
+      "avatar": "../../public/user3.png",
       "comment": "Saya mau beli mobil tapi gak punya duit, jadi gimana ya? adakah seratus?",
       "topic": "Mobil",
       "created": "1 Menit yang lalu",
@@ -257,7 +257,7 @@
     },
     {
       "user": "Anjaymabar231",
-      "avatar": "/user4.png",
+      "avatar": "../../public/user4.png",
       "comment": "Kenapa?",
       "topic": "Motor",
       "created": "15 Menit yang lalu",
@@ -307,7 +307,7 @@
     },
     {
       "user": "Iniusername",
-      "avatar": "/user5.png",
+      "avatar": "../../public/user5.png",
       "comment": "Saran oli yang bagus dong untuk motor r14 v4, yang tarikannya enteng ke motornya, terimakasih...",
       "topic": "Motor",
       "created": "35 Menit yang lalu",
@@ -333,7 +333,7 @@
     },
     {
       "user": "Kahitna213",
-      "avatar": "/user6.png",
+      "avatar": "../../public/user6.png",
       "comment": "Motor beat saya tidak nyala itu kenapa ya?, apakah bensinnya habis?",
       "topic": "Motor",
       "created": "15 Menit yang lalu",
@@ -419,7 +419,7 @@
     },
     {
       "user": "ZZulfikli22",
-      "avatar": "/user7.png",
+      "avatar": "../../public/user7.png",
       "comment": "Kenapa mobil saya knalpotnya mengeluarkan asap hitam? apakah oli bocor atau gimana?",
       "topic": "Mobil",
       "created": "30 Menit yang lalu",
@@ -463,7 +463,7 @@
     },
     {
       "user": "Daviddharma32",
-      "avatar": "/user8.png",
+      "avatar": "../../public/user8.png",
       "comment": "Kenapa lampu indikator saya menyala, meski mobil masih berfungsi dengan normal?",
       "topic": "Motor",
       "created": "5 Menit yang lalu",
@@ -480,7 +480,7 @@
     },
     {
       "user": "Woshingsi32",
-      "avatar": "/user9.png",
+      "avatar": "../../public/user9.png",
       "comment": "Halo guys, salam kenal semuanya.... Xixixi",
       "topic": "Motor",
       "created": "1 Hari yang lalu",
