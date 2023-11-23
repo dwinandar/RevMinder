@@ -1,18 +1,22 @@
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Recommendation from "../components/Recommendation";
 import WhatTheySay from "../components/WhatTheySay";
-import WhatWeOffer from "../components/WhatWeOffer";
+import MainFeature from "../components/MainFeature";
+import OtherFeature from "../components/OtherFeature";
+import Developers from "../components/Developers";
+import Contact from "../components/Contact";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <WhatWeOffer />
-      <Recommendation />
+      <MainFeature />
+      <OtherFeature />
       <WhatTheySay />
+      <Developers />
+      <Contact />
       <Footer />
     </>
   );
