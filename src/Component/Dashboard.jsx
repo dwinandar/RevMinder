@@ -1,19 +1,43 @@
-import React from "react";
-import Sidebar from './Sidebar';
-import NavDashboard from './NavDashboard';
+import React, { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
+import NavDashboard from "./NavDashboard";
 import { FaMotorcycle } from "react-icons/fa6";
 import { FaCalendarAlt, FaCar } from "react-icons/fa";
-import DateRangePicker from 'flowbite-datepicker/DateRangePicker';
+import daterangepicker from "flowbite-datepicker/DateRangePicker";
 import { Fa1, Fa2, Fa3 } from "react-icons/fa6";
+import axios from "axios";
+import { TbCircleNumber1 } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  
+
+  const [totalCount, setTotalCount] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/jumlahdata');
+        const data = await response.json();
+
+        if (response.ok) {
+          setTotalCount(data.total);
+        } else {
+          console.error('Server response not okay:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   var showdate = new Date();
   var options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   };
   var displaytodaysdate =
     showdate.getDate() +
@@ -21,7 +45,7 @@ const Dashboard = () => {
     (showdate.getMonth() + 1) +
     "/" +
     showdate.getFullYear();
-  var dt = showdate.toLocaleDateString('id-ID', options);
+  var dt = showdate.toLocaleDateString("id-ID", options);
   var displaytime =
     showdate.getHours() +
     " : " +
@@ -32,11 +56,11 @@ const Dashboard = () => {
   return (
     <div>
       <NavDashboard />
-      <div className="w-full flex flex-row">
+      <div className="w-full flex flex-row shadow-xl">
         <Sidebar />
-        <section className="grid grid-rows-2 flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
+        <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
           <div className="m-7 flex-row gap-4">
-            <img src="./public/icon-hand.png" alt="" />
+            <img src="/tangan.svg" alt="" />
             <p className="font-bold text-2xl">Hai, Phoenix!</p>
             <p className="text-sm truncate">
               Selamat datang dilayanan FixNDrive, ayo explore fitur yang kita
@@ -44,7 +68,7 @@ const Dashboard = () => {
             </p>
 
             {/* Datepicker */}
-          
+
             <div className="flex justify-end py-7 pr-11 text-sm">
               <div class="relative max-w-sm">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -59,73 +83,66 @@ const Dashboard = () => {
                   </svg>
                 </div>
                 <input
-                  datepicker
-                  datepicker-autohide
+                  daterangepicker
                   type="text"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder={dt} 
+                  placeholder={dt}
+                  disabled
                 ></input>
               </div>
             </div>
             {/* End Datepicker */}
 
-            <div className="flex flex-row py-11 gap-11 justify-center self-center">
-              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800 flex">
-                <FaMotorcycle className="w-10 shadow-xl flex" />
-                Motor
-              </button>
-              <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800  flex">
-                <FaCar className="w-10" />
-                Mobil
-              </button>
-            </div>
+            {/* Button */}
+            <div className="flex justify-center gap-5">
+              {/* Button Motor */}
+              <Link to="" className="btn btn-ghost flex flex-col shadow-xl px-11 py-11">
+                <div className=" bg-gray-400">
+                  <img src="/motorsport.svg" alt="" width="40"/>
+                </div>
 
-            <div>
+                <div className="flex flex-col justify-center">
+                  <p className=" text-primary1">Motor</p>
+                  <p className="text-sm mt-2">yang anda miliki</p>
+                </div>
+              </Link>
+
+              {/* Button Mobil */}
+              <Link to='/aset' className="btn btn-ghost flex flex-col shadow-xl px-11 py-11">
+                <div className="bg-yellow-100">
+                  <img src="/sportcar.svg" alt="" width="50" />
+                </div>
+
+                <div className="flex flex-col justify-center">
+                  {totalCount !== null ? ( 
+                  <p className="text-primary1">{totalCount}Mobil</p>
+                  ) : (
+                  
+                  <p className="text-sm mt-2">Yang anda miliki</p>
+                  )}
+                </div>
+              </Link>
+              {/* End Button Mobil */}
+            </div>
+            {/* End Button */}
+
+            <div className="mt-3">
               <p className="font-bold text-2xl">Panduan Penggunaan</p>
             </div>
           </div>
 
           {/* Overflow Scroll */}
-          <div className="overflow-y-auto p-7 flex justify-center bg-primary2 m-7 rounded-lg">
-            <div className="h-[10rem]">
-              <p className="justify-center flex mb-9 font-bold text-2xl text-primary1">
-                3 Langkah Mudah Menggunakan
-                <img
-                  src="./public/logo2.png"
-                  className="pl-1"
-                  width="170"
-                ></img>
-              </p>
-
-              {/* Stepper */}
-              <ol class="relative text-gray-500 border-s border-blue-900 dark:border-blue-700 dark:text-gray-400 ml-96">
-                <li class="mb-10 ms-6">
-                  <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
-                  <Fa1 />
-                  </span>
-                  <h3 class="font-medium leading-tight">Lakukan Pendaftaran akun</h3>
-                  <p class="text-sm">Mulai dengan melakukan pendaftaran di situs kami secara gratis.</p>
-                </li>
-                <li class="mb-10 ms-6">
-                  <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-                  <Fa2 />
-                  </span>
-                  <h3 class="font-medium leading-tight">Masukkan Akun</h3>
-                  <p class="text-sm">Masuk menggunakan akun yang audah anda daftarkan</p>
-                </li>
-                <li class="mb-10 ms-6">
-                  <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
-                    <Fa3/>
-                  </span>
-                  <h3 class="font-medium leading-tight">Jelajahi Fitur</h3>
-                  <p class="text-sm">Setelah berhasil login, silahkan jelajahi fitur-fitur yang telah kami sediakan 😊</p>
-                </li>
-              </ol>
-              {/* End Stepper */}
-              
-            </div>
+          <div className="overflow-y-auto flex justify-center h-[20rem] ml-7 mr-7 bg-primary2 rounded-lg">
+          {/* Stepper */}
+          <ol className="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400">
+            <li className="mb-10">
+              <span className="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+              </span>
+            </li>
+          </ol>
+          {/* End Stepper */}
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );

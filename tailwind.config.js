@@ -12,6 +12,8 @@ export default {
       primary1 : '#4C4DDC',
       primary2 : '#DFE0F3',
       primary3 : '#3334CC',
+      primary4 : '#F2994A',
+      primary5 : '#1F2147'
     }
 
   },

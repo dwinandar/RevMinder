@@ -6,7 +6,7 @@ const Dashboard = () => {
     <div className="navbar bg-primary1 shadow-lg rounded-b-lg">
       {/* Logo Navbar */}
       <div className="flex-1 p-5 pl-9">
-        <img src="./public/logo1.png"></img>
+        <img src="/logo1.png"></img>
       </div>
       {/* End Logo Navbar */}
 
@@ -15,7 +15,7 @@ const Dashboard = () => {
         <div className="dropdown dropdown-end">
           <a className="link">
             <div className="indicator">
-              <img src="./public/bell.png" alt="" />
+              <img src="/bell.svg" alt="" />
               <span className="badge badge-xs badge-neutral indicator-item">9</span>
             </div>
           </a>
@@ -26,7 +26,7 @@ const Dashboard = () => {
         <div className="dropdown dropdown-end mr-9">
           <label tabIndex={0} className="btn bg-gray-200 btn-xs sm:btn-sm md:btn-md lg:btn-lg rounded-full">
             <div className="rounded-lg">
-              <img class="w-10 h-10 rounded-full" src="./public/avatar.svg" alt="Rounded avatar"></img>
+              <img class="w-10 h-10 rounded-full" src="/avatar.svg" alt="Rounded avatar"></img>
             </div>
             <p className="text-sm text-start capitalize">Phoenix</p>
             <span className=" rounded-full ">
@@ -38,15 +38,15 @@ const Dashboard = () => {
             className="menu menu-xs dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32"
           >
             <li>
-              <a className="justify-center">
+              <a className="justify-center hover:bg-primary2">
                 Profile
               </a>
             </li>
             <li>
-              <a className="justify-center">Settings</a>
+              <a className="justify-center hover:bg-primary2">Settings</a>
             </li>
             <li>
-              <a className="justify-center">Logout</a>
+              <a className="justify-center hover:bg-primary2">Logout</a>
             </li>
           </ul>
         </div>

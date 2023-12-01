@@ -8,18 +8,23 @@ import { FaMotorcycle } from "react-icons/fa6";
 import Aset from "./Component/Aset";
 import TambahAset from './Component/TambahAset';
 import Dashboard from './Component/Dashboard';
-
+import Home from "./Component/Home";
+import ListMobil from "./Component/ListMobil";
 
 const App = () => {
   return (
     <>
+
       <Router>
         <Routes>
+        <Route path="/" element={<Home/>}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/aset" element={<Aset />}></Route>
           <Route path="/tambahaset" element={<TambahAset/>}></Route>
+          <Route path="/read/:id" element={<ListMobil/>}></Route>
         </Routes>
       </Router>
+
     </>
   );
 };
