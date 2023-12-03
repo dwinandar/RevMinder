@@ -13,7 +13,8 @@ const UbahProfil = () => {
     e.preventDefault()
   }
 
-  const [file, setFile] = useState()
+  const [file, setFile] = useState("");
+  const [profilImage, setProfilImage] = useState("");
   const handleChange = (e) => {
     let f = e.target.files[0];
 
@@ -42,13 +43,16 @@ const UbahProfil = () => {
   }
 
 
+
+
+
   return (
     <div className={`py-6 mx-10`} >
       <p className="font-[600] text-lg">Lihat/Edit Profil</p>
       <div className={`flex flex-row justify-start gap-10`}>
         <div className="mt-10 block w-[8rem]">
           <button onClick={() => document.getElementById("profil-modal").showModal()}>
-            <Avatar dot={true} width={"w-32"} src={`${image}`} attr="border border-[#4C4DDC] border-[3px] p-[1px]" />
+            <Avatar dot={true} width={"w-32"} src={`${profilImage !== "" ? profilImage : image}`} attr="border border-[#4C4DDC] border-[3px] p-[1px]" />
           </button>
         </div>
 
@@ -76,6 +80,7 @@ const UbahProfil = () => {
 
                 <button
                   className="bg-[#4C4DDC] py-2 px-4 rounded-lg text-white font-bold"
+                  onClick={() => setProfilImage(file)}
                 >
                   Simpan
                 </button>
