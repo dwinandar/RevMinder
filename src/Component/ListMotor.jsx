@@ -7,17 +7,16 @@ import NavDashboard from "./NavDashboard";
 import Sidebar from "./Sidebar";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { GoPlus } from "react-icons/go";
 
-function ListMobil() {
+function ListMotor() {
   const { id } = useParams();
-  const [mobil, setMobil] = useState([]);
+  const [motor, setMotor] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8081/read/mobil/"+id)
+      .get("http://localhost:8081/read/motor/"+id)
       .then((res) => {
         console.log(res);
-        setMobil(res.data[0]);
+        setMotor(res.data[0]);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -38,10 +37,10 @@ function ListMobil() {
           <div className="overflow-y-auto h-96 flex flex-col items-center bg-white min-h-screen">
             <div className="flex flex-col items-center justify-center mt-9">
               <p className="font-bold mt-3 text-4xl text-primary">
-                Informasi Mobil
+                Informasi Motor
               </p>
               <img
-                src="/sportcar.svg"
+                src="/motorsport.svg"
                 alt="Sport Car"
                 width="150"
                 className="mt-4"
@@ -50,35 +49,35 @@ function ListMobil() {
 
             <div className="h-[15rem] flex flex-col items-center space-y-4 mt-9">
               <div className="bg-primary2 shadow-md rounded-lg w-96 p-6">
-                {/* Tipe Mobil */}
+                {/* Tipe Motor */}
                 <div className="flex mb-4">
-                  <p className="font-bold mr-2">Tipe Mobil :</p>
-                  <p className="text-gray-800">{mobil.nama_kendaraan}</p>
+                  <p className="font-bold mr-2">Tipe Motor :</p>
+                  <p className="text-gray-800">{motor.nama_kendaraan}</p>
                 </div>
                 {/* No Polisi */}
                 <div className="flex mb-4">
                   <p className="font-bold mr-2">No Polisi :</p>
-                  <p className="text-gray-800 font-md">{mobil.no_pol}</p>
+                  <p className="text-gray-800 font-md">{motor.no_pol}</p>
                 </div>
                 {/* Bahan Bakar */}
                 <div className="flex mb-4">
                   <p className="font-bold mr-2">Bahan Bakar :</p>
-                  <p className="text-gray-800">{mobil.jenis}</p>
+                  <p className="text-gray-800">{motor.jenis}</p>
                 </div>
                 {/* Transmisi */}
                 <div className="flex mb-4">
                   <p className="font-bold mr-2">Transmisi :</p>
-                  <p className="text-gray-800 font-md">{mobil.transmisi}</p>
+                  <p className="text-gray-800 font-md">{motor.transmisi}</p>
                 </div>
                 {/* Tahun */}
                 <div className="flex mb-4">
                   <p className="font-bold mr-2">Tahun :</p>
-                  <p className="text-gray-800 font-md">{mobil.tahun}</p>
+                  <p className="text-gray-800 font-md">{motor.tahun}</p>
                 </div>
                 {/* Warna */}
                 <div className="flex mb-5">
                   <p className="font-bold mr-2">Warna :</p>
-                  <p className="text-gray-800">{mobil.warna}</p>
+                  <p className="text-gray-800">{motor.warna}</p>
                 </div>
               </div>
 
@@ -110,4 +109,4 @@ function ListMobil() {
   );
 }
 
-export default ListMobil;
+export default ListMotor;

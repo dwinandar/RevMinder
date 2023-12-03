@@ -22,7 +22,7 @@ function TambahAset() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8081/mobil1", values)
+      .post("http://localhost:8081/motor1", values)
       .then((res) => {
         console.log(res);
         navigate("/aset");
@@ -48,11 +48,10 @@ function TambahAset() {
           <div className="overflow-y-auto p-7 flex flex-col items-center">
             {/**/}
             <div className="flex flex-col items-center justify-center mt-9">
-              <img src="/Mobil.svg" alt="" width="200" />
-              <p className="font-bold mt-3 text-lg">Tambah Data Mobil</p>
+              <img src="/motorsport.svg" alt="" width="100" />
+              <p className="font-bold mt-3 text-lg">Tambah Data Motor</p>
             </div>
 
-            {/* */}
             <div className="h-[15rem] flex flex-col items-center">
               <form onSubmit={handleSubmit}>
                 <div className="bg-primary2 border border-gray-200 w-96 m-4 items-center justify-center rounded-xl">
