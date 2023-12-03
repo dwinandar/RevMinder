@@ -36,13 +36,20 @@ function Aset() {
   };
 
   const handleDelete = (id) => {
+
+    const isConfirmed = window.confirm("Apakah Anda yakin ingin menghapus data?");
+
+    if(isConfirmed){
     axios
       .delete(`http://localhost:8081/delete/${selectedVehicle}/${id}`)
       .then((res) => {
         location.reload();
       })
       .catch((err) => console.log(err));
-  };
+  } else {
+     console.log("Penghapusan data dibatalkan.");
+  }
+};
 
   const handleClick = (vehicleType) => {
     setShowData(true);
