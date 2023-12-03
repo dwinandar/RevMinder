@@ -9,7 +9,7 @@ export default function App() {
   return (
     <main className='w-full mx-auto max-w-[1707px]'>
       <Routes>
-        <Route path='/' element={isLogged ? <Dashboard /> : <Home logged={setIsLogged} />} />
+        <Route path='/' element={<Home />} />
 
         <Route path='/dashboard/*' element={<Dashboard />} />
       </Routes>

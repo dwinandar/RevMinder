@@ -30,7 +30,7 @@ const Dashboardview = () => {
       <div className="menu w-64 p-6 gap-3 flex justify-start">
         <p className="text-lg font-bold justify-start">Dashboard</p>
         <li>
-          <Link to='/dashboard' className="active:bg-warning font-semibold hover:bg-primary2 ">
+          <Link to='beranda' className="active:bg-warning font-semibold hover:bg-primary2 ">
             <MdDashboard />
             Dashboard
           </Link>
@@ -43,29 +43,29 @@ const Dashboardview = () => {
           </a>
         </li>
         <li>
-          <Link to='/dashboard/aset' className="font-semibold hover:bg-primary2">
+          <Link to='aset' className="font-semibold hover:bg-primary2">
             <MdWebAsset />
             Aset
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/artikel" className="font-semibold hover:bg-primary2">
+          <Link to="artikel" className="font-semibold hover:bg-primary2">
             <RiArticleFill />
             Artikel & Video
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/forum" className="font-semibold hover:bg-primary2">
+          <Link to="forum" className="font-semibold hover:bg-primary2">
             <HiChatBubbleLeftRight />
 
             Forum
           </Link>
         </li>
         <li>
-          <a className="font-semibold hover:bg-primary2">
+          <Link to="pengaturan" className="font-semibold hover:bg-primary2">
             <IoSettingsSharp />
             Pengaturan
-          </a>
+          </Link>
         </li>
         <p className="text-lg font-bold justify-start">Informasi</p>
         <li>

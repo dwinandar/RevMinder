@@ -17,7 +17,7 @@ const Hero = () => {
           </h5>
           <div className='flex gap-[21px] font-bold justify-center md:justify-start'>
             <button
-              className='text-[#0070BA] border border-[#F0F0F0] px-9 py-[6px] rounded-full bg-white'
+              className='text-[#21217A] border border-[#F0F0F0] px-9 py-[6px] rounded-full bg-white '
               onClick={() =>
                 document.getElementById("my_modal_3_login").showModal()
               }

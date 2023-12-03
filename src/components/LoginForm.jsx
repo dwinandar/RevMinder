@@ -1,5 +1,4 @@
-import { Route, Routes, Link } from "react-router-dom"
-import Dashboard from "./Dashboard.jsx"
+import { Link } from "react-router-dom"
 
 const LoginForm = (props) => {
   return (
@@ -19,7 +18,7 @@ const LoginForm = (props) => {
             className=' border border-gray-300 rounded-2xl block w-full p-2.5 drop-shadow-md
           font-normal'
             placeholder='Masukkan Username'
-            required=''
+            required
           />
         </div>
         <div>
@@ -32,7 +31,7 @@ const LoginForm = (props) => {
             id='password'
             placeholder='Masukkan Kata Sandi'
             className=' border border-gray-300 rounded-2xl drop-shadow-md block w-full p-2.5 font-normal'
-            required=''
+            required
           />
         </div>
         <div className='flex items-center justify-between'>
@@ -62,10 +61,9 @@ const LoginForm = (props) => {
         <div className='grid place-items-center'>
           <button
             type='button'
-            className='bg-[#0070BA] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
-          // onClick={() => { props.logged(true) }}
+            className='bg-[#21217A] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
           >
-            <Link to="/dashboard">
+            <Link to="/dashboard/beranda">
               Masuk
             </Link>
           </button>
