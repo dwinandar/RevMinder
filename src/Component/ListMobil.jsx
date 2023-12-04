@@ -115,26 +115,26 @@ function ListMobil() {
                 <dialog id="my_modal_1" className="modal">
                   <div className="modal-box bg-white p-6 rounded-lg shadow-lg">
                     <h3 className="font-bold text-primary1 text-lg mb-4">
-                      PILIH JENIS KENDARAAN
+                      Pilih Layanan
                     </h3>
                     <div className="flex justify-center">
-                      <Link to="/tambahdatamotor" className="text-center mx-4">
+                      <Link to="/tambahpengingat" className="text-center mx-4">
                         <img
                           src="/motorsport.svg"
                           alt="Motor Icon"
                           width="32"
                           className="mb-2"
                         />
-                        <p className="text-sm">Motor</p>
+                        <p className="text-sm">Catat Service</p>
                       </Link>
-                      <Link to="/tambahaset" className="text-center mx-4">
+                      <Link to="/tambahservice" className="text-center mx-4">
                         <img
                           src="/sportcar.svg"
                           alt="Mobil Icon"
                           width="50"
                           className="mb-2"
                         />
-                        <p className="text-sm">Mobil</p>
+                        <p className="text-sm">Pengingat</p>
                       </Link>
                     </div>
                   </div>

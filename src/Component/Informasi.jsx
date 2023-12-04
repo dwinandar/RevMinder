@@ -86,7 +86,7 @@ const Informasi = () => {
         <img src="/public/phone.svg" alt="Phone Icon" className="" />
         <div className="ml-2 text-left">
           <p className="font-bold text-primary1">Phone</p>
-          <p className="text-sm">+69812131</p>
+          <p className="text-sm">+62 81252097392</p>
         </div>
       </li>
       
@@ -94,7 +94,7 @@ const Informasi = () => {
         <img src="/public/email.svg" alt="Email Icon" className="" />
         <div className="ml-2 text-left">
           <p className="font-bold text-primary1">Email</p>
-          <p className="text-sm">revminder@gmail.com</p>
+          <p className="text-sm">revmindervehicle@gmail.com</p>
         </div>
       </li>
 
@@ -102,7 +102,7 @@ const Informasi = () => {
         <img src="/public/home.svg" alt="Address Icon" className="" />
         <div className="ml-2 text-left">
           <p className="font-bold text-primary1">Address</p>
-          <p className="text-sm">Jl. Wedhus</p>
+          <p className="text-sm">Kota Batam, Kepulauan Riau 29466</p>
         </div>
       </li>
     </ol>

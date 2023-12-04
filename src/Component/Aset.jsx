@@ -98,12 +98,12 @@ function Aset() {
 
             {/* Data Mobil */}
             {showData && (
-              <div className="border border-gray-200 m-3 shadow-xl rounded-xl overflow-y-auto h-[25rem] bg-primary2">
+              <div className="grid grid-cols-2 border border-gray-200 m-3 shadow-xl rounded-xl overflow-y-auto h-[26rem] bg-primary2">
                 {data.length > 0 ? (
                   data.map((vehicle) => (
                     <div
                       key={vehicle.id}
-                      className="flex flex-col bg-white m-7 w-80 rounded-xl hover:shadow-2xl"
+                      className="flex flex-col bg-white m-5 h-fit rounded-xl hover:shadow-2xl"
                     >
                       <div className="flex">
                         <img

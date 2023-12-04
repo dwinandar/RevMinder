@@ -9,6 +9,8 @@ import TambahDataMotor from "./Component/TambahDataMotor";
 import ListMotor from "./Component/ListMotor";
 import Informasi from "./Component/Informasi";
 import ListMobil from "./Component/ListMobil";
+import TambahPengingat from "./Component/TambahPengingat";
+import TambahService from "./Component/TambahService";
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/informasi" element={<Informasi/>}></Route>
           <Route path="/read/motor/:id" element={<ListMotor/>}></Route>
           <Route path="/read/mobil/:id" element={<ListMobil/>}></Route>
+          <Route path="/tambahpengingat" element={<TambahPengingat/>}></Route>
+          <Route path="/tambahservice" element={<TambahService/>}></Route>
         </Routes>
       </Router>
     </>

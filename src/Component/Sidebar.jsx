@@ -11,7 +11,7 @@ import { FiLogOut } from "react-icons/fi";
 const Sidebar = () => {
   
   return (
-    <div className="ml-5 border border-gray-200 w-80 shadow-xl mt-4 rounded-xl font-poppins">
+    <div className="ml-5 border border-gray-200 w-80  shadow-xl mt-4 rounded-xl font-poppins">
 
     {/* Avatar Sidebar */}
     <div className="avatar pl-7 mt-3">
