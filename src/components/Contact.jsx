@@ -9,6 +9,7 @@ const Contact = () => {
         Kontak Kami
       </h1>
       <div className='flex md:justify-center flex-wrap bg-[#F5F5FF] gap-10 md:gap-14 rounded-xl p-8 shadow-lg shadow-black/10 mb-32 max-w-4xl mx-auto'>
+
         <div>
           <div className='flex gap-3 pb-1'>
             <img src={phoneIcon} alt='phone-icon' />

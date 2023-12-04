@@ -1,3 +1,4 @@
+
 import { whatTheySayContent } from "../constant/data";
 
 const WhatTheySay = () => {
@@ -107,3 +108,4 @@ const WhatTheySay = () => {
 };
 
 export default WhatTheySay;
+

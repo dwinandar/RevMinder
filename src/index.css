@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     font-family: "Poppins", sans-serif;
@@ -21,4 +22,6 @@
   .gradient-navbar {
     background: linear-gradient(283deg, #f2994a -128.44%, #000 58.11%);
   }
+ 
 }
+
