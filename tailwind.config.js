@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend : {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      }
 
     },
     colors : {
@@ -16,13 +19,6 @@ export default {
       primary5 : '#1F2147'
     }
 
-  },
-  container: {
-    center: true,
-    padding: {
-      default: "20px",
-      md: "50px"
-    }
   },
   plugins: [
     require("daisyui"), require('flowbite/plugin')],

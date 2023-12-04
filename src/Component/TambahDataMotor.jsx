@@ -32,7 +32,7 @@ function TambahAset() {
   return (
     <>
       <NavDashboard />
-      <div className="w-full flex flex-row shadow-xl">
+      <div className="w-full flex flex-row shadow-xl font-poppins">
         <Sidebar />
         <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
           {/* Arrow */}
@@ -48,7 +48,7 @@ function TambahAset() {
           <div className="overflow-y-auto p-7 flex flex-col items-center">
             {/**/}
             <div className="flex flex-col items-center justify-center mt-9">
-              <img src="/motorsport.svg" alt="" width="100" />
+              <img src="/classicmotor.svg" alt="" width="200" />
               <p className="font-bold mt-3 text-lg">Tambah Data Motor</p>
             </div>
 

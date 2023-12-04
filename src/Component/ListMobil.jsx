@@ -24,7 +24,7 @@ function ListMobil() {
   return (
     <>
       <NavDashboard />
-      <div className="w-full flex flex-row shadow-xl">
+      <div className="w-full flex flex-row shadow-xl font-poppins">
         <Sidebar />
         <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
           <div>
@@ -41,7 +41,7 @@ function ListMobil() {
                 Informasi Mobil
               </p>
               <img
-                src="/sportcar.svg"
+                src="/Mobil.svg"
                 alt="Sport Car"
                 width="150"
                 className="mt-4"
@@ -102,6 +102,47 @@ function ListMobil() {
                   <p className="text-gray-500">Riwayat Service masih kosong</p>
                 </div>
               </div>
+
+              {/* Start Modal */}
+              <div className="flex justify-end ml-auto">
+              <button
+                className="bg-primary4 rounded-full p-3 transition-all duration-300 ease-in-out hover:shadow-lg"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                <GoPlus className="w-8 h-8 text-white" />
+                <dialog id="my_modal_1" className="modal">
+                  <div className="modal-box bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="font-bold text-primary1 text-lg mb-4">
+                      PILIH JENIS KENDARAAN
+                    </h3>
+                    <div className="flex justify-center">
+                      <Link to="/tambahdatamotor" className="text-center mx-4">
+                        <img
+                          src="/motorsport.svg"
+                          alt="Motor Icon"
+                          width="32"
+                          className="mb-2"
+                        />
+                        <p className="text-sm">Motor</p>
+                      </Link>
+                      <Link to="/tambahaset" className="text-center mx-4">
+                        <img
+                          src="/sportcar.svg"
+                          alt="Mobil Icon"
+                          width="50"
+                          className="mb-2"
+                        />
+                        <p className="text-sm">Mobil</p>
+                      </Link>
+                    </div>
+                  </div>
+                </dialog>
+              </button>
+            </div>
+            {/* End Modal */}
+            
             </div>
           </div>
         </div>

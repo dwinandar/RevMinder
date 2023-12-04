@@ -72,7 +72,7 @@ const Dashboard = () => {
   return (
     <div>
       <NavDashboard />
-      <div className="w-full flex flex-row shadow-xl">
+      <div className="w-full flex flex-row shadow-xl font-poppins">
         <Sidebar />
         <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
         <div className="m-7 flex-row gap-4">
@@ -90,7 +90,7 @@ const Dashboard = () => {
 
             {/* Datepicker */}
 
-            <div className="flex justify-end py-7 pr-11 ml-auto text-sm">
+            <div className="flex justify-end py-7 pr-11 ml-auto text-sm font-poppins">
               <div class="relative max-w-sm">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
@@ -114,7 +114,7 @@ const Dashboard = () => {
             {/* End Datepicker */}
 
             {/* Button */}
-            <div className="flex justify-center gap-5">
+            <div className="flex justify-center gap-5 font-poppins">
               {/* Button Motor */}
               <Link to="/aset" className="btn btn-ghost flex flex-col shadow-xl px-11 py-11 hover:scale-105 transition-transform">
                 <div className=" bg-gray-100 rounded-full p-3">
@@ -122,8 +122,8 @@ const Dashboard = () => {
                 </div>
 
                 <div className="flex flex-col items-center justify-center mt-4">
-                  <p className=" text-primary1 font-semibold">{jumlahDataMotor} Motor</p>
-                  <p className="text-sm mt-2">yang anda miliki</p>
+                  <p className=" text-primary1 capitalize text-lg font-semibold">{jumlahDataMotor} Motor</p>
+                  <p className="text-sm capitalize">yang anda miliki</p>
                 </div>
               </Link>
 
@@ -134,8 +134,8 @@ const Dashboard = () => {
                 </div>
 
                 <div className="flex flex-col items-center justify-center mt-4" >
-                  <p className="text-primary1 font-semibold">{jumlahDataMobil} Mobil</p>
-                  <p className="text-sm mt-2">Yang anda miliki</p>
+                  <p className="text-primary1 capitalize text-lg font-semibold">{jumlahDataMobil} Mobil</p>
+                  <p className="text-sm capitalize ">Yang anda miliki</p>
                 </div>
               </Link>
               {/* End Button Mobil */}
@@ -151,7 +151,10 @@ const Dashboard = () => {
           {/* Overflow Scroll */}
           <div className="overflow-y-auto flex justify-center h-[20rem] ml-7 mr-7 bg-primary2 rounded-lg">
           {/* Stepper */}
-          
+          <div className="flex items-center">
+            <p className="text-primary1 font-bold text-2xl">3 Langkah menggunakan</p>
+            <img src="logo2.png" alt="" className="ml-2 w-30"/>
+          </div>
           {/* End Stepper */}
           </div>
         </div>

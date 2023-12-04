@@ -72,7 +72,7 @@ function Aset() {
   return (
     <div>
       <NavDashboard />
-      <div className="w-full flex md:flex-row flex-row shadow-xl">
+      <div className="w-full flex md:flex-row flex-row shadow-xl font-poppins">
         <Sidebar />
         <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
           <div className="m-7">

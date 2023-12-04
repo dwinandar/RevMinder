@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Dashboard = () => {
   return (
-    <div className="navbar bg-primary1 shadow-lg rounded-b-lg">
+    <div className="navbar bg-primary1 shadow-lg rounded-b-lg font-poppins">
       {/* Logo Navbar */}
       <div className="flex-1 p-5 pl-9">
         <img src="/logo1.png" alt="Company Logo" className="w-50 h-10"></img>
