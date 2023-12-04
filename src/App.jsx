@@ -5,7 +5,6 @@ import { useState } from "react";
 
 
 export default function App() {
-  const [isLogged, setIsLogged] = useState(false);
   return (
     <main className='w-full mx-auto max-w-[1707px]'>
       <Routes>
