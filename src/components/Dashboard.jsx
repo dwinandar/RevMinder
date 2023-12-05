@@ -9,6 +9,7 @@ import Forum from "../pages/Forum";
 import Topic from "../pages/Topic"
 import Pengaturan from "../pages/Pengaturan";
 import Informasi from "./Informasi";
+import Layanan from "./Layanan";
 import ListMotor from "../components/ListMotor";
 import ListMobil from "../components/ListMobil"
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
           <Route path="/beranda" element={<DashboardHome />}></Route>
           <Route path="/pengaturan" element={<Pengaturan />}></Route>
           <Route path="/informasi" element={<Informasi />}></Route>
+          <Route path="/layanan" element={<Layanan />}></Route>
           {/* <Route path='/read/motor/:id' element={<ListMotor />} /> */}
           {/* <Route path='/read/mobil/:id' element={<ListMobil />} /> */}
 
