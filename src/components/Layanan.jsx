@@ -45,6 +45,7 @@ const Layanan = () => {
           showThumbs={false}
           showIndicators={false}
           showStatus={false}
+          infiniteLoop={true}
         >
           <div>
             <img src={carousel1} />
