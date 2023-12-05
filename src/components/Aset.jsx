@@ -101,7 +101,7 @@ const Aset = () => {
           </div>
 
           {/* Data Mobil */}
-          {data.length > 0 ? data.map((data, i) =>
+          {data.length > 0 ? data.map((item, i) =>
             <div key={i} className="vehicle-container flex p-8">
               <div className="flex flex-col m-2 px-4 bg-white rounded-lg w-[26rem] h-[12rem]">
                 <div className="content flex items-center my-6">
@@ -113,7 +113,7 @@ const Aset = () => {
                       {`Mobil ke-${i + 1}`}
                     </span>
                     <span className="inline-block">
-                      {data.name}
+                      {item.nama_kendaraan}
                     </span>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const Aset = () => {
                   </Link>
                   <button
                     className="bg-[#21217A] rounded-lg"
-                    onClick={() => { handleDelete(data.id) }}
+                    onClick={() => { handleDelete(item.id) }}
                   // to={`dashboard/read/${vehicle}/${data.id}`}
                   >
                     <span
