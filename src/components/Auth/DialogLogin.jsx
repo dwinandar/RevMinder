@@ -2,7 +2,7 @@ import { LogIn } from "lucide-react";
 import logofndlogin from "../../assets/Logo-RevMinder.svg";
 import LoginForm from "./LoginForm";
 
-const DialogLogin = () => {
+const DialogLogin = (props) => {
   return (
     <dialog id='my_modal_3_login' className='modal'>
       <div className='modal-box bg-[#F9FAFC] max-w-4xl px-0 relative pt-0'>
@@ -22,7 +22,7 @@ const DialogLogin = () => {
             <LogIn size={32} /> Masuk
           </p>
         </div>
-        <LoginForm />
+        <LoginForm logged={props.logged} />
       </div>
     </dialog>
   );

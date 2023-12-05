@@ -11,31 +11,6 @@ import { Carousel } from "react-responsive-carousel";
 
 const Layanan = () => {
   const [spareRecom, setSpareRecom] = useState("Motor");
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <div className='flex flex-col justify-center w-[72%] mx-auto items-center'>
