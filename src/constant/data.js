@@ -358,7 +358,7 @@ export const developers = [
     role: "Coder",
   },
   {
-    id: 6,
+    id: 7,
     photo: ppAndy,
     name: "Ahmad Afandy Latodjo",
     role: "Coder",

@@ -1,11 +1,11 @@
 const RegistForm = () => {
   return (
     <form
-      className='w-full md:px-6 mx-auto space-y-4 text-black md:space-y-6'
+      className='w-full mx-auto space-y-4 text-black md:px-6 md:space-y-6'
       action='#'
     >
-      <div className='flex justify-center gap-4 md:gap-16 px-10 flex-col md:flex-row'>
-        <div className='w-full flex flex-col gap-4'>
+      <div className='flex flex-col justify-center gap-4 px-10 md:gap-16 md:flex-row'>
+        <div className='flex flex-col w-full gap-4'>
           <div>
             <label htmlFor='username' className='block mb-2 '>
               Username
@@ -13,7 +13,7 @@ const RegistForm = () => {
             <input
               type='text'
               name='username'
-              id='username'
+              id='username-regist'
               className=' border border-gray-300 rounded-2xl block w-full p-2.5 drop-shadow-md
               font-normal'
               placeholder='Masukkan Username'
@@ -27,7 +27,7 @@ const RegistForm = () => {
             <input
               type='email'
               name='email'
-              id='email'
+              id='email-regist'
               className=' border border-gray-300 rounded-2xl block w-full p-2.5 drop-shadow-md
               font-normal'
               placeholder='Masukkan email yang aktif'
@@ -41,7 +41,7 @@ const RegistForm = () => {
             <input
               type='text'
               name='nowa'
-              id='nowa'
+              id='nowa-regist'
               className=' border border-gray-300 rounded-2xl block w-full p-2.5 drop-shadow-md
               font-normal'
               placeholder='Masukkan nomor yang aktif'
@@ -49,7 +49,7 @@ const RegistForm = () => {
             />
           </div>
         </div>
-        <div className='w-full flex flex-col gap-4'>
+        <div className='flex flex-col w-full gap-4'>
           <div>
             <label htmlFor='alamat' className='block mb-2 '>
               Alamat
@@ -57,7 +57,7 @@ const RegistForm = () => {
             <input
               type='text'
               name='alamat'
-              id='alamat'
+              id='alamat-regist'
               className=' border border-gray-300 rounded-2xl block w-full p-2.5 drop-shadow-md
               font-normal'
               placeholder='Masukkan alamat anda'
@@ -71,7 +71,7 @@ const RegistForm = () => {
             <input
               type='password'
               name='password'
-              id='password'
+              id='password-regist'
               placeholder='Masukkan sata sandi'
               className=' border border-gray-300 rounded-2xl drop-shadow-md block w-full p-2.5 font-normal'
               required=''
@@ -84,7 +84,7 @@ const RegistForm = () => {
             <input
               type='password'
               name='password'
-              id='password'
+              id='re-password-regist'
               placeholder='Ketikkan ulang kata sandi'
               className=' border border-gray-300 rounded-2xl drop-shadow-md block w-full p-2.5 font-normal'
               required=''
@@ -95,7 +95,7 @@ const RegistForm = () => {
       <div className='flex justify-center px-10 py-1'>
         <div className='flex items-center h-5'>
           <input
-            id='remember'
+            id='terms'
             aria-describedby='remember'
             type='checkbox'
             className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 '
@@ -103,7 +103,7 @@ const RegistForm = () => {
           />
         </div>
         <div className='ml-3 text-[15px] '>
-          <label htmlFor='remember' className='font-normal'>
+          <label htmlFor='terms' className='font-normal'>
             Dengan ini saya menyetujui{" "}
             <span className='text-[#0070BA]'>Ketentuan Penggunaan</span> dan
             <span className='text-[#0070BA]'>Kebijakan Privasi</span> FixNDrive

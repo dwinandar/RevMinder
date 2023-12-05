@@ -44,9 +44,9 @@ const Footer = () => {
           </div>
         </div>
       </footer> */}
-      <footer className='py-5 footer footer-center bg-black text-base-content '>
-        <aside className=' text-white'>
-          <p>Copyright © 2023 FixNDrive. Dibuat dengan ❤️ by Striver </p>
+      <footer className='py-5 bg-black footer footer-center text-base-content '>
+        <aside className='text-white '>
+          <p>Copyright © 2023 ReVMinder. Dibuat dengan ❤️ by Striver </p>
         </aside>
       </footer>
     </>
