@@ -120,7 +120,7 @@ const Aset = () => {
                 <div className="card-button flex justify-end items-end mx-3 my-6 gap-3">
                   <Link
                     className="bg-[#F2994A] rounded-lg"
-                    to={`/dashboard/read/${vehicle}/${data.id}`}>
+                    to={`/dashboard/read/${vehicle}/${item.id}`}>
                     <button
                       className="px-6 py-2 font-[400] text-white"
                     >Lihat
