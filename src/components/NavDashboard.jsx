@@ -15,7 +15,7 @@ const NavDashboard = () => {
           <a className="link">
             <div className="indicator">
               <img src="/bell.png" alt="" />
-              <span className="badge badge-xs badge-neutral indicator-item">9</span>
+              <span className="badge badge-xs badge-neutral bg-white indicator-item">9</span>
             </div>
           </a>
         </div>
@@ -23,7 +23,7 @@ const NavDashboard = () => {
 
         {/* User Profile */}
         <div className="dropdown dropdown-end mr-9 items-center">
-          <label tabIndex={0} className="btn bg-gray-200 btn-xs sm:btn-sm md:btn-md lg:btn-md rounded-full">
+          <label tabIndex={0} className="btn bg-white hover:bg-white btn-xs sm:btn-sm md:btn-md lg:btn-md rounded-full">
             <div className="rounded-lg">
               <img className="w-10 h-auto rounded-full" src="/avatar.svg" alt="Rounded avatar"></img>
             </div>
@@ -34,7 +34,7 @@ const NavDashboard = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-xs dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32"
+            className="menu menu-xs dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-32"
           >
             <li>
               <a className="justify-center">

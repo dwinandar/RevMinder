@@ -2,14 +2,59 @@ import { FaMotorcycle } from "react-icons/fa6";
 import { FaCar } from "react-icons/fa";
 import { Fa1, Fa2, Fa3 } from "react-icons/fa6";
 
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useSpring, animated } from 'react-spring';
+import { useEffect, useState } from "react";
 
 const DashboardHome = () => {
-  var showdate = new Date(Date.UTC(2023, 10, 21, 3, 0, 0));
+  const AnimatedContent = ({ children }) => {
+    const props = useSpring({
+      opacity: 1,
+      from: { opacity: 0 },
+      config: { duration: 1000 },
+    });
+
+    return <animated.div style={props}>{children}</animated.div>;
+  };
+
+  const [jumlahDataMobil, setJumlahDataMobil] = useState(null);
+  const [jumlahDataMotor, setJumlahDataMotor] = useState(null);
+
+  useEffect(() => {
+    const fetchDataMobil = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/jumlahdatamobil');
+        const data = await response.json();
+        setJumlahDataMobil(data[0]['COUNT(*)']);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchDataMobil();
+  }, []);
+
+  useEffect(() => {
+    const fetchDataMotor = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/jumlahdatamotor');
+        const data = await response.json();
+        setJumlahDataMotor(data[0]['COUNT(*)']);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchDataMotor();
+  }, []);
+
+  var showdate = new Date();
   var options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   };
   var displaytodaysdate =
     showdate.getDate() +
@@ -17,7 +62,7 @@ const DashboardHome = () => {
     (showdate.getMonth() + 1) +
     "/" +
     showdate.getFullYear();
-  var dt = showdate.toLocaleDateString('id-ID', options);
+  var dt = showdate.toLocaleDateString("id-ID", options);
   var displaytime =
     showdate.getHours() +
     " : " +
@@ -26,7 +71,7 @@ const DashboardHome = () => {
     showdate.getSeconds();
 
   return (
-    <div className="h-[40rem] mt-4 ml-5 w-[80%]">
+    <div className="h-[42rem] mt-4 ml-5 w-[80%]">
       <section className=" h-[100%] overflow-y-auto border border-gray-200 shadow-xl rounded-xl p-12">
         <div className="flex-row gap-4">
           <img src="/icon-hand.png" alt="" />
@@ -37,12 +82,11 @@ const DashboardHome = () => {
           </p>
 
           {/* Datepicker */}
-
-          <div className="flex justify-end py-4 pr-11 text-sm">
+          <div className="flex justify-end py-7 pr-11 ml-auto text-sm">
             <div className="relative max-w-sm">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  className="w-4 h-4 text-gray-500 dark:text-gray-400 transition-colors duration-300"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -52,34 +96,73 @@ const DashboardHome = () => {
                 </svg>
               </div>
               <input
-                // datepicker
-                // datepicker-autohide
                 type="text"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder={dt}
+                disabled
               ></input>
             </div>
           </div>
           {/* End Datepicker */}
 
-          <div className="flex py-11 gap-11 justify-center self-center">
-            <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800">
-              <FaMotorcycle className="w-10 shadow-xl" />
-              Motor
-            </button>
-            <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800 text-primary2">
-              <FaCar className="w-10" />
-              Mobil
-            </button>
-          </div>
+          {/* <div className="flex py-11 gap-11 justify-center self-center"> */}
+          {/*   <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800"> */}
+          {/*     <FaMotorcycle className="w-10 shadow-xl" /> */}
+          {/*     Motor */}
+          {/*   </button> */}
+          {/*   <button className="shadow-xl py-3 px-11 hover:border-b-2 hover:border-blue-800 text-primary2"> */}
+          {/*     <FaCar className="w-10" /> */}
+          {/*     Mobil */}
+          {/*   </button> */}
+          {/* </div> */}
 
           <div>
             <p className="font-bold text-2xl">Panduan Penggunaan</p>
           </div>
         </div>
 
+        {/* Button */}
+        <div className="flex justify-center gap-5">
+          {/* Button Motor */}
+          <div className="flex py-11 gap-11 justify-center self-center">
+            <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform">
+              <button className={`flex items-center  bg-gray-200 shadow-xl px-12 py-4 rounded-lg gap-4`}
+              >
+                <FaMotorcycle size={"46"} color={"#21217A"} />
+                <div className="flex flex-col items-center text-[#21217A]">
+                  <p
+                    className="text-lg"
+                  >{`${jumlahDataMotor < 1 ? 0 : jumlahDataMotor} Motor`}</p>
+                  <span
+                  >
+                    Yang Anda miliki
+                  </span>
+                </div>
+              </button>
+            </Link>
+
+            <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform rounded-lg">
+              <button className="flex  items-center bg-gray-200 shadow-xl py-4 px-12 rounded-lg gap-4">
+                <FaCar size={"46"} color={"#21217A"} />
+                <div
+                  className="text-[#21217A] flex flex-col"
+                >
+                  <p
+                    className="text-lg"
+                  >{`${jumlahDataMobil < 1 ? 0 : jumlahDataMobil} Mobil`}</p>
+                  <span className="">
+                    Yand Anda miliki
+                  </span>
+                </div>
+              </button>
+            </Link>
+          </div>
+        </div>
+        {/* End Button */}
+
+
         {/* Overflow Scroll */}
-        <div className="overflow-y-auto p-7 flex justify-center bg-primary2 m-6 rounded-lg">
+        <div className="overflow-y-auto p-7 flex justify-center bg-primary2 m-6 rounded-lg h-[26rem]">
           <div className="h-[10rem]">
             <p className="justify-center flex mb-9 font-bold text-2xl text-primary1">
               3 Langkah Mudah Menggunakan

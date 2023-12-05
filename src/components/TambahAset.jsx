@@ -1,8 +1,3 @@
-import React from "react";
-import NavDashboard from "./NavDashboard";
-import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
-import { IoMdArrowRoundBack } from "react-icons/io";
 
 const TambahAset = () => {
   return (
@@ -104,7 +99,7 @@ const TambahAset = () => {
                 id="my_modal_5"
                 className="modal modal-bottom sm:modal-middle"
               >
-                <div className="modal-box">
+                <div className="modal-box bg-white">
                   <p className="py-4 text-center font-bold text-2xl">
                     Tambah Kendaraan Berhasil
                   </p>

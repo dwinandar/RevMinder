@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./components/Dashboard";
 import { useState } from "react";
-
+import ListMotor from "./components/ListMotor";
+import ListMobil from "./components/ListMobil"
 
 export default function App() {
   return (
@@ -11,6 +12,9 @@ export default function App() {
         <Route path='/' element={<Home />} />
 
         <Route path='/dashboard/*' element={<Dashboard />} />
+
+        <Route path='/dashboard/read/motor/:id' element={<ListMotor />} />
+        <Route path='/dashboard/read/mobil/:id' element={<ListMobil />} />
       </Routes>
     </main>
   );

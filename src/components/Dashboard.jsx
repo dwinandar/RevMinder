@@ -8,7 +8,9 @@ import Aset from "./Aset.jsx";
 import Forum from "../pages/Forum";
 import Topic from "../pages/Topic"
 import Pengaturan from "../pages/Pengaturan";
-
+import Informasi from "./Informasi";
+import ListMotor from "../components/ListMotor";
+import ListMobil from "../components/ListMobil"
 
 const Dashboard = () => {
 
@@ -32,6 +34,10 @@ const Dashboard = () => {
           <Route path="/aset/tambahaset" element={<TambahAset />}></Route>
           <Route path="/beranda" element={<DashboardHome />}></Route>
           <Route path="/pengaturan" element={<Pengaturan />}></Route>
+          <Route path="/informasi" element={<Informasi />}></Route>
+          {/* <Route path='/read/motor/:id' element={<ListMotor />} /> */}
+          {/* <Route path='/read/mobil/:id' element={<ListMobil />} /> */}
+
         </Routes>
       </div>
     </div >
