@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import NavDashboard from "./NavDashboard";
 import DashboardHome from "./DashboardHome";
+import Footer from "./Footer"
 import Sidebar from "./Sidebar";
 import TambahAset from "./TambahAset";
 import Aset from "./Aset.jsx";
@@ -26,7 +27,7 @@ const Dashboard = () => {
   return (
     <div>
       <NavDashboard />
-      <div className="w-full flex flex-row">
+      <div className="w-full flex">
         <Sidebar />
         <Routes>
           <Route path="/aset" element={<Aset />}></Route>
@@ -41,6 +42,11 @@ const Dashboard = () => {
           {/* <Route path='/read/mobil/:id' element={<ListMobil />} /> */}
 
         </Routes>
+
+      </div>
+      <div className="footer bottom-0 my-0 h-full">
+
+        <Footer />
       </div>
     </div >
   );

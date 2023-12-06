@@ -51,6 +51,7 @@ const Aset = () => {
 
   const handleClick = (vehicleType) => {
     setShowData(true);
+    setData([{ "nama": "Alphard", "jenis": "motor" }, { "nama": "Mustang", "jenis": "motor" }, { "nama": "Toyota", "jenis": "motor" }])
   };
 
   const VehicleButton = ({ type, icon, width, selected, onClick }) => (
@@ -95,130 +96,138 @@ const Aset = () => {
         {/*     </p> */}
         {/*   </div> */}
 
-        <div className={`aset-content mt-2 h-[24rem] max-w-[80rem] bg-[#D9D9D9] rounded-lg`}>
-          <div className={`fixed translate-x-[30rem] translate-y-[10rem] ${data.length > 0 ? "hidden" : "static"}`}>
-            <p className="font-bold text-gray-600 text-xl">Data kendaraan belum ada</p>
-          </div>
-
-          {/* Data Mobil */}
-          {data.length > 0 ? data.map((item, i) =>
-            <div key={i} className="vehicle-container flex p-8">
-              <div className="flex flex-col m-2 px-4 bg-white rounded-lg w-[26rem] h-[12rem]">
-                <div className="content flex items-center my-6">
-                  <span className="px-4">
-                    <FaCar size={"56"} color={"#21217A"} />
-                  </span>
-                  <div className="flex flex-col text-content">
-                    <span className="inline-block font-bold text-lg">
-                      {`Mobil ke-${i + 1}`}
-                    </span>
-                    <span className="inline-block">
-                      {item.nama_kendaraan}
-                    </span>
-                  </div>
-                </div>
-                <div className="card-button flex justify-end items-end mx-3 my-6 gap-3">
-                  <Link
-                    className="bg-[#F2994A] rounded-lg"
-                    to={`/dashboard/read/${vehicle}/${item.id}`}>
-                    <button
-                      className="px-6 py-2 font-[400] text-white"
-                    >Lihat
-                    </button>
-                  </Link>
-                  <button
-                    className="bg-[#21217A] rounded-lg"
-                    onClick={() => { handleDelete(item.id) }}
-                  // to={`dashboard/read/${vehicle}/${data.id}`}
-                  >
-                    <span
-                      className="inline-block px-6 py-2 font-[400] text-white"
-                    >Hapus
-                    </span>
-                  </button>
-                </div>
+        <div className="asset-content bg-[#D9D9D9] rounded-lg">
+          <div className="scroll-vehicle overflow-y-auto mx-8">
+            <div className={`vehicle-content-container h-[20rem] flex lg:flex-row flex-col ${data.length <= 0 ? "justify-center w-full" : ""}`}>
+              <div className={`flex justify-center items-center h-full ${data.length > 0 ? "hidden" : "static"}`}>
+                <p className="font-bold text-gray-600 text-xl">Data kendaraan belum ada</p>
               </div>
 
+              {/* Data Mobil */}
+              {data.length > 0 ? data.map((item, i) =>
+                <div key={i} className="vehicle-content mr-3 py-8 ">
+                  <div className="flex flex-col m-2 px-4 bg-white rounded-lg w-[26rem] h-[12rem]">
+                    <div className="content flex items-center my-6">
+                      <span className="px-4">
+                        <FaCar size={"56"} color={"#21217A"} />
+                      </span>
+                      <div className="flex flex-col text-content">
+                        <span className="inline-block font-bold text-lg">
+                          {`Mobil ke-${i + 1}`}
+                        </span>
+                        <span className="inline-block">
+                          {item.nama_kendaraan}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="card-button flex justify-end items-end mx-3 my-6 gap-3">
+                      <Link
+                        className="bg-[#F2994A] rounded-lg"
+                        to={`/dashboard/read/${vehicle}/${item.id}`}>
+                        <button
+                          className="px-6 py-2 font-[400] text-white"
+                        >Lihat
+                        </button>
+                      </Link>
+                      <button
+                        className="bg-[#21217A] rounded-lg"
+                        onClick={() => { handleDelete(item.id) }}
+                      // to={`dashboard/read/${vehicle}/${data.id}`}
+                      >
+                        <span
+                          className="inline-block px-6 py-2 font-[400] text-white"
+                        >Hapus
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              ) : (<></>)}
+              {/* {showData && data.length > 0 ? ( */}
+              {/**/}
+              {/*   data.map((vehicle) => { */}
+              {/*     <div */}
+              {/*       key={vehicle.id} */}
+              {/*       className="flex flex-col bg-white m-7 w-80 rounded-xl hover:shadow-2xl" */}
+              {/*     > */}
+              {/*       <div className="flex"> */}
+              {/*         <img */}
+              {/*           src={ */}
+              {/*             selectedVehicle === "motor" */}
+              {/*               ? "/motorsport.svg" */}
+              {/*               : "/sportcar.svg" */}
+              {/*           } */}
+              {/*           alt="" */}
+              {/*           width="50" */}
+              {/*           className="m-5" */}
+              {/*         /> */}
+              {/*         <div className="mt-4"> */}
+              {/*           <h1 className="font-bold"> */}
+              {/*             {selectedVehicle === "motor" ? "Motor" : "Mobil"} - */}
+              {/*             {vehicle.id} */}
+              {/*           </h1> */}
+              {/*           <p>{vehicle.nama_kendaraan}</p> */}
+              {/*         </div> */}
+              {/*       </div> */}
+              {/**/}
+              {/*       <div className="flex justify-end m-5 gap-2 "> */}
+              {/*         <Link */}
+              {/*           to={`/read/${selectedVehicle}/${vehicle.id}`} */}
+              {/*           className="btn-sm rounded-full bg-primary4 text-white py-1" */}
+              {/*         > */}
+              {/*           Lihat */}
+              {/*         </Link> */}
+              {/*         <button */}
+              {/*           onClick={() => handleDelete(vehicle.id)} */}
+              {/*           className="btn-sm rounded-full bg-primary5 text-white py-1" */}
+              {/*         > */}
+              {/*           Hapus */}
+              {/*         </button> */}
+              {/*       </div> */}
+              {/*     </div> */}
+              {/**/}
+              {/**/}
+              {/*   }) */}
+              {/**/}
+              {/* ) : ""} */}
+
             </div>
-
-          ) : (<></>)}
-          {/* {showData && data.length > 0 ? ( */}
-          {/**/}
-          {/*   data.map((vehicle) => { */}
-          {/*     <div */}
-          {/*       key={vehicle.id} */}
-          {/*       className="flex flex-col bg-white m-7 w-80 rounded-xl hover:shadow-2xl" */}
-          {/*     > */}
-          {/*       <div className="flex"> */}
-          {/*         <img */}
-          {/*           src={ */}
-          {/*             selectedVehicle === "motor" */}
-          {/*               ? "/motorsport.svg" */}
-          {/*               : "/sportcar.svg" */}
-          {/*           } */}
-          {/*           alt="" */}
-          {/*           width="50" */}
-          {/*           className="m-5" */}
-          {/*         /> */}
-          {/*         <div className="mt-4"> */}
-          {/*           <h1 className="font-bold"> */}
-          {/*             {selectedVehicle === "motor" ? "Motor" : "Mobil"} - */}
-          {/*             {vehicle.id} */}
-          {/*           </h1> */}
-          {/*           <p>{vehicle.nama_kendaraan}</p> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/**/}
-          {/*       <div className="flex justify-end m-5 gap-2 "> */}
-          {/*         <Link */}
-          {/*           to={`/read/${selectedVehicle}/${vehicle.id}`} */}
-          {/*           className="btn-sm rounded-full bg-primary4 text-white py-1" */}
-          {/*         > */}
-          {/*           Lihat */}
-          {/*         </Link> */}
-          {/*         <button */}
-          {/*           onClick={() => handleDelete(vehicle.id)} */}
-          {/*           className="btn-sm rounded-full bg-primary5 text-white py-1" */}
-          {/*         > */}
-          {/*           Hapus */}
-          {/*         </button> */}
-          {/*       </div> */}
-          {/*     </div> */}
-          {/**/}
-          {/**/}
-          {/*   }) */}
-          {/**/}
-          {/* ) : ""} */}
-
+          </div>
           {/* Modal Button */}
-          <div className="flex flex-col justify-end items-end mr-12 mt-6 h-[20rem]">
+          <div className="flex justify-end items-end pr-6 pb-8">
             <button
-              className="rounded-full border-none"
+              className="rounded-full border-none "
               onClick={() =>
                 document.getElementById("my_modal_1").showModal()
               }
             >
               <FaPlusCircle size={"38"} color={"#F2994A"} />
             </button>
-            <dialog id="my_modal_1" className="modal">
-              <div className="modal-box bg-white">
-                <h3 className="font-bold border-b-2 border-black">
-                  Pilih jenis Kendaraan
-                </h3>
-                <div className="flex m-11 gap-12 justify-center">
-                  <Link to="/dashboard/aset/tambahaset">
-                    <FaMotorcycle size={"36"} color="#21217A" />
-                  </Link>
-                  <Link className="link">
-                    <FaCar size={"36"} color="#21217A" />
-                  </Link>
-                </div>
-              </div>
-            </dialog>
-            {/* End Modal Button */}
           </div>
+
+          {/* End Modal Button */}
+
+          {/* modal */}
+          <dialog id="my_modal_1" className="modal">
+            <div className="modal-box bg-white">
+              <h3 className="font-bold border-b-2 border-black">
+                Pilih jenis Kendaraan
+              </h3>
+              <div className="flex m-11 gap-12 justify-center">
+                <Link to="/dashboard/aset/tambahaset">
+                  <FaMotorcycle size={"36"} color="#21217A" />
+                </Link>
+                <Link className="link">
+                  <FaCar size={"36"} color="#21217A" />
+                </Link>
+              </div>
+            </div>
+          </dialog>
+          {/* modal-end */}
+
         </div>
-        {/* </div> */}
 
       </div >
     </section >
