@@ -1,12 +1,14 @@
 import React from "react";
 import NavDashboard from "./NavDashboard";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useState } from "react";
 import axios from "axios";
 
 function TambahAset() {
+  
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     nama_pemilik: "",
     no_pol: "",
@@ -22,13 +24,14 @@ function TambahAset() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8081/mobil1", values)
+      .post("http://localhost:8081/tambahmobil", values)
       .then((res) => {
         console.log(res);
         navigate("/aset");
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <>
       <NavDashboard />
@@ -159,6 +162,7 @@ function TambahAset() {
                 </div>
 
                 <button
+                type="submit"
                   className="btn bg-primary3 hover:bg-primary1 text-white ml-4"
                   onClick={() =>
                     document.getElementById("my_modal_5").showModal()

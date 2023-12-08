@@ -22,7 +22,7 @@ function TambahAset() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8081/motor1", values)
+      .post("http://localhost:8081/tambahmotor", values)
       .then((res) => {
         console.log(res);
         navigate("/aset");

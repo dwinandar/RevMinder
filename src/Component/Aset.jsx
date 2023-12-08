@@ -14,7 +14,7 @@ import { GoPlus } from "react-icons/go";
 function Aset() {
   const [data, setData] = useState([]);
   const [showData, setShowData] = useState(false);
-  const [selectedVehicle, setSelectedVehicle] = useState("motor");
+  const [selectedVehicle, setSelectedVehicle] = useState("mobil");
 
   useEffect(() => {
     // Panggil fungsi getVehicle dengan parameter jenis kendaraan yang dipilih

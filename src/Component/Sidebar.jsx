@@ -31,7 +31,7 @@ const Sidebar = () => {
     <div className="menu w-80 p-6 gap-3 flex flex-col">
       <div className="text-lg font-bold text-primary1">Dashboard</div>
       <li>
-        <Link to='/dashboard' className="font-semibold hover:bg-primary2 text-primary1 hover:btn-active">
+        <Link to='/' className="font-semibold hover:bg-primary2 text-primary1 hover:btn-active">
           <MdDashboard className="mr-2" />
           Dashboard
         </Link>

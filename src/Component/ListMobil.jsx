@@ -8,19 +8,31 @@ import Sidebar from "./Sidebar";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
+import { LuAlarmClock } from "react-icons/lu";
+import { RxCounterClockwiseClock } from "react-icons/rx";
 
 function ListMobil() {
   const { id } = useParams();
   const [mobil, setMobil] = useState([]);
+  const [layananData, setLayananData] = useState([]);
+
   useEffect(() => {
     axios
-      .get("http://localhost:8081/read/mobil/"+id)
+      .get(`http://localhost:8081/read/mobil/${id}`)
       .then((res) => {
         console.log(res);
         setMobil(res.data[0]);
       })
       .catch((err) => console.log(err));
-  }, []);
+
+    axios
+      .get(`http://localhost:8081/layanan/mobil/${id}`)
+      .then((res) => {
+        console.log(res);
+        setLayananData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
   return (
     <>
       <NavDashboard />
@@ -96,53 +108,51 @@ function ListMobil() {
                 </div>
 
                 <label htmlFor="" className="font-bold">
-                  Riwayat Service
+                  Riwayat layanan
                 </label>
                 <div className="bg-primary2 shadow-md rounded-lg w-96 h-96 p-6 flex items-center justify-center">
-                  <p className="text-gray-500">Riwayat Service masih kosong</p>
+                  <ul>
+                    {layananData.map((layanan) => (
+                      <li key={layanan.id}>
+                        {layanan.tanggal}, {layanan.jarak}, {layanan.keterangan}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
               {/* Start Modal */}
               <div className="flex justify-end ml-auto">
-              <button
-                className="bg-primary4 rounded-full p-3 transition-all duration-300 ease-in-out hover:shadow-lg"
-                onClick={() =>
-                  document.getElementById("my_modal_1").showModal()
-                }
-              >
-                <GoPlus className="w-8 h-8 text-white" />
-                <dialog id="my_modal_1" className="modal">
-                  <div className="modal-box bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="font-bold text-primary1 text-lg mb-4">
-                      Pilih Layanan
-                    </h3>
-                    <div className="flex justify-center">
-                      <Link to="/tambahpengingat" className="text-center mx-4">
-                        <img
-                          src="/motorsport.svg"
-                          alt="Motor Icon"
-                          width="32"
-                          className="mb-2"
-                        />
-                        <p className="text-sm">Catat Service</p>
-                      </Link>
-                      <Link to="/tambahservice" className="text-center mx-4">
-                        <img
-                          src="/sportcar.svg"
-                          alt="Mobil Icon"
-                          width="50"
-                          className="mb-2"
-                        />
-                        <p className="text-sm">Pengingat</p>
-                      </Link>
+                <button
+                  className="bg-primary4 rounded-full p-3 transition-all duration-300 ease-in-out hover:shadow-lg"
+                  onClick={() =>
+                    document.getElementById("my_modal_1").showModal()
+                  }
+                >
+                  <GoPlus className="w-8 h-8 text-white" />
+                  <dialog id="my_modal_1" className="modal">
+                    <div className="modal-box bg-white p-6 rounded-lg shadow-lg">
+                      <h3 className="font-bold text-primary1 text-lg mb-4">
+                        Pilih Layanan
+                      </h3>
+                      <div className="flex justify-center">
+                        <Link to="/tambahservice" className="text-center mx-4">
+                        <RxCounterClockwiseClock className="w-20 h-8 mb-2"/>
+                          <p className="text-sm">Catat Service </p>
+                        </Link>
+                        <Link
+                          to="/tambahpengingat"
+                          className="text-center mx-4"
+                        >
+                        <LuAlarmClock className="w-20 h-8 mb-2"/>
+                          <p className="text-sm">Pengingat</p>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </dialog>
-              </button>
-            </div>
-            {/* End Modal */}
-            
+                  </dialog>
+                </button>
+              </div>
+              {/* End Modal */}
             </div>
           </div>
         </div>
