@@ -63,7 +63,7 @@ const LoginForm = (props) => {
             type='button'
             className='bg-[#21217A] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
           >
-            <Link to="/dashboard/beranda">
+            <Link to="dashboard/beranda">
               Masuk
             </Link>
           </button>

@@ -51,7 +51,10 @@ const Aset = () => {
 
   const handleClick = (vehicleType) => {
     setShowData(true);
-    setData([{ "nama": "Alphard", "jenis": "motor" }, { "nama": "Mustang", "jenis": "motor" }, { "nama": "Toyota", "jenis": "motor" }])
+    setData([{
+      "id": 1, "nama_kendaraan": "Alphard", "jenis": "motor"
+    }, { "id": 2, "nama_kendaraan": "Mustang", "jenis": "motor" },
+    { "id": 3, "nama_kendaraan": "Toyota", "jenis": "motor" }])
   };
 
   const VehicleButton = ({ type, icon, width, selected, onClick }) => (
@@ -67,7 +70,7 @@ const Aset = () => {
   );
   return (
 
-    <section className="flex flex-col w-[80%] mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
+    <section className="flex flex-col w-full lg:w-[80%] mt-4 lg:mx-5 border border-gray-200 shadow-xl rounded-xl">
       <div className="p-12 flex flex-col gap-4">
         <p className="text-3xl font-bold">Informasi Aset</p>
         <div className="flex mt-11 gap-5 ">
@@ -123,7 +126,7 @@ const Aset = () => {
                     <div className="card-button flex justify-end items-end mx-3 my-6 gap-3">
                       <Link
                         className="bg-[#F2994A] rounded-lg"
-                        to={`/dashboard/read/${vehicle}/${item.id}`}>
+                        to={`read/${vehicle}/${item.id}`}>
                         <button
                           className="px-6 py-2 font-[400] text-white"
                         >Lihat

@@ -29,9 +29,9 @@ function ListMobil() {
   }, []);
   return (
     <>
-      <NavDashboard />
+      {/* <NavDashboard /> */}
       <div className="w-[98rem] flex flex-row">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div className="flex flex-col flex-1 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl">
           <div>
             <Link to="/dashboard/aset">

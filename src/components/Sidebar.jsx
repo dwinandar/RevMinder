@@ -156,7 +156,7 @@ const Dashboardview = () => {
     <>
       <div className="drawer lg:hidden left-0 w-0 z-50">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <label htmlFor="my-drawer" className="mx-6 p-2 rounded-lg border-none drawer-button -translate-y-[56px]">
+        <label htmlFor="my-drawer" className="absolute mx-6 p-2 rounded-lg border-none drawer-button -translate-y-[56px]">
           <Menu size={"32"} color={"white"} />
         </label>
         <div className="drawer-side">
@@ -166,7 +166,7 @@ const Dashboardview = () => {
             {/* <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay flex justify-end px-3"> */}
             {/* </label> */}
             {/*   <X size={"32"} /> */}
-            <div className='sidebar-content flex justify-center flex-col my-8'>
+            <div className='sidebar-content flex justify-center flex-col md:my-10'>
               <SidebarContent onPage={onPage} setOnPage={setOnPage} clickHandler={closeSidebar} />
             </div>
 
@@ -175,11 +175,12 @@ const Dashboardview = () => {
       </div>
 
       <div
-        className={`ml-5 border border-gray-200 w-64 shadow-xl mt-4 rounded-xl hidden lg:block`}
+        className={`ml-5 border max-h-[42rem] border-gray-200 w-64 shadow-xl mt-4 rounded-xl hidden lg:block`}
       >
 
         <SidebarContent onPage={onPage} setOnPage={setOnPage} />
       </div >
+
     </>
   );
 };

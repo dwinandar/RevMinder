@@ -27,27 +27,28 @@ const Dashboard = () => {
   return (
     <div>
       <NavDashboard />
-      <div className="w-full flex">
+      <div className="w-full flex ">
         <Sidebar />
         <Routes>
-          <Route path="/aset" element={<Aset />}></Route>
-          <Route path="/forum" element={<Forum />}></Route>
-          <Route path="/artikel" element={<Topic />}></Route>
-          <Route path="/aset/tambahaset" element={<TambahAset />}></Route>
           <Route path="/beranda" element={<DashboardHome />}></Route>
+          <Route path="/layanan" element={<Layanan />}></Route>
+          <Route path="/aset" element={<Aset />}>
+          </Route>
+          <Route path='aset/read/motor/:id' element={<ListMotor />} />
+          <Route path='aset/read/mobil/:id' element={<ListMobil />} />
+          <Route path="/artikel" element={<Topic />}></Route>
+          <Route path="/forum" element={<Forum />}></Route>
+          <Route path="/aset/tambahaset" element={<TambahAset />}></Route>
           <Route path="/pengaturan" element={<Pengaturan />}></Route>
           <Route path="/informasi" element={<Informasi />}></Route>
-          <Route path="/layanan" element={<Layanan />}></Route>
-          {/* <Route path='/read/motor/:id' element={<ListMotor />} /> */}
-          {/* <Route path='/read/mobil/:id' element={<ListMobil />} /> */}
-
         </Routes>
 
       </div>
-      <div className="footer bottom-0 my-0 h-full">
 
+      <div className="footer relative clear-both mt-4 bottom-0 mb-0 mx-auto">
         <Footer />
       </div>
+
     </div >
   );
 };

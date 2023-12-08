@@ -50,14 +50,18 @@ const NavDashboard = () => {
               </li>
               <li>
                 <a className="justify-center">
-                  Profile
+                  Profil
                 </a>
               </li>
               <li>
-                <a className="justify-center">Settings</a>
+                <a className="justify-center">
+                  Pengaturan
+                </a>
               </li>
               <li>
-                <a className="justify-center">Logout</a>
+                <a className="justify-center">
+                  Keluar
+                </a>
               </li>
             </ul>
           </div>
