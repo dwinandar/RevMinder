@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavDashboard from "./NavDashboard";
 import DashboardHome from "./DashboardHome";
 import Footer from "./Footer"
+import FooterDashboard from "./FooterDashboard"
 import Sidebar from "./Sidebar";
 import TambahAset from "./TambahAset";
 import Aset from "./Aset.jsx";
@@ -46,7 +47,7 @@ const Dashboard = () => {
       </div>
 
       <div className="footer relative clear-both mt-4 bottom-0 mb-0 mx-auto">
-        <Footer />
+        <FooterDashboard />
       </div>
 
     </div >
