@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </footer> */}
 
-      <footer className='py-5 footer footer-center bg-black text-base-content z-20'>
+      <footer className='py-5 footer footer-center bg-black text-base-content '>
         <aside className=' text-white'>
           <p>Copyright © 2023 FixNDrive. Dibuat dengan ❤️ by Striver </p>
         </aside>
