@@ -36,6 +36,7 @@ const Forum = () => {
     } else {
       const postObj = {
         user: "Pheonix",
+        avatar: userPhoto,
         comment: postRef.current.value,
         topic: "Motor",
         created: "23-11-2023 09:00:00",

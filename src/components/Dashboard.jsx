@@ -38,7 +38,7 @@ const Dashboard = () => {
           <Route path='aset/read/mobil/:id' element={<ListMobil />} />
           <Route path="/artikel" element={<Topic />}></Route>
           <Route path="/forum" element={<Forum />}></Route>
-          <Route path="/aset/tambahaset" element={<TambahAset />}></Route>
+          <Route path="/aset/tambahaset/*" element={<TambahAset />}></Route>
           <Route path="/pengaturan" element={<Pengaturan />}></Route>
           <Route path="/informasi" element={<Informasi />}></Route>
         </Routes>

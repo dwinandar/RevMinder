@@ -1,8 +1,8 @@
-import Sidebar from "./Sidebar";
-import NavDashboard from "./NavDashboard";
 import { FaCar } from "react-icons/fa";
 import { FaMotorcycle } from "react-icons/fa6";
 import { FaPlusCircle } from "react-icons/fa";
+import { X } from "lucide-react";
+
 import { Link } from "react-router-dom";
 import TambahAset from "./TambahAset";
 import { useState, useEffect } from "react";
@@ -112,7 +112,7 @@ const Aset = () => {
               {/* Data Mobil */}
               {data.length > 0 ? data.map((item, i) =>
                 <div key={i} className="vehicle-content pt-6 ">
-                  <div className="flex flex-col m-2 px-4 bg-white rounded-lg min-w-[20rem] h-[13rem]">
+                  <div className="flex flex-col m-2 px-4 bg-white rounded-lg min-w-[16rem] h-[13rem]">
                     <div className="content flex items-center my-6">
                       <span className="px-4">
                         <FaCar size={"56"} color={"#21217A"} />
@@ -173,17 +173,27 @@ const Aset = () => {
           {/* modal */}
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box bg-white">
-              <h3 className="font-bold border-b-2 border-black">
-                Pilih jenis Kendaraan
-              </h3>
-              <div className="flex m-11 gap-12 justify-center">
-                <Link to="/dashboard/aset/tambahaset">
-                  <FaMotorcycle size={"36"} color="#21217A" />
-                </Link>
-                <Link className="link">
-                  <FaCar size={"36"} color="#21217A" />
-                </Link>
+              <form method="dialog">
+                <div className="flex justify-end mb-3 sm:mb-0">
+                  <button className="">
+                    <X size={"28"} />
+                  </button>
+                </div>
+              </form>
+              <div className="flex flex-col items-center justify-center gap-6 mb-10">
+                <h3 className="font-bold text-primary1 text-xl">
+                  Pilih jenis Kendaraan
+                </h3>
+                <div className="flex justify-center gap-12">
+                  <Link to="tambahaset/motor">
+                    <FaMotorcycle size={"42"} color="#21217A" className="hover:scale-110" />
+                  </Link>
+                  <Link to="tambahaset/mobil">
+                    <FaCar size={"42"} color="#21217A" className=" hover:scale-110" />
+                  </Link>
+                </div>
               </div>
+
             </div>
           </dialog>
           {/* modal-end */}
