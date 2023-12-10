@@ -40,6 +40,7 @@ const Layanan = () => {
   return (
     <div className='flex flex-col justify-center w-[72%] mx-auto items-center'>
       <div className='w-[719px] mt-2'>
+
         <Carousel
           autoPlay
           showThumbs={false}
@@ -57,6 +58,7 @@ const Layanan = () => {
             <img src={carousel3} />
           </div>
         </Carousel>
+
       </div>
       <div className='w-[100%] mt-4 ml-5 mb-2'>
         <section className='p-8 pb-0 overflow-y-auto border border-gray-200 shadow-xl rounded-xl'>
@@ -65,9 +67,7 @@ const Layanan = () => {
           </h1>
           <nav className='flex flex-wrap justify-center gap-8 text-2xl py-9 pt-7'>
             <button
-              className={`px-16 py-4 font-semibold relative shadow-md rounded-lg  ${
-                spareRecom === "Motor" ? "bg-[#F3F5F7]" : "bg-white"
-              }`}
+              className={`px-16 py-4 font-semibold relative shadow-md rounded-lg  ${spareRecom === "Motor" ? "bg-[#F3F5F7]" : "bg-white"}`}
               onClick={() => {
                 setSpareRecom("Motor");
               }}
@@ -81,17 +81,15 @@ const Layanan = () => {
                 Motor
               </div>
               <div
-                className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity   ${
-                  spareRecom === "Motor" ? "opacity-100" : "opacity-0"
-                }`}
+                className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity   ${spareRecom === "Motor" ? "opacity-100" : "opacity-0"
+                  }`}
               >
-                {" "}
+                {""}
               </div>
             </button>
             <button
-              className={`px-16 py-4 font-semibold relative shadow-md rounded-lg   ${
-                spareRecom === "Mobil" ? "bg-[#F3F5F7]" : "bg-white"
-              }`}
+              className={`px-16 py-4 font-semibold relative shadow-md rounded-lg   ${spareRecom === "Mobil" ? "bg-[#F3F5F7]" : "bg-white"
+                }`}
               onClick={() => {
                 setSpareRecom("Mobil");
               }}
@@ -105,9 +103,8 @@ const Layanan = () => {
                 Mobil
               </div>
               <div
-                className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity ${
-                  spareRecom === "Mobil" ? "opacity-100" : "opacity-0"
-                }`}
+                className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity ${spareRecom === "Mobil" ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 {" "}
               </div>

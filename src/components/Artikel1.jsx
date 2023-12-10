@@ -50,7 +50,7 @@ const Artikel1 = () => {
         </Link>
       </div>
 
-      <article>
+      <article className='h-[100%]'>
         <div className="top">
           <h1 className=' flex md:px-20 justify-start text-justify px-2 text-lg md:text-3xl font-semibold mt-6'>
             {data.judul === "" ? nunormTitle(title) : nunormTitle(data.judul)}
@@ -68,8 +68,8 @@ const Artikel1 = () => {
             </div>
 
             <div className='flex flex-col '>
-              <div className="flex flex-col justify-center mx-2 md:mx-20">
-                <img className='h-auto mb-2' src={data.gambar.path === "" ? "/public/maticvsmanual.svg" : data.gambar.path} alt="" />
+              <div className="flex flex-col justify-center mx-2 md:mx-20 ">
+                <img className='h-auto mb-2' src={data.gambar.path === "" ? "/public/maticvsmanual.svg" : data.gambar.path} alt="Gambar" />
                 <p className='italic text-right'>{data.gambar.sumber === "" ? "sumber: cdns.klimg.com" : data.gambar.sumber}</p>
               </div>
             </div>

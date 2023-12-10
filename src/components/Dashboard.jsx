@@ -11,9 +11,12 @@ import Forum from "../pages/Forum";
 import Topic from "../pages/Topic"
 import Pengaturan from "../pages/Pengaturan";
 import Informasi from "./Informasi";
-import Layanan from "./Layanan";
 import ListMotor from "../components/ListMotor";
 import ListMobil from "../components/ListMobil"
+import LayananLayout from "./LayananLayout";
+import Layanan from "./Layanan";
+
+
 
 const Dashboard = () => {
 
@@ -32,7 +35,7 @@ const Dashboard = () => {
         <Sidebar />
         <Routes>
           <Route path="/beranda" element={<DashboardHome />}></Route>
-          <Route path="/layanan" element={<Layanan />}></Route>
+          <Route path="/layanan" element={<LayananLayout />}></Route>
           <Route path="/aset" element={<Aset />}>
           </Route>
           <Route path='aset/read/motor/:id' element={<ListMotor />} />
