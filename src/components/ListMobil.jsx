@@ -55,7 +55,7 @@ function ListMobil() {
               <div className="bg-gray-200 shadow-md rounded-lg sm:w-96 p-6 ">
                 {/* Tipe Mobil */}
                 <div className="flex flex-col mb-4">
-                  <p className="font-bold mr-2">Tipe Motor</p>
+                  <p className="font-bold mr-2">Tipe Mobil</p>
                   <input type="text" className="text-gray-400 rounded-lg ring-0 border-none focus:ring-0" value={mobil.nama_kendaraan} disabled />
                 </div>
                 {/* No Polisi */}

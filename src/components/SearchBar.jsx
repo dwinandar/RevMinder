@@ -3,8 +3,8 @@ const SearchBar = ({ placeholder }) => {
   return (
     <>
       <div className="flex justify-center md:justify-end my-6 md:my-6">
-        <div className="form-control max-md:w-full">
-          <span className="inline-block flex items-center border border-black rounded-lg ">
+        <div className="form-control max-md:w-full px-4 lg:px-0">
+          <span className="inline-block flex items-center border border-black rounded-lg">
             <input
               type="text"
               placeholder={`${placeholder}`}

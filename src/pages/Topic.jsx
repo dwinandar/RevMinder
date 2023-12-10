@@ -7,13 +7,13 @@ const Topic = () => {
   return (
     <>
 
-      <div className="flex flex-col flex-1">
-        <div className="mt-4 ml-5 overflow-y-auto oveflow-hidden rounded-lg h-[84vh] w-[80rem]">
+      <div className="flex flex-col lg:flex-1">
+        <div className="lg:mt-4 mt-8 lg:ml-5 lg:overflow-y-auto oveflow-hidden lg:rounded-lg lg:h-[84vh] xl:w-[80rem]">
           <div className="forum-container w-auto">
 
             <div className="discussion-container">
-              <div className="title p-10 md:p-12 border rounded-[10px] bg-[#FFFFFF] w-full">
-                <div className="flex text-left flex-col ">
+              <div className="title md:p-12 lg:border lg:rounded-[10px] bg-[#FFFFFF] xl:w-full">
+                <div className="flex text-left flex-col px-4 ">
                   <p className="text-[24px] font-bold">Artikel dan Video</p>
                   <p>Artikel edukatif dan konten video yang menyenangkan</p>
                 </div>

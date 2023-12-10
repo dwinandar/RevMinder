@@ -113,14 +113,14 @@ const RegistForm = () => {
       <div className='grid place-items-center'>
         <button
           type='submit'
-          className='bg-[#42B72A] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
+          className='bg-[#21217A] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
         >
           Daftar
         </button>
       </div>
       <p className='font-medium text-center'>
         Sudah Punya Akun?{" "}
-        <a href='#' className='font-semibold text-[#0070BA] hover:underline '>
+        <a href='#' className='font-semibold text-[#F2994A] hover:underline '>
           Masuk
         </a>
       </p>

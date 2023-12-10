@@ -7,7 +7,7 @@ const NavDashboard = () => {
 
 
   return (
-    <div className="navbar sticky bg-primary1 shadow-lg w-screen px-6">
+    <div className="navbar sticky bg-primary3 shadow-lg w-screen px-6">
 
       {/* Logo Navbar */}
       <div className="relative hidden md:block ml-14 lg:ml-0 lg:translate-x-0 lg:flex">

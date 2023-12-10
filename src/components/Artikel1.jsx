@@ -1,99 +1,151 @@
-import React from 'react'
-import NavDashboard from './NavDashboard'
-import FooterDashboard from './FooterDashboard'
+import React, { useState, useEffect } from 'react'
+import parse from 'html-react-parser';
+import { useParams, Link } from 'react-router-dom'
+import axios from 'axios';
+
+import { IoMdArrowBack } from 'react-icons/io';
+import { DivideIcon } from 'lucide-react';
+
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 const Artikel1 = () => {
+  let { title } = useParams();
+
+
+  let section_one = "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+  let section_two = [];
+
+  const [data, setData] = useState({
+    "judul": "",
+    "nama_author": "",
+    "tanggal_publish": "",
+    "gambar": { "sumber": "", "path": "" },
+    "konten": {
+      "section-one": section_one,
+      "section-two": section_two
+    }
+  })
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/artikel")
+      .then((res) => {
+        console.log(res);
+        setData(res.data[0]);
+      })
+      .catch((err) => console.log(err));
+  }, [title]);
+
+  const nunormTitle = (normTitle) => {
+    return normTitle.replaceAll("-", " ").toUpperCase();
+
+  }
+
   return (
-    <div id='4'>
-       <NavDashboard />
-      
-      <div className='flex ml-10 mt-10'>
-        <img src="/public/icon _arrow back_.png" alt="" />
+    <div>
+      <Navbar page={"artikel"} />
+      <div className='flex lg:ml-10 lg:mt-10'>
+        <Link to="/dashboard/artikel">
+          <IoMdArrowBack className={"w-12 md:w-16 h-auto "} />
+        </Link>
       </div>
 
-      <h1 className=' flex ml-20 my-5 text-3xl font-semibold'>Manual Vs Matic, enak mana?</h1>
+      <article>
+        <div className="top">
+          <h1 className=' flex md:px-20 justify-start text-justify px-2 text-lg md:text-3xl font-semibold mt-6'>
+            {data.judul === "" ? nunormTitle(title) : nunormTitle(data.judul)}
+            {/* Manual Vs Matic, enak mana?  -> commented bacause need dynamic title*/}
+          </h1>
 
-      <div className='avatar pl-20'>
+          <div className="top-section flex flex-col gap-4 my-8">
+            <div className='avatar flex gap-3 mx-2 md:mx-20'>
+              <div className=''>
+                <img src="" alt="" />
+              </div>
+              <p >Oleh <span className='font-semibold text-sm lg:text-md'>{data.nama_author === "" ? "Bentang Nala Narendrayanto" : data.nama_autho}</span>
+                <br />{data.tanggal_publish === "" ? "12 November 2023" : data.tanggal_publish}
+              </p>
+            </div>
 
-        <div className='w-12'>
-          <img src="/public/bentang.png" alt="" />
+            <div className='flex flex-col '>
+              <div className="flex flex-col justify-center mx-2 md:mx-20">
+                <img className='h-auto mb-2' src={data.gambar.path === "" ? "/public/maticvsmanual.svg" : data.gambar.path} alt="" />
+                <p className='italic text-right'>{data.gambar.sumber === "" ? "sumber: cdns.klimg.com" : data.gambar.sumber}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p className='px-6'>Oleh <span className='font-semibold'>Bentang Nala Narendrayanto</span> <br />12 November 2023</p>
-      </div>
-
-      
-      <div className='flex flex-col items-center m-12'>
-          <img className='w-max h-auto mb-2' src="/public/maticvsmanual.svg" alt="" />
-          <div className='ml-auto text-right mr-80 italic'>
-              <p>sumber: cdns.klimg.com</p>
+        <div className="main flex flex-col gap-2 md:mx-20 mx-2 mb-[10rem]">
+          <div className="section-one">
+            {data.konten["section-one"] === "" ? "no data" : parse(data.konten["section-one"])}
           </div>
-      </div>
-
-      <p className='mx-20 my-12 text-justify'> Dilema antara mobil matic dan manual merupakan hal yang biasa terjadi, terutama saat  membeli mobil.
-        Pasalnya, masing-masing mempunyai kelebihan dan kekurangan. Keunggulan mobil matic yang paling utama adalah kenyamanan.
-        Tidak perlu menekan kopling untuk berpindah gigi, semuanya dikontrol secara otomatis oleh sistem kelistrikan.
-        Alhasil, mobil Anda akan berjalan mulus hanya dengan menekan pedal gas. Namun memilih mobil manual tidaklah haram. Keunggulannya terletak pada harga.
-        Mobil jenis ini biasanya lebih murah dibandingkan mobil matic. Dengan begitu, Anda bisa menghemat anggaran pembelian mobil.
-        Mau tahu fakta menarik seputar mobil matic dan manual? Apa yang harus saya beli? Simak pembahasan berikut untuk  jawaban selengkapnya: 
-      </p>
-
-      <div className='flex flex-col mx-20 my-5 text-justify'>
-
-        <p className='font-semibold mb-5'>
-            1. Kenyamanan Mobil Matic Tidak Ada Lawan
-        </p>
-
-        <p>
-            Telah disebutkan di awal tulisan, soal kenyamanan mobil matic vs manual tentu tidak perlu dipertanyakan lagi. 
-            Mobil matic jauh lebih nyaman saat dipakai berkendara, terlebih saat melewati kemacetan. 
-            Kaki kamu tidak perlu berpindah untuk menginjak kopling, sehingga berkendara terasa rileks. Apalagi bila mobil yang kamu pakai 
-            memiliki transmisi CVT, seperti halnya Honda Mobilio dan Toyota Yaris. Faktor kenyamanan yang dirasa saat berkendara lebih nikmat lagi.
-            Hal ini lantaran transmisi CVT dikenal lebih halus dalam mendistribusikan tenaga. Dengan transmisi ini, gejala perpindahan gigi sama sekali tidak terasa.
-        </p>
+          <div className="section-two">
+            <div className='flex flex-col gap-2'>
+              {data.konten["section-two"].length < 1 ? "No Data" : data.konten["section-two"].map((c, i) => {
+                return parse(c);
+              })}
+            </div>
+          </div>
+        </div>
 
 
-        <p className='mt-10 font-semibold'>
-            2. Harga Mobil Manual Lebih Murah
-        </p>
+        {/* <div className='flex flex-coltext-justify'> */}
+        {/**/}
+        {/*   <p className='font-semibold mb-5'> */}
+        {/*     1. Kenyamanan Mobil Matic Tidak Ada Lawan */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p> */}
+        {/*     Telah disebutkan di awal tulisan, soal kenyamanan mobil matic vs manual tentu tidak perlu dipertanyakan lagi. */}
+        {/*     Mobil matic jauh lebih nyaman saat dipakai berkendara, terlebih saat melewati kemacetan. */}
+        {/*     Kaki kamu tidak perlu berpindah untuk menginjak kopling, sehingga berkendara terasa rileks. Apalagi bila mobil yang kamu pakai */}
+        {/*     memiliki transmisi CVT, seperti halnya Honda Mobilio dan Toyota Yaris. Faktor kenyamanan yang dirasa saat berkendara lebih nikmat lagi. */}
+        {/*     Hal ini lantaran transmisi CVT dikenal lebih halus dalam mendistribusikan tenaga. Dengan transmisi ini, gejala perpindahan gigi sama sekali tidak terasa. */}
+        {/*   </p> */}
+        {/**/}
+        {/**/}
+        {/*   <p className='font-semibold'> */}
+        {/*     2. Harga Mobil Manual Lebih Murah */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p className=''> */}
+        {/*     Walau kurang nyaman, karena perlu menginjak koling saat berkendara di kemacetan. Mobil manual punya keunggulan dari sisi harga jual. */}
+        {/*     Banderolnya jauh lebih murah dari versi matic, dengan selisih rata-rata sekitar Rp 10 jutaan. */}
+        {/*     Bila tidak percaya, ini perbandingan harga mobil matic vs manual untuk produk Toyota Avanza. */}
+        {/*     Khusus varian 1.3 G AT (otomatis) dijual Rp228,75 juta (OTR Jakarta). */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p className=''> */}
+        {/*     Lalu varian 1.3 G MT (manual) Rp 218,05 juta (OTR Jakarta). */}
+        {/*     Contoh lain, Honda Mobilio RS MT (manual) punya harga Rp 248,2 juta (OTR Jakarta). Lalu Mobilio RS CVT banderolnya */}
+        {/*     mencapai Rp 259 juta (OTR Jakarta). Dengan membeli mobil manual yang lebih murah, tentu kamu bisa menghemat bujet. */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p className='font-semibold'> */}
+        {/*     Kesimpulan Mobil Matic Vs Manual */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p className=''> */}
+        {/*     Jadi dari pembahasan mobil matic Vs manual di atas, kesimpulannya tidak ada yang lebih unggul. Masing-masing punya kelebihan dan kekurangan. */}
+        {/*   </p> */}
+        {/**/}
+        {/*   <p className=''> */}
+        {/*     Mobil matic lebih cocok buat kamu yang punya bujet lebih, kemudian mencari rasa berkendara rileks dan nyaman. */}
+        {/*     Sementara mobil manual paling pas untuk kamu dengan bujet terbatas, maklum banderolnya lebih murah serta irit bahan bakar. */}
+        {/*   </p> */}
+        {/**/}
+        {/**/}
+        {/*   <p className=''> */}
+        {/*     Setelah mengetahui fakta mobil matic Vs manual, kira-kira kamu bakal pilih yang mana? */}
+        {/*   </p> */}
+        {/**/}
+        {/* </div> */}
+      </article>
+      <Footer />
 
-        <p className='mt-5'>
-            Walau kurang nyaman, karena perlu menginjak koling saat berkendara di kemacetan. Mobil manual punya keunggulan dari sisi harga jual. 
-            Banderolnya jauh lebih murah dari versi matic, dengan selisih rata-rata sekitar Rp 10 jutaan.
-            Bila tidak percaya, ini perbandingan harga mobil matic vs manual untuk produk Toyota Avanza. 
-            Khusus varian 1.3 G AT (otomatis) dijual Rp228,75 juta (OTR Jakarta). 
-        </p>
-
-        <p className='mt-5'>
-            Lalu varian 1.3 G MT (manual) Rp 218,05 juta (OTR Jakarta).
-            Contoh lain, Honda Mobilio RS MT (manual) punya harga Rp 248,2 juta (OTR Jakarta). Lalu Mobilio RS CVT banderolnya 
-            mencapai Rp 259 juta (OTR Jakarta). Dengan membeli mobil manual yang lebih murah, tentu kamu bisa menghemat bujet.
-        </p>
-
-        <p className='font-semibold mt-12'>
-            Kesimpulan Mobil Matic Vs Manual
-        </p>
-
-        <p className='mt-5'>
-            Jadi dari pembahasan mobil matic Vs manual di atas, kesimpulannya tidak ada yang lebih unggul. Masing-masing punya kelebihan dan kekurangan.
-        </p>
-
-        <p className='mt-5'>
-            Mobil matic lebih cocok buat kamu yang punya bujet lebih, kemudian mencari rasa berkendara rileks dan nyaman. 
-            Sementara mobil manual paling pas untuk kamu dengan bujet terbatas, maklum banderolnya lebih murah serta irit bahan bakar.    
-        </p>
-           
-
-        <p className='mt-5'>
-             Setelah mengetahui fakta mobil matic Vs manual, kira-kira kamu bakal pilih yang mana?
-        </p>
-
-      </div>
-
-      <FooterDashboard />
-      
-    </div>
+    </div >
   )
 }
 
-export default Artikel1
+export default Artikel1;
