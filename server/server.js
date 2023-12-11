@@ -56,33 +56,56 @@ app.post('/tambahmobil', (req, res) => {
 {/* Input data layanan */}
 app.post('/tambahlayanan', (req, res) => {
     try {
-        const sql = "INSERT INTO layanan (`tanggal`,`jarak`, `biaya`, `kategori`, `dikerjakan`, `keterangan`) VALUES (?)";
-        const values = [
-            req.body.tanggal,
-            req.body.jarak,
-            req.body.biaya,
-            req.body.kategori,
-            req.body.dikerjakan,
-            req.body.keterangan,
-        ];
-        db.query(sql, [values], (err, result) => {
-            if(err) return res.json(err);
-            return res.json(result);
-        })
+      const { tanggal, jarak, biaya, kategori, dikerjakan, keterangan } = req.body;
+  
+      // Fetch the list of mobil entries
+      const mobilSql = 'SELECT * FROM mobil';
+      db.query(mobilSql, (mobilErr, mobilResult) => {
+        if (mobilErr) {
+          console.error('Error fetching mobil entries:', mobilErr);
+          return res.status(500).json({ error: 'Internal Server Error' });
+        }
+  
+        // Use the id_mobil from the first mobil entry (you might want to modify this logic based on your requirements)
+        const id_mobil = mobilResult.length > 0 ? mobilResult[0].id : null;
+  
+        const layananSql = 'INSERT INTO layanan (id_mobil, tanggal, jarak, biaya, kategori, dikerjakan, keterangan) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        const values = [id_mobil, tanggal, jarak, biaya, kategori, dikerjakan, keterangan];
+  
+        db.query(layananSql, values, (layananErr, layananResult) => {
+          if (layananErr) {
+            console.error('Error creating layanan entry:', layananErr);
+            return res.status(500).json({ error: 'Internal Server Error' });
+          }
+  
+          return res.status(201).json({ message: 'Layanan added successfully', result: layananResult });
+        });
+      });
     } catch (error) {
-      console.log(error);
-    } 
-})
+      console.error('Exception caught:', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
+
 
 {/* Input data layanan berdasarkan indeks mobil tertentu*/}
-app.get('/layanan', (req, res) => {
-    const sql = ` SELECT * FROM layanan`;
+app.get('/layanan/:id_mobil', (req, res) => {
+    const id_mobil = req.params.id_mobil;
+    if (!id_mobil) {
+        return res.status(400).json({ error: 'id_mobil parameter is required' });
+    }
 
-    db.query(sql, (err, result) => {
-        if(err) return res.json({Message: "Error inside server"});
+    const sql = 'SELECT * FROM layanan WHERE id_mobil = ?';
+
+    db.query(sql, [id_mobil], (err, result) => {
+        if (err) {
+            console.error('Error fetching layanan entries:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
         return res.json(result);
-    })  
-})
+    });
+});
 
 {/* Input data motor */}
 app.post('/tambahmotor', (req, res) => {

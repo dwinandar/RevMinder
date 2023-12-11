@@ -48,8 +48,7 @@ function TambahService() {
                     Tanggal / Jam
                   </label>
                   <input
-                    type="datetime-local"
-                    placeholder=""
+                    type="date"
                     className="input-bordered w-full max-w-xs mb-2  form-control"
                     onChange={(e) =>
                       setValues({ ...values, tanggal: e.target.value })
@@ -57,7 +56,6 @@ function TambahService() {
                   />
                   <input
                     type="text"
-
                     placeholder="Jarak Tempuh (Km)"
                     className="input input-bordered w-full max-w-xs mb-2  form-control"
                     onChange={(e) =>
@@ -66,7 +64,6 @@ function TambahService() {
                   />
                   <input
                     type="text"
-
                     placeholder="Biaya (IDR)"
                     className="input input-bordered w-full max-w-xs mb-2  form-control"
                     onChange={(e) =>
@@ -86,7 +83,6 @@ function TambahService() {
                   </label>
                   <select
                     id="cars"
-
                     className="input input-bordered w-full max-w-xs mb-2  form-control"
                     onChange={(e) =>
                       setValues({ ...values, dikerjakan: e.target.value })
@@ -104,7 +100,6 @@ function TambahService() {
 
                   <textarea
                     placeholder="Keterangan"
-
                     className="input input-bordered w-full max-w-xs mb-2  form-control"
                     rows="4"
                     onChange={(e) =>
@@ -114,7 +109,7 @@ function TambahService() {
                 </div>
 
                 <button
-                type="submit"
+                  type="submit"
                   className="btn bg-primary3 hover:bg-primary1 text-white ml-4"
                   onClick={() =>
                     document.getElementById("my_modal_5").showModal()
