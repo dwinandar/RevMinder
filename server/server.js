@@ -54,29 +54,31 @@ app.post('/tambahmobil', (req, res) => {
 })
 
 {/* Input data layanan */}
-app.post('/layanan', (req, res) => {
-    const sql = "INSERT INTO layanan (`tanggal`,`jarak`, `biaya`, `kategori`, `dikerjakan`, `keterangan`) VALUES (?)";
-    console.log(req.body)
-    const values = [
-        req.body.tanggal,
-        req.body.jarak,
-        req.body.biaya,
-        req.body.kategori,
-        req.body.dikerjakan,
-        req.body.keterangan,
-    ]
-    db.query(sql, [values], (err, result) => {
-        if(err) return res.json(err);
-        return res.json(result);
-    })
+app.post('/tambahlayanan', (req, res) => {
+    try {
+        const sql = "INSERT INTO layanan (`tanggal`,`jarak`, `biaya`, `kategori`, `dikerjakan`, `keterangan`) VALUES (?)";
+        const values = [
+            req.body.tanggal,
+            req.body.jarak,
+            req.body.biaya,
+            req.body.kategori,
+            req.body.dikerjakan,
+            req.body.keterangan,
+        ];
+        db.query(sql, [values], (err, result) => {
+            if(err) return res.json(err);
+            return res.json(result);
+        })
+    } catch (error) {
+      console.log(error);
+    } 
 })
 
 {/* Input data layanan berdasarkan indeks mobil tertentu*/}
-app.get('/layanan/mobil/:id', (req, res) => {
-    const idMobil = req.params.id;
+app.get('/layanan', (req, res) => {
     const sql = ` SELECT * FROM layanan`;
 
-    db.query(sql, [idMobil], (err, result) => {
+    db.query(sql, (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
         return res.json(result);
     })  

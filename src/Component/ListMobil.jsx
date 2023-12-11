@@ -26,13 +26,13 @@ function ListMobil() {
       .catch((err) => console.log(err));
 
     axios
-      .get(`http://localhost:8081/layanan/mobil/${id}`)
+      .get(`http://localhost:8081/layanan`)
       .then((res) => {
         console.log(res);
         setLayananData(res.data);
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, []);
   return (
     <>
       <NavDashboard />
@@ -111,13 +111,13 @@ function ListMobil() {
                   Riwayat layanan
                 </label>
                 <div className="bg-primary2 shadow-md rounded-lg w-96 h-96 p-6 flex items-center justify-center">
-                  <ul>
-                    {layananData.map((layanan) => (
-                      <li key={layanan.id}>
-                        {layanan.tanggal}, {layanan.jarak}, {layanan.keterangan}
-                      </li>
-                    ))}
-                  </ul>
+                <ul>
+        {layananData.map((layanan) => (
+          <li key={layanan.tanggal}>
+            {layanan.biaya} - {layanan.kategori} - {layanan.jarak} km
+          </li>
+        ))}
+      </ul>
                 </div>
               </div>
 

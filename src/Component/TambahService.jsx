@@ -1,7 +1,7 @@
 import React from "react";
 import NavDashboard from "./NavDashboard";
 import Sidebar from "./Sidebar";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { faCar, faTools } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function TambahService() {
 
   const navigate = useNavigate();
-  const { id } = useParams();
   const [values, setValues] = useState({
     tanggal: "",
     jarak: "",
@@ -23,7 +22,7 @@ function TambahService() {
     e.preventDefault();
     console.log(values);
     axios
-      .post("http://localhost:8081/layanan", values)
+      .post(`http://localhost:8081/tambahlayanan`, values)
       .then((res) => {
         console.log(res);
         navigate("/aset");
@@ -115,6 +114,7 @@ function TambahService() {
                 </div>
 
                 <button
+                type="submit"
                   className="btn bg-primary3 hover:bg-primary1 text-white ml-4"
                   onClick={() =>
                     document.getElementById("my_modal_5").showModal()
