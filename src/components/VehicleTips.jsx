@@ -29,7 +29,7 @@ const VehicleTips = ({ tipsNBerita }) => {
             <img src={tnb.imgsrc} alt='tnb-img' />
             <div className='flex flex-col justify-center px-5'>
               <h2 className='text-sm font-bold text-start'>{tnb.title}</h2>
-              <a className='flex grow-0 text-[#0070BA] items-center text-xs hover:underline cursor-pointer'>
+              <a href={`/dashboard/topic/tips/${tnb.title}`} className='flex grow-0 text-[#0070BA] items-center text-xs hover:underline cursor-pointer'>
                 Baca selengkapnya <ArrowRight size={12} />
               </a>
             </div>

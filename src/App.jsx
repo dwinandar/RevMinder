@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import { useState } from "react";
 import ListMotor from "./components/ListMotor";
 import ListMobil from "./components/ListMobil"
+import ArticlePage from "./components/ArticlePage";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
 
         <Route path='/dashboard/read/motor/:id' element={<ListMotor />} />
         <Route path='/dashboard/read/mobil/:id' element={<ListMobil />} />
+        <Route path='/dashboard/topic/tips/:title' element={<ArticlePage />} />
       </Routes>
     </main>
   );
