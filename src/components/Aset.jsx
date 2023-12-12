@@ -51,13 +51,18 @@ const Aset = () => {
 
   const handleClick = (vehicleType) => {
     setShowData(true);
-    setData([{
-      "id": 1, "nama_kendaraan": "Alphard", "jenis": "motor"
-    },
-    { "id": 2, "nama_kendaraan": "Mustang", "jenis": "motor" },
-    { "id": 3, "nama_kendaraan": "Toyota", "jenis": "motor" },
-    { "id": 4, "nama_kendaraan": "Mustang", "jenis": "motor" },
-    ])
+    // uncomment ketika sudah nyala BE
+    // |
+    // setData(vehicleType); 
+
+    //Comment ketika BE nyala
+    // setData([{
+    //   "id": 1, "nama_kendaraan": "Alphard", "jenis": "motor"
+    // },
+    // { "id": 2, "nama_kendaraan": "Mustang", "jenis": "motor" },
+    // { "id": 3, "nama_kendaraan": "Toyota", "jenis": "motor" },
+    // { "id": 4, "nama_kendaraan": "Mustang", "jenis": "motor" },
+    // ])
     // setData(vehicleType)
   };
 
