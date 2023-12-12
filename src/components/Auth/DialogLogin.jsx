@@ -1,6 +1,6 @@
 import { LogIn } from "lucide-react";
 import logofndlogin from "../../assets/Logo-RevMinder.svg";
-import LoginForm from "../LoginForm";
+import LoginForm from "./LoginForm";
 
 const DialogLogin = (props) => {
   return (

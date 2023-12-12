@@ -1,6 +1,6 @@
 import { UserPlus2 } from "lucide-react";
 import logofndlogin from "../../assets/Logo-RevMinder.svg";
-import RegistForm from "../RegistForm";
+import RegistForm from "./RegistForm";
 
 const DialogRegist = () => {
   return (
