@@ -13,6 +13,8 @@ import Pengaturan from "../pages/Pengaturan";
 import Informasi from "./Informasi";
 import ListMotor from "./ListMotor";
 import ListMobil from "./ListMobil"
+import TambahService from "./TambahService";
+import TambahPengingat from "./TambahPengingat"
 import Layanan from "./Layanan";
 
 const Dashboard = () => {
@@ -37,6 +39,8 @@ const Dashboard = () => {
           </Route>
           <Route path='aset/read/motor/:id' element={<ListMotor />} />
           <Route path='aset/read/mobil/:id' element={<ListMobil />} />
+          {/* <Route path='aset/tambahservice' element={<TambahService />} /> */}
+          {/* <Route path='aset/tambahpengingat' element={<TambahPengingat />} /> */}
           <Route path="/artikel" element={<Topic />}></Route>
           <Route path="/forum" element={<Forum />}></Route>
           <Route path="/aset/tambahaset/*" element={<TambahAset />}></Route>

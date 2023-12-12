@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.6.2",
     "flowbite-datepicker": "^1.2.4",
+    "fortawesome": "^0.0.1-security",
     "framer-motion": "^10.16.5",
     "html-react-parser": "^5.0.7",
     "json-server": "^0.17.4",

@@ -23,7 +23,7 @@ const Aset = () => {
 
   const getVehicle = async (vehicleType) => {
     try {
-      const response = await axios.get(`http://localhost:8080/${vehicleType}`);
+      const response = await axios.get(`http://localhost:8081/${vehicleType}`);
       setData(response.data);
       setShowData(true);
     } catch (error) {
@@ -39,7 +39,7 @@ const Aset = () => {
 
     if (isConfirmed) {
       axios
-        .delete(`http://localhost:8080/delete/${vehicle}/${id}`)
+        .delete(`http://localhost:8081/delete/${vehicle}/${id}`)
         .then((res) => {
           location.reload();
         })
@@ -58,7 +58,9 @@ const Aset = () => {
     { "id": 3, "nama_kendaraan": "Toyota", "jenis": "motor" },
     { "id": 4, "nama_kendaraan": "Mustang", "jenis": "motor" },
     ])
+    // setData(vehicleType)
   };
+
 
   const VehicleButton = ({ type, icon, width, selected, onClick }) => (
     <a

@@ -143,7 +143,7 @@ function ListMobil() {
                         <p className="text-sm">Catat Service </p>
                       </Link>
 
-                      <Link to="/tambahpengingat" className="flex flex-col items-center justify-center gap-1 mx-4">
+                      <Link to="tambahpengingat" className="flex flex-col items-center justify-center gap-1 mx-4">
                         <LuAlarmClock size={"38"} color={"#21217A"} className="hover:scale-110" />
                         <p className="text-sm">Pengingat</p>
                       </Link>
