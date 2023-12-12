@@ -12,10 +12,78 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 import userPhoto from "../assets/UserPhoto.png"
 
+import { forum } from "../constant/data";
+
+
+
+
+
+const Topic = ({ key, data }) => {
+  return (
+    <div key={key} className="lg:p-4 mb-5">
+      <div className="rounded-lg bg-gray-200 shadow-xl text-slate-900">
+        <div className="flex flex-col text-right">
+          <span className="inline-block md:pr-[4rem] pt-6">{data.created}</span>
+          <div className="flex flex-col gap-[1rem] justify-start px-3 md:px-[4rem] pb-8">
+            <div className="flex flex-row gap-3">
+              <Avatar width={"w-22"} src={data.avatar} />
+              <div className="flex flex-col justify-center">
+                <p className="text-left font-bold text-xl">{data.user}</p>
+                <p className="text-left">Topik: {data.topic}</p>
+              </div>
+            </div>
+            <span className="text-justify pb-4">{data.comment}</span>
+            <span className="inline-block border-b-2 border-gray-400"></span>
+            <div className="exist flex flex-row gap-6">
+              <p className="flex justify-start items-center gap-2">
+                <span>
+                  <FaHeart size={24} color={"#3334CC"} />
+                </span>
+                {data.likes}
+              </p>
+              <p className="flex justify-start items-center gap-2">
+                <span>
+                  <BiSolidCommentDetail size={24} color={"#3334CC"} />
+                </span>
+                {data.replies.length}
+              </p>
+              <p className="flex justify-start items-center gap-2">
+                <span>
+                  <BsThreeDotsVertical size={24} color={"#3334CC"} />
+                </span>
+              </p>
+              <div className="flex justify-end w-full">
+                <button className="bg-[#F2994A] hover:bg-[#F2994A] text-white px-[1.5rem] py-3 md:px-[3rem] rounded-lg">Balas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
+}
+
+const TopicContainer = ({ value, forum }) => {
+  return (
+
+    <div className={`lg:h-[24rem] w-full`}>
+      {value.length < 1 ? forum.map((data, i) => (
+        <Topic key={i} data={data} />
+      ))
+        : value.map((data, i) => (
+          <Topic key={i} data={data} />
+        ))}
+
+    </div>
+  )
+
+}
 
 const Forum = () => {
   const [val, setVal] = useState([]);
   const [category, setCategory] = useState("semua")
+  const [filter, setFilter] = useState("");
 
   const fetchInfo = async () => {
     return await fetch("http://localhost:3000/discussion").then((res) => res.json()).then((res) => setVal(res));
@@ -58,22 +126,22 @@ const Forum = () => {
   }
   return (
     <>
-      <div className="mt-4 ml-5 rounded-lg w-[80%] shadow-xl">
+      <div className="md:mt-4 lg:mx-5 rounded-lg lg:w-[80%] mdshadow-xl">
         <div className="forum-container w-auto h-full">
-          <div id="Forum" className="title p-10 md:p-12 border h-[84vh] rounded-[10px] bg-[#FFFFFF] ">
+          <div id="Forum" className="title md:p-10 md:p-12 border lg:h-[84vh] rounded-[10px] bg-[#FFFFFF] ">
             <div className="flex text-left flex-col ">
               <p className="text-[24px] font-bold">Selamat Datang di Forum!</p>
             </div>
 
-            <SearchBar placeholder={"Cari topik..."} />
+            <SearchBar placeholder={"Cari topik..."} onChange={setFilter} />
 
             <div className="text-white grid grid-cols-6 gap-4 mb-4">
               <div className="col-start-1 col-end-3">
                 <div className="flex flex-start gap-3">
-                  <button className={`p-3 rounded-lg bg-[#0070BA] ${category === "semua" ? "" : "opacity-50"} px-[1.5rem] font-bold text-white`}
+                  <button className={`p-3 rounded-lg bg-primary1 ${category === "semua" ? "" : "opacity-40"} px-[1.5rem] font-bold text-white`}
                     onClick={() => setCategory("semua")}
                   >Semua</button>
-                  <button className={`p-3 rounded-lg ${category === "populer" ? "" : "opacity-50"} bg-[#0070BA] font-bold px-[1.5rem] text-white`}
+                  <button className={`p-3 rounded-lg bg-primary1 ${category === "populer" ? "" : "opacity-40"} font-bold px-[1.5rem] text-white`}
                     onClick={() => setCategory("populer")}
                   >Populer</button>
                 </div>
@@ -113,54 +181,7 @@ const Forum = () => {
             </Modal>
 
             <div className="overflow-y-auto mt-2 rounded-lg ">
-              <div className={`${val.length < 1 ? "h-[10rem]" : "h-[24rem]"} w-full`}>
-
-                {val.map((data, i) => {
-                  return (
-                    <div key={i} className="p-4">
-                      <div className="rounded-lg bg-gray-200 shadow-xl text-slate-900">
-                        <div className="flex flex-col text-right">
-                          <span className="inline-block pr-[3rem] md:pr-[4rem] pt-6">{data.created}</span>
-                          <div className="flex flex-col gap-[1rem] justify-start px-[3rem] md:px-[4rem] pb-8">
-                            <div className="flex flex-row gap-3">
-                              <Avatar width={"w-22"} src={data.avatar} />
-                              <div className="flex flex-col justify-center">
-                                <p className="text-left font-bold text-xl">{data.user}</p>
-                                <p className="text-left">Topik: {data.topic}</p>
-                              </div>
-                            </div>
-                            <span className="text-justify pb-4">{data.comment}</span>
-                            <span className="inline-block border-b-2 border-gray-400"></span>
-                            <div className="exist flex flex-row gap-6">
-                              <p className="flex justify-start items-center gap-2">
-                                <span>
-                                  <FaHeart size={24} />
-                                </span>
-                                {data.likes}
-                              </p>
-                              <p className="flex justify-start items-center gap-2">
-                                <span>
-                                  <BiSolidCommentDetail size={24} />
-                                </span>
-                                {data.replies.length}
-                              </p>
-                              <p className="flex justify-start items-center gap-2">
-                                <span>
-                                  <BsThreeDotsVertical size={24} />
-                                </span>
-                              </p>
-                              <div className="flex justify-end w-full">
-                                <button className="btn bg-[#F2994A] hover:bg-[#F2994A] text-white px-[1.5rem] md:px-[3rem]">Balas</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-
+              <TopicContainer value={val} forum={forum} />
             </div>
 
           </div>

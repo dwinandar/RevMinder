@@ -5,6 +5,12 @@ import iconForum from "../assets/icons8_talk_male.svg";
 import iconThumb from "../assets/icons8_thumbsup.svg";
 
 import {
+  oli1,
+  oli2,
+  oli3
+} from "../assets/sukucadang"
+
+import {
   avatarAde,
   avatarAndy,
   avatarBentang,
@@ -51,6 +57,8 @@ import {
   ppRizky,
   ppTania,
 } from "../assets/photo-profile";
+
+import { discussion } from "./forum";
 
 export const RevMinderFeature = [
   {
@@ -157,6 +165,7 @@ export const motorRecom = [
     id: 1,
     name: "Oli Mesin",
     icon: oliRecom,
+    uuid: "wkr1go2chqwrqt2212Hq12910whg"
   },
   {
     id: 2,
@@ -247,6 +256,22 @@ export const mobilRecom = [
     icon: glassFilmRecom,
   },
 ];
+
+export const sukuCadang = [
+  {
+    name: "X- Teen Matic Super Max",
+    path: oli1
+  },
+  {
+    name: "AHM SPX2",
+    path: oli2
+  },
+  {
+    name: "Shell",
+    path: oli3
+  }
+];
+
 
 export const whatTheySayContent = [
   {
@@ -364,3 +389,5 @@ export const developers = [
     role: "Coder",
   },
 ];
+
+export const forum = discussion; 

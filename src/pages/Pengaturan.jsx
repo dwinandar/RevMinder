@@ -6,8 +6,8 @@ const Pengaturan = () => {
   const [setting, setSetting] = useState("profil")
 
   return (
-    <div className="flex flex-col flex-1">
-      <div className="mt-4 ml-5 overflow-y-auto oveflow-hidden rounded-lg h-[84vh] w-[80rem]">
+    <div className="mt-4 lg:mx-5 overflow-y-auto  rounded-lg h-[84vh] w-[80rem] border border-primary2 shadow-xl">
+      <div className="flex flex-col flex-1">
         <div className="pengaturan-container w-auto">
 
           <div className=" flex gap-2 flex-row justify-start px-6 py-4">

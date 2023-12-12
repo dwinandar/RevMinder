@@ -63,8 +63,10 @@ const TambahMobil = () => {
                   onChange={(e) =>
                     setValues({ ...values, nama_pemilik: e.target.value })
                   }
+                  required
+
                 />
-                <input
+                <input required
                   type="text"
                   placeholder="Nomor Registrasi (NoPol)"
                   className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -77,7 +79,7 @@ const TambahMobil = () => {
 
               <div className="bg-primary2 border border-gray-200 w-[22rem] md:w-96 flex flex-col justify-center lg:flex-none py-2  rounded-xl">
                 <p className="font-bold mt-5 mx-4 mb-1">Data Kendaraan</p>
-                <input
+                <input required
                   type="text"
                   placeholder="Nama Kendaraan"
                   className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -86,7 +88,7 @@ const TambahMobil = () => {
                   }
                 />
                 <div className="flex">
-                  <input
+                  <input required
                     type="text"
                     placeholder="Merek"
                     className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -94,7 +96,7 @@ const TambahMobil = () => {
                       setValues({ ...values, merek: e.target.value })
                     }
                   />
-                  <input
+                  <input required
                     type="text"
                     placeholder="Model"
                     className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -104,7 +106,7 @@ const TambahMobil = () => {
                   />
                 </div>
 
-                <input
+                <input required
                   type="text"
                   placeholder="Transmisi"
                   className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -113,7 +115,7 @@ const TambahMobil = () => {
                   }
                 />
                 <div className="flex">
-                  <input
+                  <input required
                     type="text"
                     placeholder="Tahun"
                     className="input input-bordered w-full  max-w-xs m-2 rounded-full form-control"
@@ -121,7 +123,7 @@ const TambahMobil = () => {
                       setValues({ ...values, tahun: e.target.value })
                     }
                   />
-                  <input
+                  <input required
                     type="text"
                     placeholder="Warna"
                     className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -135,7 +137,7 @@ const TambahMobil = () => {
 
               <div className="bg-primary2 border border-gray-200 w-[22rem] md:w-96 flex flex-col justify-center lg:flex-none py-2  rounded-xl">
                 <p className="font-bold mt-5 mx-4 mb-1">Bahan Bakar</p>
-                <input
+                <input required
                   type="text"
                   placeholder="Jenis"
                   className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"
@@ -143,7 +145,7 @@ const TambahMobil = () => {
                     setValues({ ...values, jenis: e.target.value })
                   }
                 />
-                <input
+                <input required
                   type="text"
                   placeholder="Produk"
                   className="input input-bordered w-full max-w-xs m-2 rounded-full form-control"

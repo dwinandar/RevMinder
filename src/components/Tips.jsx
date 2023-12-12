@@ -6,7 +6,7 @@ const Tips = () => {
   const [vehicle, setVehicle] = useState("Motor");
 
   return (
-    <div className='flex flex-col items-center lg:w-full min-h-screen lg:px-5 lg:mx-auto'>
+    <div className='flex flex-col items-center lg:w-full min-h-screen px-5 lg:mx-0 '>
       <h2 className='pt-20 pb-10 text-2xl font-bold text-center'>
         TIPS & BERITA SEPUTAR OTOMOTIF
       </h2>

@@ -8,7 +8,7 @@ const Topic = () => {
     <>
 
       <div className="flex flex-col lg:flex-1">
-        <div className="lg:mt-4 mt-8 lg:ml-5 lg:overflow-y-auto oveflow-hidden lg:rounded-lg lg:h-[84vh] xl:w-[80rem]">
+        <div className="lg:mt-4 mt-8 lg:mx-5 lg:overflow-y-auto oveflow-hidden lg:rounded-lg lg:h-[84vh] xl:w-[80rem]">
           <div className="forum-container w-auto">
 
             <div className="discussion-container">

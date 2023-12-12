@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
@@ -19,10 +20,14 @@ export const RekomItem = ({ vehicleRecom }) => {
     <div className="items-containter grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 ">
       {vehicleRecom.map((recom, i) =>
       (
-        <div key={i} className="flex font-medium items-center justify-center mx-2 gap-2 px-8 py-2 my-4 border border-primary2 rounded-lg shadow-lg md:hover:scale-110 hover:scale-105">
-          <img src={recom.icon} alt={`${recom.name}-icon`} />
-          <h2 className=''>{recom.name}</h2>
-        </div>
+        <Link key={i} to={"sukucadang/" + (recom.uuid)} className="flex justify-center mx-2 gap-2 px-8 py-2 my-4 border border-primary2 rounded-lg shadow-lg md:hover:scale-106 hover:scale-105">
+          <button
+            onClick={() => console.log("Hello")}
+            className="flex font-medium items-center justify-center gap-2">
+            <img src={recom.icon} alt={`${recom.name}-icon`} />
+            <h2 className='hover:cursor-pointer'>{recom.name}</h2>
+          </button>
+        </Link>
       ))}
     </div>
   )
@@ -62,7 +67,7 @@ const LayananLayout = () => {
   };
 
   return (
-    <div className=" md:border md:border-primary2 rounded-lg mt-4 xl:ml-5 lg:w-[80%] lg:h-[42rem] shadow-xl">
+    <div className=" md:border md:border-primary2 rounded-lg mt-4 lg:mx-5 lg:w-[80%] lg:h-[42rem] shadow-xl">
 
       <div className="flex flex-col my-10 md:px-6">
         <div className="carousel-container mx-2 md:mx-[4rem] lg:mx-[10rem] mb-10 md:mb-2 flex justify-center">

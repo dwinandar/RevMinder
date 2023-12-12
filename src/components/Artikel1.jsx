@@ -42,7 +42,7 @@ const Artikel1 = () => {
   }
 
   return (
-    <div>
+    <div className="h-screen">
       <Navbar page={"artikel"} />
       <div className='flex lg:ml-10 lg:mt-10'>
         <Link to="/dashboard/artikel">

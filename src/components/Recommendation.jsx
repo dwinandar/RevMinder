@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import motorIcon from "../assets/icon_motorcycle.svg";
 import mobilIcon from "../assets/icon_Car.svg";
-import { useState } from "react";
 import { motorRecom, mobilRecom } from "../constant/data";
 import RecomItem from "./RecomItem";
 
 const Recommendation = () => {
+  let { item } = useParams();
   const [spareRecom, setSpareRecom] = useState("Motor");
 
   return (
@@ -17,9 +19,8 @@ const Recommendation = () => {
       </h2>
       <nav className='flex flex-wrap justify-center gap-8 py-24 text-2xl'>
         <button
-          className={`px-16 py-4 font-semibold relative shadow-md rounded-lg  ${
-            spareRecom === "Motor" ? "bg-[#F3F5F7]" : "bg-white"
-          }`}
+          className={`px-16 py-4 font-semibold relative shadow-md rounded-lg  ${spareRecom === "Motor" ? "bg-[#F3F5F7]" : "bg-white"
+            }`}
           onClick={() => {
             setSpareRecom("Motor");
           }}
@@ -28,17 +29,15 @@ const Recommendation = () => {
             <img src={motorIcon} alt='motor-icon' /> Motor
           </div>
           <div
-            className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity   ${
-              spareRecom === "Motor" ? "opacity-100" : "opacity-0"
-            }`}
+            className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity   ${spareRecom === "Motor" ? "opacity-100" : "opacity-0"
+              }`}
           >
             {" "}
           </div>
         </button>
         <button
-          className={`px-16 py-4 font-semibold relative shadow-md rounded-lg   ${
-            spareRecom === "Mobil" ? "bg-[#F3F5F7]" : "bg-white"
-          }`}
+          className={`px-16 py-4 font-semibold relative shadow-md rounded-lg   ${spareRecom === "Mobil" ? "bg-[#F3F5F7]" : "bg-white"
+            }`}
           onClick={() => {
             setSpareRecom("Mobil");
           }}
@@ -47,9 +46,8 @@ const Recommendation = () => {
             <img src={mobilIcon} alt='mobil-icon' /> Mobil
           </div>
           <div
-            className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity ${
-              spareRecom === "Mobil" ? "opacity-100" : "opacity-0"
-            }`}
+            className={`bg-[#0070BA] w-[70%] h-1 absolute bottom-0 rounded-lg left-1/2 -translate-x-1/2 transition-opacity ${spareRecom === "Mobil" ? "opacity-100" : "opacity-0"
+              }`}
           >
             {" "}
           </div>

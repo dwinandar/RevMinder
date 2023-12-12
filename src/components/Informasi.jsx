@@ -6,10 +6,10 @@ import { IoMdHome } from "react-icons/io";
 const Informasi = () => {
   return (
     <>
-      <div className="flex flex-col flex-1 overflow-y-auto mt-4 ml-5 mr-5 border h-[42rem] rounded-lg border-gray-200">
-        <div className="body-font relative bg-gray-200 m-7 rounded-lg ">
-          <div className="container py-8">
-            <div className="flex flex-col text-center w-full">
+      <div className="flex flex-col flex-1 overflow-y-auto mt-4 lg:mx-5 lg:border lg:h-[42rem] lg:rounded-lg lg:border-gray-200 gap-10">
+        <div className="body-font relative bg-primary2 lg:m-7 rounded-lg ">
+          <div className="container py-8 px-2 md:px-0">
+            <div className="flex flex-col text-center w-full mb-6">
               <h1 className="sm:text-2xl text-1xl font-bold title-font mb-4 text-gray-900">
                 Kirimkan pesan kepada kami
               </h1>
@@ -70,14 +70,14 @@ const Informasi = () => {
           </div>
         </div>
 
-        <div className="body-font relative bg-primary2 shadow-xl mx-7 my-2 p-6 rounded-lg">
+        <div className="body-font relative bg-primary2 lg:shadow-xl lg:mx-7 my-2 p-6 rounded-lg">
           <h1 className="font-bold text-2xl text-center relative mb-4">
             Kontak Kami
             <span className="underline absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 border-b-2 mt-2 border-primary1"></span>
           </h1>
 
-          <div className="flex justify-center mt-6">
-            <ol className="flex flex-row gap-36">
+          <div className="">
+            <ol className="flex flex-wrap justify-center gap-12 lg:gap-36">
               <li className="flex items-center text-center">
                 <img src="/public/phone.svg" alt="Phone Icon" className="" />
                 <div className="ml-2 text-left">

@@ -67,7 +67,7 @@ const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
             onClick={() => setOnPage("layanan")}
           >
             <Link
-              to='layanan' className={`flex items-center gap-2`}>
+              to='layanan/rekomendasi' className={`flex items-center gap-2`}>
               <RiCustomerServiceFill />
               Layanan
             </Link>
