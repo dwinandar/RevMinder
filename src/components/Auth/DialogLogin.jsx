@@ -1,10 +1,13 @@
 import { LogIn } from "lucide-react";
 import logofndlogin from "../../assets/Logo-RevMinder.svg";
 import LoginForm from "./LoginForm";
+import { ToastContainer } from "react-toastify";
 
 const DialogLogin = () => {
   return (
-    <dialog id='my_modal_3_login' className='modal'>
+    <dialog id='my_modal_3_login' className='z-20 modal'>
+      <ToastContainer position='top-center' />
+
       <div className='modal-box bg-[#F9FAFC] max-w-4xl px-0 relative pt-0'>
         <form
           method='dialog'

@@ -1,10 +1,12 @@
 import { UserPlus2 } from "lucide-react";
 import logofndlogin from "../../assets/Logo-RevMinder.svg";
 import RegistForm from "./RegistForm";
+import { ToastContainer } from "react-toastify";
 
 const DialogRegist = () => {
   return (
     <dialog id='my_modal_3_regist' className='modal'>
+      <ToastContainer position='top-center' />
       <div className='modal-box bg-[#F9FAFC] max-w-4xl px-0 relative pt-0'>
         <form
           method='dialog'

@@ -7,15 +7,15 @@ import { RiArticleFill } from "react-icons/ri";
 import { MdWebAsset, MdDashboard } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 
-const Dashboardview = () => {
+const Sidebar = () => {
   return (
-    <div className='w-64 mt-4 ml-5 border border-gray-200 shadow-xl rounded-xl'>
+    <div className='mt-4 ml-5 border border-gray-200 shadow-xl w-80 rounded-xl font-poppins'>
       {/* Avatar Sidebar */}
-      <div className='mt-1 avatar pl-7'>
-        <div className='items-center w-16 mt-3 rounded-full'>
-          <img src='/public/avatar.svg' />
+      <div className='mt-3 avatar pl-7'>
+        <div className='items-center w-20 mt-3 rounded-full'>
+          <img src='/avatar.svg' alt='User Avatar' className='rounded-full' />
         </div>
-        <p className='flex items-center justify-center p-4 font-bold'>
+        <p className='flex items-center justify-center p-4 font-bold text-primary1'>
           Phoenix
         </p>
         <a className='flex items-center justify-center link pl-9'>
@@ -25,57 +25,63 @@ const Dashboardview = () => {
       {/* End Avatar Sidebar */}
 
       {/* Menu Sidebar */}
-      <div className='flex justify-start w-64 gap-3 p-6 menu'>
-        <p className='justify-start text-lg font-bold'>Dashboard</p>
+      <div className='flex flex-col gap-3 p-6 menu w-80'>
+        <div className='text-lg font-bold text-primary1'>Dashboard</div>
         <li>
           <Link
-            to='beranda'
-            className='font-semibold active:bg-warning hover:bg-primary2 '
+            to='/'
+            className='font-semibold hover:bg-primary2 text-primary1 hover:btn-active'
           >
-            <MdDashboard />
+            <MdDashboard className='mr-2' />
             Dashboard
           </Link>
         </li>
-        <p className='justify-start text-lg font-bold'>Menu Utama</p>
+        <div className='text-lg font-bold text-primary1'>Menu Utama</div>
         <li>
-          <Link to='layanan' className='font-semibold hover:bg-primary2'>
-            <RiCustomerServiceFill />
+          <a className='font-semibold hover:bg-primary2 text-primary1'>
+            <RiCustomerServiceFill className='mr-2' />
             Layanan
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to='aset' className='font-semibold hover:bg-primary2'>
-            <MdWebAsset />
+          <Link
+            to='/aset'
+            className='font-semibold hover:bg-primary2 text-primary1'
+          >
+            <MdWebAsset className='mr-2' />
             Aset
           </Link>
         </li>
         <li>
-          <Link to='artikel' className='font-semibold hover:bg-primary2'>
-            <RiArticleFill />
+          <a className='font-semibold hover:bg-primary2 text-primary1'>
+            <RiArticleFill className='mr-2' />
             Artikel & Video
-          </Link>
-        </li>
-        <li>
-          <Link to='forum' className='font-semibold hover:bg-primary2'>
-            <HiChatBubbleLeftRight />
-            Forum
-          </Link>
-        </li>
-        <li>
-          <Link to='pengaturan' className='font-semibold hover:bg-primary2'>
-            <IoSettingsSharp />
-            Pengaturan
-          </Link>
-        </li>
-        <p className='justify-start text-lg font-bold'>Informasi</p>
-        <li>
-          <a className='font-semibold hover:bg-primary2'>
-            <FaQuestionCircle />
-            Informasi
           </a>
         </li>
-        <button className='flex items-center justify-center gap-3 py-2 mt-4 text-blue-500 rounded-full hover:bg-sky-100'>
-          <FiLogOut />
+        <li>
+          <a className='font-semibold hover:bg-primary2 text-primary1'>
+            <HiChatBubbleLeftRight className='mr-2' />
+            Forum
+          </a>
+        </li>
+        <li>
+          <a className='font-semibold hover:bg-primary2 text-primary1'>
+            <IoSettingsSharp className='mr-2' />
+            Pengaturan
+          </a>
+        </li>
+        <div className='text-lg font-bold text-primary1'>Informasi</div>
+        <li>
+          <Link
+            to='/informasi'
+            className='font-semibold hover:bg-primary2 text-primary1'
+          >
+            <FaQuestionCircle className='mr-2' />
+            Informasi
+          </Link>
+        </li>
+        <button className='flex items-center justify-center gap-3 py-2 mt-2 text-blue-500 rounded-full hover:bg-sky-100'>
+          <FiLogOut className='mr-2' />
           Keluar
         </button>
         {/* End Menu Sidebar */}
@@ -84,4 +90,4 @@ const Dashboardview = () => {
   );
 };
 
-export default Dashboardview;
+export default Sidebar;
