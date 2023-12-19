@@ -1,4 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import { Menu, X } from "lucide-react"
 import { RiMenu3Fill, RiCustomerServiceFill } from "react-icons/ri";
 import { FaQuestionCircle } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
@@ -7,87 +10,179 @@ import { RiArticleFill } from "react-icons/ri";
 import { MdWebAsset, MdDashboard } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 
-const Sidebar = () => {
+const closeSidebar = (id) => {
+  document.getElementById(id).click()
+}
+
+const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
   return (
-    <div className='mt-4 ml-5 border border-gray-200 shadow-xl w-80 rounded-xl font-poppins'>
+    <>
       {/* Avatar Sidebar */}
-      <div className='mt-3 avatar pl-7'>
-        <div className='items-center w-20 mt-3 rounded-full'>
-          <img src='/avatar.svg' alt='User Avatar' className='rounded-full' />
+      <div className="avatar lg:mx-6 mx-4  mt-1 border-black border-b-4 pb-4 flex flex-1 justify-between ">
+        <div className="w-16 rounded-full items-center mt-3">
+          <img src="/public/avatar.svg" />
         </div>
-        <p className='flex items-center justify-center p-4 font-bold text-primary1'>
-          Phoenix
-        </p>
-        <a className='flex items-center justify-center link pl-9'>
-          <RiMenu3Fill />
-        </a>
+        <div className="user mr-5 pt-5">
+          <p className="font-bold text-lg">
+            Phoenix
+          </p>
+          <p>User</p>
+        </div>
+
+        <button
+          onClick={() => { clickHandler("close-sidebar") }}
+          className="lg:flex lg:hidden justify-end items-center lg:ml-6 ml-[2rem]">
+          <X size={"34"} />
+        </button>
+
+        <button
+          onClick={() => { clickHandler("close-sidebar") }}
+          className="hidden lg:block">
+          <Menu size={"28"} />
+        </button>
+
       </div>
       {/* End Avatar Sidebar */}
 
       {/* Menu Sidebar */}
-      <div className='flex flex-col gap-3 p-6 menu w-80'>
-        <div className='text-lg font-bold text-primary1'>Dashboard</div>
+      <div className="menu w-64 p-4 lg:p-6 gap-3 flex justify-start">
+        <p className="text-lg font-bold justify-start">Dashboard</p>
         <li>
-          <Link
-            to='/'
-            className='font-semibold hover:bg-primary2 text-primary1 hover:btn-active'
+          <button
+            className={`${onPage === "dashboard" ? "bg-gray-200" : ""} font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("dashboard")}
           >
-            <MdDashboard className='mr-2' />
-            Dashboard
-          </Link>
+            <Link
+              className={`flex items-center gap-2`}
+              to='beranda'>
+              <MdDashboard />
+              Dashboard
+            </Link>
+          </button>
         </li>
-        <div className='text-lg font-bold text-primary1'>Menu Utama</div>
+        <p className="text-lg font-bold justify-start">Menu Utama</p>
         <li>
-          <a className='font-semibold hover:bg-primary2 text-primary1'>
-            <RiCustomerServiceFill className='mr-2' />
-            Layanan
-          </a>
-        </li>
-        <li>
-          <Link
-            to='/aset'
-            className='font-semibold hover:bg-primary2 text-primary1'
+          <button
+            className={`${onPage === "layanan" ? "bg-gray-200" : ""} font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("layanan")}
           >
-            <MdWebAsset className='mr-2' />
-            Aset
-          </Link>
+            <Link
+              to='layanan/rekomendasi' className={`flex items-center gap-2`}>
+              <RiCustomerServiceFill />
+              Layanan
+            </Link>
+          </button>
         </li>
         <li>
-          <a className='font-semibold hover:bg-primary2 text-primary1'>
-            <RiArticleFill className='mr-2' />
-            Artikel & Video
-          </a>
-        </li>
-        <li>
-          <a className='font-semibold hover:bg-primary2 text-primary1'>
-            <HiChatBubbleLeftRight className='mr-2' />
-            Forum
-          </a>
-        </li>
-        <li>
-          <a className='font-semibold hover:bg-primary2 text-primary1'>
-            <IoSettingsSharp className='mr-2' />
-            Pengaturan
-          </a>
-        </li>
-        <div className='text-lg font-bold text-primary1'>Informasi</div>
-        <li>
-          <Link
-            to='/informasi'
-            className='font-semibold hover:bg-primary2 text-primary1'
+          <button
+            className={`${onPage === "aset" ? "bg-gray-200" : ""} font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("aset")}
           >
-            <FaQuestionCircle className='mr-2' />
-            Informasi
-          </Link>
+            <Link
+              className={`flex items-center gap-2`}
+              to='aset' >
+              <MdWebAsset />
+              Aset
+            </Link>
+          </button>
         </li>
-        <button className='flex items-center justify-center gap-3 py-2 mt-2 text-blue-500 rounded-full hover:bg-sky-100'>
-          <FiLogOut className='mr-2' />
+        <li>
+          <button
+            className={`flex ${onPage === "artikel" ? "bg-gray-200" : ""}  font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("artikel")}
+          >
+            <Link
+              to='artikel' className={` flex items-center gap-2`}>
+              <RiArticleFill />
+              Artikel & Video
+            </Link>
+          </button>
+        </li>
+        <li>
+
+          <button
+            className={`flex ${onPage === "forum" ? "bg-gray-200" : ""}  font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("forum")}
+          >
+            <Link
+              to='forum' className={` flex items-center gap-2`}>
+              <HiChatBubbleLeftRight />
+
+              Forum
+            </Link>
+          </button>
+        </li>
+        <li>
+          <button
+            className={`flex ${onPage === "pengaturan" ? "bg-gray-200" : ""}  font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("pengaturan")}
+          >
+            <Link
+              to='pengaturan' className={` flex items-center gap-2`}>
+              <IoSettingsSharp />
+              Pengaturan
+            </Link>
+          </button>
+        </li>
+        <p className="text-lg font-bold justify-start">Informasi</p>
+        <li>
+          <button
+            className={`flex ${onPage === "informasi" ? "bg-gray-200" : ""}  font-semibold hover:bg-primary2`}
+            onClick={() => setOnPage("informasi")}
+          >
+            <Link
+              to='informasi' className={` flex items-center gap-2`}>
+              <FaQuestionCircle />
+              Informasi
+            </Link>
+          </button>
+        </li>
+        <button className="flex justify-center items-center text-blue-500 mt-4 rounded-full hover:bg-sky-100 py-2 gap-3">
+          <FiLogOut />
           Keluar
         </button>
         {/* End Menu Sidebar */}
+
       </div>
-    </div>
+
+    </>
+  )
+
+}
+
+const Dashboardview = () => {
+  const [onPage, setOnPage] = useState("")
+  return (
+    <>
+      <div className="drawer lg:hidden left-0 w-0 z-50">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <label htmlFor="my-drawer" className="absolute mx-6 p-2 rounded-lg border-none drawer-button -translate-y-[56px]">
+          <Menu size={"32"} color={"white"} />
+        </label>
+        <div className="drawer-side">
+
+          <label id="close-sidebar" htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 min-h-[60rem] bg-white text-base-content">
+            {/* <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay flex justify-end px-3"> */}
+            {/* </label> */}
+            {/*   <X size={"32"} /> */}
+            <div className='sidebar-content flex justify-center flex-col md:my-10'>
+              <SidebarContent onPage={onPage} setOnPage={setOnPage} clickHandler={closeSidebar} />
+            </div>
+
+          </ul>
+        </div>
+      </div>
+
+      <div
+        className={`ml-5 border max-h-[42rem] border-gray-200 w-64 shadow-xl mt-4 rounded-xl hidden lg:block`}
+      >
+
+        <SidebarContent onPage={onPage} setOnPage={setOnPage} />
+      </div >
+
+    </>
   );
 };
 
-export default Sidebar;
+export default Dashboardview;
