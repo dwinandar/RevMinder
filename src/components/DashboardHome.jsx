@@ -137,37 +137,73 @@ const DashboardHome = () => {
         </div>
 
         <div className='container flex flex-col'>
-          <div className='flex flex-col items-center justify-center gap-5 md:flex-row '>
+          {/* Button */}
+          {/* <div className='flex flex-col items-center justify-center gap-5 md:flex-row '> */}
+          {/*   <button */}
+          {/*     className={`flex flex-col md:flex-row items-center justify-center bg-gray-200 shadow-xl lg:px-12 px-8 py-4 rounded-lg max-w-[30rem]`} */}
+          {/*   > */}
+          {/*     <Link */}
+          {/*       to='/dashboard/aset' */}
+          {/*       className='flex gap-4 transition-transform btn btn-ghost hover:scale-105' */}
+          {/*     > */}
+          {/*       <FaMotorcycle size={"46"} color={"#21217A"} /> */}
+          {/*       <div className='flex flex-col items-center text-[#21217A]'> */}
+          {/*         <p className='text-lg'>{`${jumlahDataMotor} Motor`}</p> */}
+          {/*         <span>Yang Anda miliki</span> */}
+          {/*       </div> */}
+          {/*     </Link> */}
+          {/*   </button> */}
+          {/**/}
+          {/*   <button className='flex items-center gap-4 px-8 py-4 bg-gray-200 rounded-lg shadow-xl lg:px-12'> */}
+          {/*     <Link */}
+          {/*       to='/dashboard/aset' */}
+          {/*       className='transition-transform rounded-lg btn btn-ghost hover:scale-105' */}
+          {/*     > */}
+          {/*       <FaCar size={"46"} color={"#21217A"} /> */}
+          {/*       <div className='text-[#21217A] flex flex-col'> */}
+          {/*         <p className='text-lg'>{`${jumlahDataMobil} Mobil`}</p> */}
+          {/*         <span className=''>Yang Anda miliki</span> */}
+          {/*       </div> */}
+          {/*     </Link> */}
+          {/*   </button> */}
+          {/* </div> */}
+          {/* End Button */}
+
+          <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
             {/* Button */}
-            <button
-              className={`flex flex-col md:flex-row items-center justify-center bg-gray-200 shadow-xl lg:px-12 px-8 py-4 rounded-lg max-w-[30rem]`}
-            >
-              <Link
-                to='/dashboard/aset'
-                className='flex gap-4 transition-transform btn btn-ghost hover:scale-105'
-              >
+            <button className={`flex flex-col md:flex-row items-center justify-center bg-gray-200 shadow-xl lg:px-12 px-8 py-4 rounded-lg max-w-[30rem]`}>
+              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform flex gap-4">
                 <FaMotorcycle size={"46"} color={"#21217A"} />
-                <div className='flex flex-col items-center text-[#21217A]'>
-                  <p className='text-lg'>{`${jumlahDataMotor} Motor`}</p>
-                  <span>Yang Anda miliki</span>
+                <div className="flex flex-col items-center text-[#21217A]">
+                  <p
+                    className="text-lg"
+                  >{`${jumlahDataMotor < 1 ? 0 : jumlahDataMotor} Motor`}</p>
+                  <span
+                  >
+                    Yang Anda miliki
+                  </span>
                 </div>
               </Link>
             </button>
 
-            <button className='flex items-center gap-4 px-8 py-4 bg-gray-200 rounded-lg shadow-xl lg:px-12'>
-              <Link
-                to='/dashboard/aset'
-                className='transition-transform rounded-lg btn btn-ghost hover:scale-105'
-              >
+            <button className="flex  items-center bg-gray-200 shadow-xl py-4 lg:px-12 px-8  rounded-lg gap-4">
+              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform rounded-lg">
                 <FaCar size={"46"} color={"#21217A"} />
-                <div className='text-[#21217A] flex flex-col'>
-                  <p className='text-lg'>{`${jumlahDataMobil} Mobil`}</p>
-                  <span className=''>Yang Anda miliki</span>
+                <div
+                  className="text-[#21217A] flex flex-col"
+                >
+                  <p
+                    className="text-lg"
+                  >{`${jumlahDataMobil < 1 ? 0 : jumlahDataMobil} Mobil`}</p>
+                  <span className="">
+                    Yang Anda miliki
+                  </span>
                 </div>
               </Link>
             </button>
             {/* End Button */}
           </div>
+
 
           <div className='px-2 mt-6 mb-2'>
             <p className='text-2xl font-bold'>Panduan Penggunaan</p>

@@ -106,7 +106,7 @@ const LoginForm = () => {
           <button
             to='/dashboard/beranda'
             type='submit'
-            className='bg-[#0070BA] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
+            className='bg-[#21217A] text-white px-10 py-2 rounded-2xl mx-auto font-normal'
           >
             Masuk
           </button>

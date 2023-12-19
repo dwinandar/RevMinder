@@ -56,7 +56,6 @@ const Navbar = () => {
               className='btn border-none swap swap-rotate lg:hidden'
               htmlFor='my-drawer-4'
             >
-              <input type='checkbox' />
               <Menu className='border-none fill-current swap-off ring-0' />
               <X className='fill-current swap-on' />
             </label>

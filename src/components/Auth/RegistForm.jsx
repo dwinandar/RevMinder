@@ -201,7 +201,7 @@ const RegistForm = () => {
         <div className='grid place-items-center'>
           <button
             type='submit'
-            className='bg-[#101221] text-white px-10 py-2 rounded-2xl mx-auto font-normal disabled:bg-gray-500'
+            className={`bg-[#21217A] text-white px-10 py-2 rounded-2xl mx-auto font-normal disabled:bg-gray-500 ${terms === true ? "opacity-50 " : "opacity-100"}`}
             disabled={terms}
           >
             Daftar
