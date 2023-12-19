@@ -27,7 +27,6 @@ const LoginForm = () => {
       if (res) {
         console.log(res);
         reset();
-        toast.success("Berhasil Login!");
         navigate("/dashboard");
       } else {
         console.log(res);

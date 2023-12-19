@@ -4,11 +4,13 @@ import { FaCar } from "react-icons/fa";
 import { Fa1, Fa2, Fa3 } from "react-icons/fa6";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useEffect, useState } from "react";
 
 const DashboardHome = () => {
+  const [auth, setAuth] = useState(false);
+  const [username, setUsername] = useState("");
   const [jumlahDataMobil, setJumlahDataMobil] = useState(0);
   const [jumlahDataMotor, setJumlahDataMotor] = useState(0);
   const AnimatedContent = ({ children }) => {
@@ -20,6 +22,28 @@ const DashboardHome = () => {
 
     return <animated.div style={props}>{children}</animated.div>;
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.defaults.withCredentials = true;
+    axios
+      .get("http://localhost:5050/verify")
+      .then((res) => {
+        if (res.data && res.data.username) {
+          setAuth(true);
+          setUsername(res.data.username);
+        } else {
+          alert("Ada yang salah");
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        alert("Terjadi kesalahan dalam mengambil data");
+        navigate("/");
+      });
+  }, []);
 
   useEffect(() => {
     const fetchDataMobil = async () => {
@@ -80,7 +104,7 @@ const DashboardHome = () => {
         <div className='flex-col'>
           <div className='px-3'>
             <img src='/icon-hand.png' alt='' />
-            <p className='text-2xl font-bold'>Hai, Phoenix!</p>
+            <p className='text-2xl font-bold'>Hai, {username}!</p>
             <p className='mb-3 text-sm'>
               Selamat datang dilayanan FixNDrive, ayo explore fitur yang kita
               miliki.
