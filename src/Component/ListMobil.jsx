@@ -15,6 +15,8 @@ function ListMobil() {
   const { id } = useParams();
   const [mobil, setMobil] = useState([]);
   const [layananData, setLayananData] = useState([]);
+  const [pengingat, setPengingat] = useState([]);
+  const [emailSent, setEmailSent] = useState(false);
 
   useEffect(() => {
     axios
@@ -32,7 +34,25 @@ function ListMobil() {
         setLayananData(res.data);
       })
       .catch((err) => console.log(err));
+
+    axios
+      .get(`http://localhost:8081/pengingat/${id}`)
+      .then((res) => {
+        console.log(res);
+        setPengingat(res.data);
+      })
+      .catch((err) => console.log(err));
   }, [id]);
+
+  const handleSendEmail = async () => {
+    try {
+      // Mengirim data pengingat ke server untuk dikirim melalui email
+      await axios.post('http://localhost:8081/send-email', { pengingat});
+      setEmailSent(true);
+    } catch (error) {
+      console.error('Gagal mengirim email:', error);
+    }
+  };
   return (
     <>
       <NavDashboard />
@@ -103,21 +123,47 @@ function ListMobil() {
                   <button className="btn btn-active">Selesai</button>
                 </div>
 
-                <div className="bg-primary2 shadow-md rounded-lg w-96 h-96 p-6 flex items-center justify-center">
-                  <p className="text-gray-500">Pengingat masih kosong</p>
+                <div className="bg-primary2 shadow-md rounded-lg w-96 h-96 p-6 flex flex-col items-center justify-center">
+                  <ul className="list-none p-0">
+                    {pengingat.length > 0 ? (
+                      pengingat.map((pengingat) => (
+                        <li key={pengingat.id} className="mb-4">
+                          <p className="text-lg font-bold mb-1">
+                            Waktu: {pengingat.waktu}
+                          </p>
+                          <p className="text-sm mb-1">
+                            Kategori: {pengingat.kategori}
+                          </p>
+                          <p className="text-sm">
+                            Ingatkan: {pengingat.ingatkan}
+                          </p>
+                        </li>
+                      ))
+                    ) : (
+                      <li className="text-center">Maaf, belum ada riwayat.</li>
+                    )}
+                  </ul>
                 </div>
 
                 <label htmlFor="" className="font-bold">
                   Riwayat layanan
                 </label>
                 <div className="bg-primary2 shadow-md rounded-lg w-96 h-96 p-6 flex items-center justify-center">
-                <ul>
-        {layananData.map((layanan) => (
-          <li>
-            {layanan.biaya} - {layanan.kategori} - {layanan.jarak} km - {layanan.tanggal}
-          </li>
-        ))}
-      </ul>
+                  <ul>
+                    {layananData.length > 0 ? (
+                      layananData.map((layanan) => (
+                        <li key={layanan.id}>
+                          Biaya: {layanan.biaya} <br />
+                          Kategori: {layanan.kategori} <br />
+                          Jarak: {layanan.jarak} <br />
+                          Tanggal: {layanan.tanggal} - <br />
+                          Dikerjakan: {layanan.dikerjakan}
+                        </li>
+                      ))
+                    ) : (
+                      <li>Maaf, catatan kosong.</li>
+                    )}
+                  </ul>
                 </div>
               </div>
 
@@ -137,14 +183,14 @@ function ListMobil() {
                       </h3>
                       <div className="flex justify-center">
                         <Link to="/tambahservice" className="text-center mx-4">
-                        <RxCounterClockwiseClock className="w-20 h-8 mb-2"/>
+                          <RxCounterClockwiseClock className="w-20 h-8 mb-2" />
                           <p className="text-sm">Catat Service </p>
                         </Link>
                         <Link
                           to="/tambahpengingat"
                           className="text-center mx-4"
                         >
-                        <LuAlarmClock className="w-20 h-8 mb-2"/>
+                          <LuAlarmClock className="w-20 h-8 mb-2" />
                           <p className="text-sm">Pengingat</p>
                         </Link>
                       </div>

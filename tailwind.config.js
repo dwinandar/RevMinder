@@ -24,6 +24,6 @@ export default {
     require("daisyui"), require('flowbite/plugin')],
   
   daisyui: {
-    themes: ["light"]
+    themes: []
   }
 }

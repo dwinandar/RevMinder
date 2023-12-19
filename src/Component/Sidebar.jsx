@@ -18,7 +18,7 @@ const Sidebar = () => {
       <div className="rounded-full items-center mt-3 w-20">
         <img src="/avatar.svg" alt="User Avatar" className="rounded-full" />
       </div>
-      <p className="flex justify-center items-center font-bold p-4 text-primary1">
+      <p className="flex justify-center items-center font-bold p-4 text-black">
         Phoenix
       </p>
       <a className="link flex justify-center items-center pl-9">
@@ -29,47 +29,47 @@ const Sidebar = () => {
   
     {/* Menu Sidebar */}
     <div className="menu w-80 p-6 gap-3 flex flex-col">
-      <div className="text-lg font-bold text-primary1">Dashboard</div>
+      <div className="text-lg font-bold text-black">Dashboard</div>
       <li>
-        <Link to='/' className="font-semibold hover:bg-primary2 text-primary1 hover:btn-active">
+        <Link to='/' className="font-semibold hover:bg-primary2 text-black hover:btn-active">
           <MdDashboard className="mr-2" />
           Dashboard
         </Link>
       </li>
-      <div className="text-lg font-bold text-primary1">Menu Utama</div>
+      <div className="text-lg font-bold text-black">Menu Utama</div>
       <li>
-        <a className="font-semibold hover:bg-primary2 text-primary1">
+        <a className="font-semibold hover:bg-primary2 text-black">
           <RiCustomerServiceFill className="mr-2" />
           Layanan
         </a>
       </li>
       <li>
-        <Link to='/aset' className="font-semibold hover:bg-primary2 text-primary1">
+        <Link to='/aset' className="font-semibold hover:bg-primary2 text-black">
           <MdWebAsset className="mr-2" />
           Aset
         </Link>
       </li>
       <li>
-        <a className="font-semibold hover:bg-primary2 text-primary1">
+        <a className="font-semibold hover:bg-primary2 text-black">
           <RiArticleFill className="mr-2" />
           Artikel & Video
         </a>
       </li>
       <li>
-        <a className="font-semibold hover:bg-primary2 text-primary1">
+        <a className="font-semibold hover:bg-primary2 text-black">
           <HiChatBubbleLeftRight className="mr-2" />
           Forum
         </a>
       </li>
       <li>
-        <a className="font-semibold hover:bg-primary2 text-primary1">
+        <a className="font-semibold hover:bg-primary2 text-black">
           <IoSettingsSharp className="mr-2" />
           Pengaturan
         </a>
       </li>
-      <div className="text-lg font-bold text-primary1">Informasi</div>
+      <div className="text-lg font-bold text-black">Informasi</div>
       <li>
-        <Link to="/informasi" className="font-semibold hover:bg-primary2 text-primary1">
+        <Link to="/informasi" className="font-semibold hover:bg-primary2 text-black">
           <FaQuestionCircle className="mr-2" />
           Informasi
         </Link>

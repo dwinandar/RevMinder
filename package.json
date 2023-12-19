@@ -17,6 +17,7 @@
     "bulma": "^0.9.4",
     "flowbite": "^2.2.0",
     "flowbite-datepicker": "^1.2.4",
+    "nodemailer": "^6.9.7",
     "react": "^18.2.0",
     "react-animations": "^1.0.0",
     "react-dom": "^18.2.0",

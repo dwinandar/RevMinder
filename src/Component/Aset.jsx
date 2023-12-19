@@ -98,7 +98,7 @@ function Aset() {
 
             {/* Data Mobil */}
             {showData && (
-              <div className="grid grid-cols-2 border border-gray-200 m-3 shadow-xl rounded-xl overflow-y-auto h-[26rem] bg-primary2">
+              <div className="grid grid-cols-2 border border-gray-200 m-3 shadow-xl rounded-xl overflow-y-auto h-[20rem] bg-primary2">
                 {data.length > 0 ? (
                   data.map((vehicle) => (
                     <div

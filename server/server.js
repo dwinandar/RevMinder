@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "revminder" //database
+    database: "revminder1" //database
 })
 
 {/* Mengambil semua database mobil */}
@@ -87,7 +87,39 @@ app.post('/tambahlayanan', (req, res) => {
     }
   });
   
-
+  {/* Input data pengingat */}
+  app.post('/tambahpengingat', (req, res) => {
+    try {
+      const { waktu, kategori, ingatkan} = req.body;
+  
+      // Fetch the list of mobil entries
+      const mobilSql = 'SELECT * FROM mobil';
+      db.query(mobilSql, (mobilErr, mobilResult) => {
+        if (mobilErr) {
+          console.error('Error fetching mobil entries:', mobilErr);
+          return res.status(500).json({ error: 'Internal Server Error' });
+        }
+  
+        // Use the id_mobil from the first mobil entry (you might want to modify this logic based on your requirements)
+        const id_mobil = mobilResult.length > 0 ? mobilResult[0].id : null;
+  
+        const pengingatSql = 'INSERT INTO pengingat (waktu, kategori, ingatkan, id_mobil) VALUES (?, ?, ?, ?)';
+        const values = [waktu, kategori, ingatkan, id_mobil];
+  
+        db.query(pengingatSql, values, (pengingatErr, pengingatResult) => {
+          if (pengingatErr) {
+            console.error('Error creating layanan entry:', pengingatErr);
+            return res.status(500).json({ error: 'Internal Server Error' });
+          }
+  
+          return res.status(201).json({ message: 'Layanan added successfully', result: pengingatResult });
+        });
+      });
+    } catch (error) {
+      console.error('Exception caught:', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
 {/* Input data layanan berdasarkan indeks mobil tertentu*/}
 app.get('/layanan/:id_mobil', (req, res) => {
@@ -97,6 +129,24 @@ app.get('/layanan/:id_mobil', (req, res) => {
     }
 
     const sql = 'SELECT * FROM layanan WHERE id_mobil = ?';
+
+    db.query(sql, [id_mobil], (err, result) => {
+        if (err) {
+            console.error('Error fetching layanan entries:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+        return res.json(result);
+    });
+});
+
+{/* Input data pengingat berdasarkan indeks mobil tertentu*/}
+app.get('/pengingat/:id_mobil', (req, res) => {
+    const id_mobil = req.params.id_mobil;
+    if (!id_mobil) {
+        return res.status(400).json({ error: 'id_mobil parameter is required' });
+    }
+
+    const sql = 'SELECT * FROM pengingat WHERE id_mobil = ?';
 
     db.query(sql, [id_mobil], (err, result) => {
         if (err) {
