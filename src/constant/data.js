@@ -272,7 +272,7 @@ export const whatTheySayContent = [
   {
     id: 1,
     avatar: avatarBentang,
-    name: "Bentang Nala",
+    name: "Faisal Ikhsan",
     rating: 5,
     comment:
       "“Sangat membantu saya dalam hal pencatatan service, karena saya sering lupa kapan terakhir kali service.”",
@@ -280,7 +280,7 @@ export const whatTheySayContent = [
   {
     id: 2,
     avatar: avatarNafid,
-    name: "Nafid Zanis",
+    name: "Ridho Mujahid",
     rating: 5,
     comment:
       "“Website ini sangat recomended, karena dapet mengingatkan kita untuk service rutin.”",
@@ -288,7 +288,7 @@ export const whatTheySayContent = [
   {
     id: 3,
     avatar: avatarTania,
-    name: "Tania Frentinur",
+    name: "Fannia Lathifah",
     rating: 5,
     comment:
       "“Wajib coba website ini untuk orang yang ingin dingatkan service rutin.”",
@@ -296,7 +296,7 @@ export const whatTheySayContent = [
   {
     id: 4,
     avatar: avatarRizky,
-    name: "Rizky Budiansyah",
+    name: "Ferdy Panggabean",
     rating: 5,
     comment:
       "“Mantab websitenya, bisa menambahkan banyak kendaraan juga untuk pencatatan service.”",
@@ -304,14 +304,14 @@ export const whatTheySayContent = [
   {
     id: 5,
     avatar: avatarNaza,
-    name: "Naza Amarianda",
+    name: "Susi Listia",
     rating: 5,
     comment: "“Website ini sangat recomended, sangat berguna untuk saya.”",
   },
   {
     id: 6,
     avatar: avatarAde,
-    name: "Ade Dwinandar",
+    name: "Sultan Naufal",
     rating: 5,
     comment:
       "“Siap mantap, websitenya keren. Sangat mempermudah untuk perawatan kendaraan.”",
@@ -319,21 +319,21 @@ export const whatTheySayContent = [
   {
     id: 7,
     avatar: avatarAndy,
-    name: "Ahmad Affandy",
+    name: "M. Rizki Aji",
     rating: 5,
     comment: "“Sip, semoga kedepannya fiturnya lebih banyak lagi..”",
   },
   {
     id: 8,
     avatar: avatarNaza,
-    name: "Naza Amarianda",
+    name: "Rumaisha",
     rating: 5,
     comment: "“Website ini sangat recomended, sangat berguna untuk saya.”",
   },
   {
     id: 9,
     avatar: avatarTania,
-    name: "Tania Frentinur",
+    name: "Fatin Dian",
     rating: 5,
     comment:
       "“Wajib coba website ini untuk orang yang ingin dingatkan service rutin.”",
