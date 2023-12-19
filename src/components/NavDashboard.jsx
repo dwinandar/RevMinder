@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+
 
 import { IoIosArrowDown } from "react-icons/io";
 
-const NavDashboard = () => {
+const NavDashboard = ({ username }) => {
+  const navigate = useNavigate();
 
-
+  const handleLogout = () => {
+    axios.get("http://localhost:5050/logout").then(res => {
+      if (res.data) {
+        navigate("/")
+      } else {
+        alert("error")
+      }
+    }).catch(err => console.log(err))
+  }
   return (
     <div className="navbar sticky bg-primary3 shadow-lg w-screen px-6">
 
@@ -35,7 +46,7 @@ const NavDashboard = () => {
                 <img className="w-12 md:w-10  h-auto rounded-full" src="/avatar.svg" alt="Rounded avatar"></img>
               </div>
               <div className="flex items-center gap-2 hidden md:inline-flex">
-                <p className="text-md text-start capitalize">Phoenix</p>
+                <p className="text-md text-start capitalize">{username}</p>
                 <span className=" rounded-full ">
                   <IoIosArrowDown />
                 </span>
@@ -46,7 +57,7 @@ const NavDashboard = () => {
               className="menu menu-xs dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-32"
             >
               <li className="block md:hidden">
-                <a className="justify-center text-md font-bold border-b-2 border-black rounded-none">Pheonix</a>
+                <a className="justify-center text-md font-bold border-b-2 border-black rounded-none">{username}</a>
               </li>
               <li>
                 <a className="justify-center">
@@ -59,9 +70,11 @@ const NavDashboard = () => {
                 </a>
               </li>
               <li>
-                <a className="justify-center">
+                <button
+                  onClick={handleLogout}
+                  className="justify-center">
                   Keluar
-                </a>
+                </button>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import { Menu, X } from "lucide-react"
@@ -9,12 +9,14 @@ import { HiChatBubbleLeftRight } from "react-icons/hi2";
 import { RiArticleFill } from "react-icons/ri";
 import { MdWebAsset, MdDashboard } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
+import axios from 'axios';
 
 const closeSidebar = (id) => {
   document.getElementById(id).click()
 }
 
-const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
+const SidebarContent = ({ onPage, setOnPage, clickHandler, logoutHandler, username }) => {
+
   return (
     <>
       {/* Avatar Sidebar */}
@@ -24,7 +26,7 @@ const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
         </div>
         <div className="user mr-5 pt-5">
           <p className="font-bold text-lg">
-            Phoenix
+            {username}
           </p>
           <p>User</p>
         </div>
@@ -137,7 +139,9 @@ const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
             </Link>
           </button>
         </li>
-        <button className="flex justify-center items-center text-blue-500 mt-4 rounded-full hover:bg-sky-100 py-2 gap-3">
+        <button
+          onClick={logoutHandler}
+          className="flex justify-center items-center text-blue-500 mt-4 rounded-full hover:bg-sky-100 py-2 gap-3">
           <FiLogOut />
           Keluar
         </button>
@@ -150,9 +154,22 @@ const SidebarContent = ({ onPage, setOnPage, clickHandler }) => {
 
 }
 
-const Dashboardview = () => {
+const Dashboardview = ({ username }) => {
   const [onPage, setOnPage] = useState("")
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    axios.get("http://localhost:5050/logout").then(res => {
+      if (res.data) {
+        navigate("/")
+      } else {
+        alert("error")
+      }
+    }).catch(err => console.log(err))
+  }
+
   return (
+
     <>
       <div className="drawer lg:hidden left-0 w-0 z-50">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -167,7 +184,7 @@ const Dashboardview = () => {
             {/* </label> */}
             {/*   <X size={"32"} /> */}
             <div className='sidebar-content flex justify-center flex-col md:my-10'>
-              <SidebarContent onPage={onPage} setOnPage={setOnPage} clickHandler={closeSidebar} />
+              <SidebarContent onPage={onPage} setOnPage={setOnPage} clickHandler={closeSidebar} logoutHandle={handleLogout} username={username} />
             </div>
 
           </ul>
@@ -178,7 +195,7 @@ const Dashboardview = () => {
         className={`ml-5 border max-h-[42rem] border-gray-200 w-64 shadow-xl mt-4 rounded-xl hidden lg:block`}
       >
 
-        <SidebarContent onPage={onPage} setOnPage={setOnPage} />
+        <SidebarContent onPage={onPage} setOnPage={setOnPage} logoutHandle={handleLogout} username={username} />
       </div >
 
     </>

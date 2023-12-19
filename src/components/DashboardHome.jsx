@@ -39,7 +39,6 @@ const DashboardHome = () => {
         }
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
         alert("Terjadi kesalahan dalam mengambil data");
         navigate("/");
       });
@@ -54,7 +53,6 @@ const DashboardHome = () => {
         );
         setJumlahDataMobil(response.data);
       } catch (error) {
-        console.error("Error:", error);
       }
     };
 
@@ -172,11 +170,11 @@ const DashboardHome = () => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
             {/* Button */}
             <button className={`flex flex-col md:flex-row items-center justify-center bg-gray-200 shadow-xl lg:px-12 px-8 py-4 rounded-lg max-w-[30rem]`}>
-              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform flex gap-4">
+              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 hover:border-none transition-transform flex gap-4">
                 <FaMotorcycle size={"46"} color={"#21217A"} />
-                <div className="flex flex-col items-center text-[#21217A]">
+                <div className="flex flex-col items-center text-[#21217A] focus:ring-0">
                   <p
-                    className="text-lg"
+                    className="text-lg focus:ring-0"
                   >{`${jumlahDataMotor < 1 ? 0 : jumlahDataMotor} Motor`}</p>
                   <span
                   >
@@ -187,7 +185,7 @@ const DashboardHome = () => {
             </button>
 
             <button className="flex  items-center bg-gray-200 shadow-xl py-4 lg:px-12 px-8  rounded-lg gap-4">
-              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 transition-transform rounded-lg">
+              <Link to="/dashboard/aset" className="btn btn-ghost hover:scale-105 hover:border-none transition-transform rounded-lg">
                 <FaCar size={"46"} color={"#21217A"} />
                 <div
                   className="text-[#21217A] flex flex-col"

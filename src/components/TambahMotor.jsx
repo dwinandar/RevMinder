@@ -48,7 +48,7 @@ const TambahMotor = () => {
           <div className='overflow-y-auto lg:h-[76%] w-[100%] m-auto p-1 md:px-4 md:py-4 flex flex-col items-center'>
             {/**/}
             <div className='flex flex-col items-center justify-center mt-9'>
-              <img src='/Mobil.svg' alt='' width='200' />
+              <img src='/classicmotor.svg' alt='' width='200' />
               <p className='mt-3 text-lg font-bold'>Tambah Data Motor</p>
             </div>
 
@@ -155,7 +155,7 @@ const TambahMotor = () => {
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   className='text-white btn bg-primary1 hover:bg-primary3'
-                  onClick={() => handleSubmit()}
+                  onClick={(e) => handleSubmit(e)}
                 >
                   Simpan Data
                 </button>

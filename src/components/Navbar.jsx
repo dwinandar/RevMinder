@@ -2,7 +2,7 @@ import { Menu, X } from "lucide-react";
 import logoRM from "../assets/Logo-RevMinder.svg";
 import { useEffect, useRef, useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ page }) => {
   const [bgNav, setBgNav] = useState("");
   const [detailsOpen, setDetailsOpen] = useState(false);
   const detailsRef = useRef(null);
@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`flex md:justify-between justify-center items-center md:px-20 px-7 w-full gap-2 transition-all text-white sticky top-0 z-30 ${bgNav} py-3 duration-200`}
+      className={`flex md:justify-between justify-center items-center md:px-20 px-7 w-full gap-2 transition-all text-white sticky top-0 z-30  ${page === "artikel" ? "bg-[#000]" : bgNav} py-3 duration-200`}
     >
       <div className='flex items-center justify-between w-full shrink-0 lg:w-auto '>
         <img src={logoRM} alt='logo-fnd' className='w-52 h-[2.7rem]' />

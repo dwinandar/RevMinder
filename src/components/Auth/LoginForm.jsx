@@ -27,7 +27,7 @@ const LoginForm = () => {
       if (res) {
         console.log(res);
         reset();
-        navigate("/dashboard");
+        navigate("/dashboard/beranda");
       } else {
         console.log(res);
       }
@@ -39,7 +39,7 @@ const LoginForm = () => {
         // error.response.status === 400
       ) {
         reset();
-        toast.error(`${error.response.data.message}`);
+        toast.error(`${error.response.data}`);
         return;
       } else {
         console.error("Login gagal:", error);

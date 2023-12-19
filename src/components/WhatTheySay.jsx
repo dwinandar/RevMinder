@@ -3,7 +3,7 @@ import { whatTheySayContent } from "../constant/data";
 const WhatTheySay = () => {
   return (
     <div className='md:px-24 lg:px-32 px-7 min-h-screen'>
-      <h1 className='text-center text-[32px] font-semibold py-24'>
+      <h1 className='text-center text-[#21217A] text-[32px] font-semibold py-24'>
         Apa Kata Mereka ?
       </h1>
       <div className='w-full bg-[#DFE0F3] h-fit carousel flex items-center rounded-xl mb-24'>

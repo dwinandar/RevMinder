@@ -7,7 +7,7 @@ const MainFeature = () => {
       id='main-feature'
     >
       <div className='flex flex-col items-center gap-5'>
-        <h1 className='mt-10 text-4xl font-semibold text-center capitalize'>
+        <h1 className='mt-10 text-4xl text-[#21217A] font-semibold text-center capitalize'>
           Fitur RevMinder
         </h1>
         <div className='text-[#21217A] text-xl text-center'>

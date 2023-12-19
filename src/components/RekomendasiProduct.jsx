@@ -10,6 +10,8 @@ import { MdArrowBack } from 'react-icons/md'
 
 import { sukuCadang } from "../constant/data"
 
+import rek from "../assets/rekomendasiHero.png"
+
 
 
 const RekomendasiProduct = () => {
@@ -45,7 +47,7 @@ const RekomendasiProduct = () => {
       <div className="flex flex-col">
 
         <div className=' flex flex-col lg:flex-row  items-center sm:justify-center'>
-          <img src="/rek.png" alt="" />
+          <img src={rek} alt="" />
 
           <div className='flex flex-col'>
             <select className='border rounded p-2 mt-2 z-20'
@@ -55,7 +57,7 @@ const RekomendasiProduct = () => {
               <option value="pilihan2">Bajaj</option>
               <option value="pilihan3">Harley Davidson</option>
               <option value="pilihan4">KTM</option>
-              <option value="pilihan5">Honda</option>
+              <option value="pilihan5" selected={true}>Honda</option>
               <option value="pilihan6">Kawasaki</option>
               <option value="pilihan7">Kaisar</option>
               <option value="pilihan8">Minerva</option>
@@ -81,7 +83,7 @@ const RekomendasiProduct = () => {
               <option value="pilihan9">Scoopy</option>
               <option value="pilihan10">Spacy</option>
               <option value="pilihan11">Vario 150</option>
-              <option value="pilihan12">Vario 160</option>
+              <option value="pilihan12" selected={true}>Vario 160</option>
               <option value="pilihan13">Lainnya</option>
             </select>
 

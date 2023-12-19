@@ -2,7 +2,8 @@ import Avatar from "./Avatar";
 
 import image from "../assets/UserPhoto.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function triggerInputFile(id) {
   document.getElementById(id).click();
@@ -39,6 +40,20 @@ const UbahProfil = () => {
       return;
     }
   };
+
+
+  const [user, setUser] = useState([])
+  useEffect(() => {
+    try {
+      axios.defaults.withCredentials = true;
+      axios.get("http://localhost:5050/user").then((res) => {
+        console.log(res.data.result[0]);
+        setUser(res.data.result[0]);
+      })
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, [])
 
   return (
     <div className={`py-6 mx-10`}>
@@ -105,17 +120,18 @@ const UbahProfil = () => {
               <tr>
                 <td>
                   <label htmlFor='nama_lengkap' className='font-[600]'>
-                    Nama Lengkap
+                    Nama Pengguna
                   </label>
                 </td>
                 <td>
                   <input
                     type='text'
                     name='nama_lengkap'
-                    defaultValue={"Pheonix"}
+                    value={`${user?.username}`}
                     className='w-full text-gray-600 border-none rounded-lg focus:text-black'
                     required
                   />
+                  {console.log(user)}
                 </td>
               </tr>
 
@@ -129,7 +145,7 @@ const UbahProfil = () => {
                   <input
                     type='text'
                     name='email'
-                    defaultValue={"pheonix@gmail.com"}
+                    value={`${user?.email}`}
                     className='w-full text-gray-600 border-none rounded-lg focus:text-black'
                     required
                   />
@@ -146,7 +162,7 @@ const UbahProfil = () => {
                   <input
                     type='text'
                     name='no_hp'
-                    defaultValue={"0812345678"}
+                    value={`${user?.nowa}`}
                     className='w-full text-gray-600 border-none rounded-lg focus:text-black'
                     required
                   />
@@ -163,7 +179,7 @@ const UbahProfil = () => {
                   <input
                     type='text'
                     name='alamat'
-                    defaultValue={"Cengkareng, Jakarta 43123"}
+                    value={`${user?.alamat}`}
                     className='w-full text-gray-600 border-none rounded-lg focus:text-black'
                     required
                   />

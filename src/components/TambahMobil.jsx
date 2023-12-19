@@ -21,6 +21,7 @@ const TambahMobil = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.defaults.withCredentials = true;
     axios
       .post("http://localhost:5050/vehicle/insert/mobil", values)
       .then((res) => {
@@ -165,7 +166,7 @@ const TambahMobil = () => {
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   className='text-white btn bg-primary1 hover:bg-primary3'
-                  onClick={() => handleSubmit()}
+                  onClick={(e) => handleSubmit(e)}
                 >
                   Simpan Data
                 </button>
