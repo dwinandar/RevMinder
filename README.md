@@ -41,5 +41,5 @@ npm run dev
 2. [React Router](https://reactrouter.com/en/main)
 3. [TailwindCSS](https://tailwindcss.com/)
 4. [DaisyUI](https://daisyui.com/)
-5. [Flowbite] (https://flowbite.com/)
+5. [Flowbite](https://flowbite.com/)
 5. [React Icons](https://react-icons.github.io/react-icons/)
