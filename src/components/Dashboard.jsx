@@ -63,7 +63,7 @@ const Dashboard = () => {
   return (
     <div>
       <NavDashboard username={username} />
-      <div className='flex w-full '>
+      <div className='flex w-full'>
         <Sidebar username={username} />
         <Routes>
           <Route path='/beranda' element={<DashboardHome />}></Route>
